@@ -5,6 +5,14 @@
  */
 
 /* Global Styles */
+/* arial-rounded */
+@font-face {
+    font-family: 'arial-rounded';
+    src: url('../fonts/arial-rounded/666.eot'),
+    url('../fonts/arial-rounded/666.woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 html,
 body {
@@ -239,3 +247,101 @@ hr.small {
 footer {
     padding: 100px 0;
 }
+
+
+
+
+/* css app */
+.red {
+    border: 1px solid red;
+}
+.blue {
+    border: 1px solid blue;
+}
+/** COLORS **/
+.color-red {
+    color: #ec008c;
+}
+.color-blue {
+    color: #0049f9;
+}
+.color-purple {
+    color: #9e04ec;
+}
+
+
+
+.space-button {
+   /*width: 50%;*/
+   padding: 150px 0 0 0; 
+}
+.space-parrot {
+    padding: 0 0 0 100px;
+}
+/*
+@media (max-width: 767px) {
+   .space-parrot {
+      border: 1px solid pink;
+   }   
+}*/
+@media (max-width: 767px) {
+   .space-parrot {
+      display: none;
+   }
+    .space-button {
+        text-align: center;
+        width:100%; 
+        padding:0;
+        background: transparent url(../img/parrot-abc.png) no-repeat center center;  
+        min-height: 525px;
+        padding: 150px 0 0 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .space-button img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.btn-level, .btn-level:hover {
+    display: inline-block;
+    width: 413px;
+    height: 128px;
+    font-size: 48px;
+    line-height: 125px;
+    text-decoration: none;
+    text-align: center;
+text-shadow: 4px 0 0 #fff,
+-4px 0 0 #fff,
+0 4px 0 #fff,
+0 -4px 0 #fff,
+2px 2px #fff,
+-2px -2px 0 #fff,
+2px -2px 0 #fff,
+-2px 2px 0 #fff;    
+}
+.btn-level-1 {
+    color: #ec008c;
+    background: transparent url(../img/btn-level-1.png) no-repeat left center;
+
+}
+.btn-level-2 {
+    color: #0049f9;
+    background: transparent url(../img/btn-level-2.png) no-repeat left center;
+}
+.btn-level-3 {
+    color: #9e04ec;
+    background: transparent url(../img/btn-level-3.png) no-repeat left center;
+}
+
+/*  PLAY.HTML */
+.bg-play {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg-play.png) no-repeat top center;
+}
+
