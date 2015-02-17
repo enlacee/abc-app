@@ -1,0 +1,20 @@
+# App ABC
+
+Project development in Html, css
+
+
+# description Mauricio Vargas
+
+Estas son las palabras que tenemos: http://develowebapps.com/apps/abc/palabras.jpg
+
+cada letra tiene 3 palabras asociadas ( 1 por nivel). Por favor acomoda según tu criterio la palabra más facil en el nivel 1 y la más complicada en el 3. (p. ej:  A: Arbol (nivel 1), Arbol (Nivel 2), Alpaca (Nivel 3) )
+
+solo la X tiene 1 sola palabra, así que se repite en los 3 niveles.
+
+ 
+
+Por favor, en el PSD con las palabras solo utiliza la imagen y la letra, Ya no va la palabra, ya que en el juego se le muestran 4 palabras para que elija la adecuada.
+
+Por favor también a tu criterio elige las otras 3 palabras que se mostrarán al niño. Todas empiezan con la misma letra. Ten en cuenta que lis niños tienen de 4 a 6 años, así que busca palabras sencillas.
+
+
