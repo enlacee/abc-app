@@ -1,9 +1,13 @@
-# App ABC
+# abc-app
+Application for tablet and mobile Alphabet for kids (alphabet game)
+
+
+## App ABC - description 
 
 Project development in Html, css
 
 
-# description Mauricio Vargas
+## description Mauricio Vargas
 
 Estas son las palabras que tenemos: http://develowebapps.com/apps/abc/palabras.jpg
 
