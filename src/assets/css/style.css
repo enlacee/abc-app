@@ -418,10 +418,38 @@ footer {
     height: 90px;
 }
 
-.bg-play div {
-    /*margin: 0;
-    padding: 0;*/
+/**********************/
+.x-btn-1 {
+    border:5px solid #ec008c;
+    background-color: #fdc214;
+    margin: 0 0 15px 0;
+    padding: 0 25%;
+    font-size: 45px;
+    /*box-shadow: 5px 5px 5px #ccc;*/
+    border-radius: 25px;
+    box-shadow: inset -5px -5px 10px 5px;
+    box-shadow: inset 8px -5px 8px -2px #ffff1b;
+    color:#ec008c;
+
+
+
+background: #ffff1b; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffff1b 0%, #fed516 47%, #fdbb13 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffff1b), color-stop(47%,#fed516), color-stop(100%,#fdbb13)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', endColorstr='#fdbb13',GradientType=0 ); /* IE6-9 */
+
 }
+.x-btn-1:hover {
+    color: #ec008c;;
+}
+
+
+
+
 
 /* maximo de acho donde aplicara todo este estilo*/
 @media (min-width: 767px) {
@@ -445,12 +473,18 @@ footer {
     .col-xs-6 {
         width: 50%;
         /*border:5px solid black;*/
-    } 
+        padding: 0;
+    }
+    .x-btn-1 {
+        padding: 0 14%;
+    }
+    
 }
 @media (max-width: 390px) {
     .col-xs-6 {
         width: 100%;
         /*border:5px solid red;*/
+        padding: 0;
     } 
 }
 
