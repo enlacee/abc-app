@@ -317,12 +317,10 @@ padding: 0 0 0 12%;
   /*  background: transparent url(../img/btn-level-3.png) no-repeat center center;
 */}
 .div-btn-float{
-    position: absolute;
-    width: 100%;
+    /*position: absolute;
+    width: 100%;*/
 }
-.div-text-float{
-    position: relative;
-}
+
 @media (max-width: 767px) {
    .space-parrot {
       /*display: none;*/
