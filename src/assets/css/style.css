@@ -3,13 +3,11 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
-/* Global Styles */
 /* arial-rounded */
 @font-face {
-    font-family: 'arial-rounded';
+    font-family: 'arial rounded';
     src: url('../fonts/arial-rounded/666.eot'),
-    url('../fonts/arial-rounded/666.woff');
+    url('../fonts/arial-rounded/666.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +22,8 @@ body {
 
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url(../img/bg.jpg) no-repeat center center scroll;
+    background-color: red; 
 }
 
 .text-vertical-center {
@@ -38,6 +38,10 @@ body {
     font-size: 4.5em;
     font-weight: 700;
 }
+.text-vertical-center .row {
+    margin: 0;
+}
+
 
 /* Custom Button Styles */
 
@@ -170,6 +174,7 @@ hr.small {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    border:2px solid red;
 }
 
 /* About */
@@ -270,49 +275,25 @@ footer {
 }
 
 
-
 .space-button {
-   /*width: 50%;*/
-   padding: 150px 0 0 0; 
+   margin: 5% 0 0 0;
+   padding: 0;
+   .row {
+        margin:0;
+   }
 }
 .space-parrot {
-    padding: 0 0 0 100px;
+    padding: 0 0 0 0;
 }
-/*
-@media (max-width: 767px) {
-   .space-parrot {
-      border: 1px solid pink;
-   }   
-}*/
-@media (max-width: 767px) {
-   .space-parrot {
-      display: none;
-   }
-    .space-button {
-        text-align: center;
-        width:100%; 
-        padding:0;
-        background: transparent url(../img/parrot-abc.png) no-repeat center center;  
-        min-height: 525px;
-        padding: 150px 0 0 0;
-    }
-}
-
-@media (max-width: 390px) {
-    .space-button img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
 .btn-level, .btn-level:hover {
     display: inline-block;
+    font-family: 'arial rounded';
     width: 413px;
     height: 128px;
     font-size: 48px;
-    line-height: 125px;
+    line-height: 100px;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
 text-shadow: 4px 0 0 #fff,
 -4px 0 0 #fff,
 0 4px 0 #fff,
@@ -320,21 +301,62 @@ text-shadow: 4px 0 0 #fff,
 2px 2px #fff,
 -2px -2px 0 #fff,
 2px -2px 0 #fff,
--2px 2px 0 #fff;    
+-2px 2px 0 #fff;
+padding: 0 0 0 12%; 
 }
 .btn-level-1 {
     color: #ec008c;
-    background: transparent url(../img/btn-level-1.png) no-repeat left center;
-
-}
+  /*  background: transparent url(../img/btn-level-1.png) no-repeat center center;
+*/}
 .btn-level-2 {
     color: #0049f9;
-    background: transparent url(../img/btn-level-2.png) no-repeat left center;
-}
+  /*  background: transparent url(../img/btn-level-2.png) no-repeat center center;
+*/}
 .btn-level-3 {
     color: #9e04ec;
-    background: transparent url(../img/btn-level-3.png) no-repeat left center;
+  /*  background: transparent url(../img/btn-level-3.png) no-repeat center center;
+*/}
+.div-btn-float{
+    position: absolute;
+    width: 100%;
 }
+.div-text-float{
+    position: relative;
+}
+@media (max-width: 767px) {
+   .space-parrot {
+      /*display: none;*/
+   }
+    .space-button {
+        text-align: center;
+        /*width:100%; 
+        padding:0;
+        background: transparent url(../img/parrot-abc.png) no-repeat center center;  
+        min-height: 525px;
+        padding: 30% 0 0 0;*/
+    }
+    .btn-level, .btn-level:hover{
+        width: 100%;
+    }
+}
+
+@media (max-width: 390px) {
+   .space-parrot {
+    margin: 30% 0;
+   }
+    .space-button img {
+        max-width: 100%;
+        height: auto;
+    }
+    .btn-level, .btn-level:hover{
+        font-size: 25px;
+        padding: 8.5% 0 0 10.5%;
+        line-height: 25px;
+        text-align: left;           
+    }
+}
+
+
 
 /*  PLAY.HTML */
 .bg-play {
@@ -345,3 +367,8 @@ text-shadow: 4px 0 0 #fff,
     background: url(../img/bg-play.png) no-repeat top center;
 }
 
+/*  fix jquery mobile */
+body:first-child {
+   color pink;
+   background-color: pink;
+}
