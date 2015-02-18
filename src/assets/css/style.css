@@ -174,7 +174,6 @@ hr.small {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    border:2px solid red;
 }
 
 /* About */
@@ -294,15 +293,15 @@ footer {
     line-height: 100px;
     text-decoration: none;
     text-align: left;
-text-shadow: 4px 0 0 #fff,
--4px 0 0 #fff,
-0 4px 0 #fff,
-0 -4px 0 #fff,
-2px 2px #fff,
--2px -2px 0 #fff,
-2px -2px 0 #fff,
--2px 2px 0 #fff;
-padding: 0 0 0 12%; 
+    text-shadow: 4px 0 0 #fff,
+    -4px 0 0 #fff,
+    0 4px 0 #fff,
+    0 -4px 0 #fff,
+    2px 2px #fff,
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff;
+    padding: 0 0 0 12%; 
 }
 .btn-level-1 {
     color: #ec008c;
@@ -364,9 +363,106 @@ padding: 0 0 0 12%;
     height: 100%;
     background: url(../img/bg-play.png) no-repeat top center;
 }
-
-/*  fix jquery mobile */
-body:first-child {
-   color pink;
-   background-color: pink;
+.btn-lvl-general {
+    font-size: 4em;
+    line-height: 2.2em;
 }
+.btn-lvl-1 {
+    border: 0;
+    border-radius: 35px;
+    font-family: "rial rounded";
+    height: 117px;
+    padding: 0;
+    width: 379px;
+    background: transparent url('../img/btn-lvl-1.png');
+    text-shadow: 4px 0 0 #fff,
+    -4px 0 0 #fff,
+    0 4px 0 #fff,
+    0 -4px 0 #fff,
+    2px 2px #fff,
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff;    
+
+}
+.img-alphabet {
+
+}
+
+/** boton **/
+.mybutton {
+    /*min-width: 100px;*/
+    min-width: 310px;
+}
+.button-lef-1 {
+    float: left;
+    width: 41px;
+    height: 115px;
+    background: transparent url('../img/buttons/level-1/left.png');    
+}
+.button-right-1 {
+    float: left;
+    width: 41px;
+    height: 115px;
+    background: transparent url('../img/buttons/level-1/right.png');
+}
+.button-bg-1 {
+    float: left;
+    height: 115px;
+    background: transparent url('../img/buttons/level-1/bg.png') repeat top right;
+    font-size: 4em;
+    line-height: 2.1em;    
+}
+
+.img-main-alphabet img {
+    height: 90px;
+}
+
+.bg-play div {
+    /*margin: 0;
+    padding: 0;*/
+}
+
+/* maximo de acho donde aplicara todo este estilo*/
+@media (min-width: 767px) {
+    .img-main-alphabet img {
+        height: 100%;
+    }
+    .button-bg-1 {
+        font-size: 2em;
+        line-height: 4em;
+        padding: 0 35px; 
+    }    
+}
+/* maximo de acncho donde aplicara el estilo */
+@media (min-width: 390px) {
+    .button-bg-1 {
+        font-size: 2em;
+        line-height: 4em;
+        padding: 0 40px;
+    }
+
+    .col-xs-6 {
+        width: 50%;
+        /*border:5px solid black;*/
+    } 
+}
+@media (max-width: 390px) {
+    .col-xs-6 {
+        width: 100%;
+        /*border:5px solid red;*/
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
