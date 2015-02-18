@@ -6,7 +6,7 @@
 /* arial-rounded */
 @font-face {
     font-family: 'arial rounded';
-    src: url('../fonts/arial-rounded/666.eot'),
+    src: url('../fonts/arial-rounded/666.eotA'),
     url('../fonts/arial-rounded/666.ttf');
     font-weight: normal;
     font-style: normal;
@@ -21,7 +21,7 @@ body {
 }
 
 body {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "arial rounded","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url(../img/bg.jpg) no-repeat center center scroll;
     background-color: red; 
 }
@@ -339,7 +339,7 @@ footer {
 
 @media (max-width: 390px) {
    .space-parrot {
-    margin: 30% 0;
+    /*margin: 30% 0;*/
    }
     .space-button img {
         max-width: 100%;
@@ -420,17 +420,26 @@ footer {
 
 /**********************/
 .x-btn-1 {
+    font-family: 'arial rounded';
     border:5px solid #ec008c;
     background-color: #fdc214;
     margin: 0 0 15px 0;
-    padding: 0 25%;
+    padding: 0 22%;
     font-size: 45px;
     /*box-shadow: 5px 5px 5px #ccc;*/
     border-radius: 25px;
     box-shadow: inset -5px -5px 10px 5px;
     box-shadow: inset 8px -5px 8px -2px #ffff1b;
     color:#ec008c;
-
+    text-shadow: 
+    4px 0 0 #fff,
+    -4px 0 0 #fff,
+    0 4px 0 #fff,
+    0 -4px 0 #fff,
+    2px 2px #fff,
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff;
 
 
 background: #ffff1b; /* Old browsers */
@@ -446,7 +455,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
 .x-btn-1:hover {
     color: #ec008c;;
 }
+.x-btn-1:active {
+background: #ffff1b; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffff1b 0%, #fed516 47%, #fdbb13 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffff1b), color-stop(47%,#fed516), color-stop(100%,#fdbb13)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', endColorstr='#fdbb13',GradientType=0 ); /* IE6-9 */
 
+}
 
 
 
@@ -490,8 +509,105 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
 
 
 
+/*****   WIN   ******/
 
+.parrot-background {     
+background-image: url(../img/parrot-abc.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
 
+}
+
+.win-title {
+    font-size: 105px;
+    color: #ec008c;
+    text-shadow: 
+    4px 0 0 #fff,
+    -4px 0 0 #fff,
+    0 4px 0 #fff,
+    0 -4px 0 #fff,
+    2px 2px #fff,
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff;    
+}
+.win-subtitle {
+    font-size: 36px;
+    color: #ec008c;
+    text-shadow: 
+    2px 0 0 #fff,
+    -2px 0 0 #fff,
+    0 2px 0 #fff,
+    0 -2px 0 #fff,
+    1px 1px #fff,
+    -1px -2px 0 #fff,
+    1px -2px 0 #fff,
+    -1px 1px 0 #fff;
+    text-align: right;
+    margin: 0 28%;
+}
+
+.win-content-title {
+    color: #8d2c92;
+    font-size: 36px;
+    text-shadow: 
+    2px 0 0 #fff,
+    -2px 0 0 #fff,
+    0 2px 0 #fff,
+    0 -2px 0 #fff,
+    1px 1px #fff,
+    -1px -2px 0 #fff,
+    1px -2px 0 #fff,
+    -1px 1px 0 #fff; 
+
+}
+.win-content-subtitle {
+    font-size: 61px;
+    color: #8d2c92;
+    text-shadow: 
+    4px 0 0 #fff,
+    -4px 0 0 #fff,
+    0 4px 0 #fff,
+    0 -4px 0 #fff,
+    2px 2px #fff,
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff;     
+}
+/* maximo de acncho donde aplicara el estilo */
+@media (min-width: 390px) {
+    .win-title {
+        font-size: 60px;  
+    }
+    .win-subtitle {
+        font-size: 19px;
+    }
+    .win-content-title {
+        font-size: 16px;
+
+    }
+    .win-content-subtitle {
+        font-size: 41px;
+    }
+    
+}
+
+@media (max-width: 390px) {
+    .win-title {
+        font-size: 55px;  
+    }
+    .win-subtitle {
+        font-size: 13px;
+    }
+    .win-content-title {
+        font-size: 13px;
+
+    }
+    .win-content-subtitle {
+        font-size: 25px;
+    }
+}
 
 
 
