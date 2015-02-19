@@ -70,7 +70,23 @@
         </header>
 
         <!--<script src="assets/plugins/bootstrap-3.3.2/js/bootstrap.min.js"></script>-->
-        <!--app-->
+        <!--app--> 
+<script src="assets/js/plugins/soundmanager2/script/soundmanager2.js"></script>
+<script>
+soundManager.setup({
+  url: 'assets/js/plugins/soundmanager2/swf/',
+  onready: function() {
+    var mySound = soundManager.createSound({
+      id: 'aSound',
+      url: 'assets/audio/alpaca.mp3'
+    });
+    mySound.play();
+  },
+  ontimeout: function() {
+    // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+  }
+});
+</script>        
         <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
         <script type="text/javascript" src="assets/js/js.js"></script>
     </body>
