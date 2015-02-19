@@ -1,13 +1,9 @@
 # abc-app
-Application for tablet and mobile Alphabet for kids (alphabet game)
+Application for divice mobile subject : Alphabet for kids (alphabet game)
+Project development in Html,css
 
 
-## App ABC - description 
-
-Project development in Html, css
-
-
-## description Mauricio Vargas
+## Description : Mauricio Vargas
 
 Estas son las palabras que tenemos: http://develowebapps.com/apps/abc/palabras.jpg
 
@@ -22,3 +18,7 @@ Por favor, en el PSD con las palabras solo utiliza la imagen y la letra, Ya no v
 Por favor también a tu criterio elige las otras 3 palabras que se mostrarán al niño. Todas empiezan con la misma letra. Ten en cuenta que lis niños tienen de 4 a 6 años, así que busca palabras sencillas.
 
 
+
+Screenshot reference
+
+![screenshot abc app](docs/screenshot-abc.png)
