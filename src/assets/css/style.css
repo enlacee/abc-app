@@ -415,7 +415,7 @@ footer {
 }
 
 .img-main-alphabet img {
-    height: 90px;
+    height: 150px;
 }
 
 /**********************/
@@ -561,6 +561,10 @@ background-size: cover;
     1px -2px 0 #fff,
     -1px 1px 0 #fff; 
 
+}
+.win-parrot {
+    position: relative;
+    bottom: 15px;
 }
 .win-content-subtitle {
     font-size: 61px;
