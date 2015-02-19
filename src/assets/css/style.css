@@ -6,7 +6,7 @@
 /* arial-rounded */
 @font-face {
     font-family: 'arial rounded';
-    src: url('../fonts/arial-rounded/666.eotA'),
+    src: url('../fonts/arial-rounded/666.eot'),
     url('../fonts/arial-rounded/666.ttf');
     font-weight: normal;
     font-style: normal;
@@ -14,7 +14,7 @@
 
 html,
 body {
-    width: 100%;
+    width: 100%;ƒ√
     height: 100%;
     margin:0;
     padding: 0;
@@ -23,7 +23,6 @@ body {
 body {
     font-family: "arial rounded","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url(../img/bg.jpg) no-repeat center center scroll;
-    background-color: red; 
 }
 
 .text-vertical-center {
@@ -456,15 +455,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
     color: #ec008c;;
 }
 .x-btn-1:active {
-background: #ffff1b; /* Old browsers */
-background: -moz-linear-gradient(top,  #ffff1b 0%, #fed516 47%, #fdbb13 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffff1b), color-stop(47%,#fed516), color-stop(100%,#fdbb13)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', endColorstr='#fdbb13',GradientType=0 ); /* IE6-9 */
-
+    background: #ec008c;
+    box-shadow: none;   
 }
 
 
