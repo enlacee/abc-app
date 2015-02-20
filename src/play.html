@@ -39,13 +39,15 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-6 ">
-                                <a href="win.html" class="btn  x-btn-1" data-role="button" rel="external">
+                                <a href="win.html" class="btn  x-btn-1" data-role="button" rel="external"
+                                  data-audio="" >
                                     ABEJA
                                 </a>
                             </div>
 
                             <div class="col-xs-6 ">
-                                <a href="win.html" class="btn  x-btn-1" data-role="button" rel="external">
+                                <a href="win.html" class="btn  x-btn-1" data-role="button" rel="external"
+                                   data-audio="assets/audio/avion.mp3">
                                     AVIÓN
                                 </a>
                             </div>
@@ -53,13 +55,15 @@
 
                         <div class="row">
                             <div class="col-xs-6 ">
-                                <a href="win.html" class="btn  x-btn-1" data-role="button" rel="external">
+                                <a href="win.html" class="btn  x-btn-1" data-role="button" rel="external"
+                                   data-audio="">
                                     ÁRBOL
                                 </a>
                             </div>
 
                             <div class="col-xs-6 ">
-                                <a href="win.html" class="btn  x-btn-1" data-role="button" rel="external">
+                                <a href="win.html" class="btn  x-btn-1" data-role="button" rel="external"
+                                   data-audio="">
                                     AGUA
                                 </a>
                             </div>
@@ -73,19 +77,13 @@
         <!--app--> 
 <script src="assets/js/plugins/soundmanager2/script/soundmanager2.js"></script>
 <script>
-soundManager.setup({
-  url: 'assets/js/plugins/soundmanager2/swf/',
-  onready: function() {
-    var mySound = soundManager.createSound({
-      id: 'aSound',
-      url: 'assets/audio/alpaca.mp3'
-    });
-    mySound.play();
-  },
-  ontimeout: function() {
-    // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
-  }
-});
+    
+
+
+
+
+var buttons = $('.btn');
+console.log('buttons', buttons);
 </script>        
         <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
         <script type="text/javascript" src="assets/js/js.js"></script>

@@ -20,8 +20,11 @@ $(function(){
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l','m',
             'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
         URI : new URI(location.href),
+        PATH_AUDIO : '../audio/',
 
+        DOM_BTN_ALPHABET : '.btn',
         PARAM_DOM_TIMER : '#timer'
+        
     };
 
     var App = {
@@ -30,12 +33,15 @@ $(function(){
         //timer : null, // default timeless
         dataUri : {}, // all data 
         alphabetPosition : 0,
+        mySound : null,
         points : 0,
         score : 0,
 
         init : function() {
             console.log("init App");
             this.readAllDataLevel();
+            console.log("loading sound");
+            this.loadSoundManager2();
 
         },
         // 01 : Get level
@@ -51,7 +57,53 @@ $(function(){
             console.log('data',data);
 
         },
-
+        // cargar los sonidos correspondientes a la pagina
+        // Requiere the library soundmanager2
+        loadSoundManager2 : function(uriAudioMp3) {
+            // step 01
+            var stringSound = '';
+            $( vars.DOM_BTN_ALPHABET ).each(function(index, element) {
+                var uriAudio = $( this ).attr( "data-audio" );
+                console.log ('uriAudio', uriAudio);
+                if (uriAudio.length > 0) {
+                    stringSound = uriAudio;
+                    return false;
+                }
+            });
+    
+            // step 02
+            soundManager.setup({
+                url: 'plugins/soundmanager2/swf/',
+                    onready: function(stringSound) {
+                        /*var mySound = soundManager.createSound({
+                            id: 'aSound',
+                            url: 'assets/audio/avion.mp3'
+                        });
+                        mySound.play();*/
+                        
+                        console.log('LOGG', vars.PATH_AUDIO);
+                        
+                        console.log('PATH domain', vars.URI.domain());
+                        console.log('PATH URI', vars.URI.directory());
+                        console.log('stringSoundstringSound X', stringSound);
+                        var urlAudio = vars.URI.domain() + vars.URI.directory() + '/' + stringSound;
+                        console.log('urlAudio', urlAudio);
+                        /*
+                        var mySound = soundManager.createSound({
+                            id: 'aSound',
+                            url: vars.PATH_AUDIO +  stringSound
+                        });
+                        mySound.play();*/
+                        
+                        //App.mySound = arrayUriSound[0];
+                        
+                        
+                    },
+                    ontimeout: function() {
+                        alert("Lo sentimos este sonido no se pudo reproducir.");
+                    }
+            });
+        },
         // 02 : render vista
         render: function() {
         
