@@ -122,7 +122,7 @@ console.log("INIIIIT", vars.URI.search(true));
                 
                 if (attribute.length > 0) {
                     //App.mySound.play();
-                    $(vars.DOM_MESSAGE_WIN).show();
+                    //$(vars.DOM_MESSAGE_WIN).show();
                     
                     // PUNTUACION OK
                     console.log('App.data ANTES', vars.URI.data);
@@ -149,9 +149,9 @@ console.log("INIIIIT", vars.URI.search(true));
                     setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URI.data.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 1000);
+                    }, 700);
                 } else {
-                    alert("error");
+                    console.log("error");
                 }
 
             });
