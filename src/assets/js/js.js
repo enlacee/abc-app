@@ -149,7 +149,7 @@ console.log("INIIIIT", vars.URI.search(true));
                     setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URI.data.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 700);
+                    }, 500);
                 } else {
                     console.log("error");
                 }
