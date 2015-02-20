@@ -31,33 +31,27 @@ $(function(){
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l','m',
             'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
         URI : new URI(location.href),
+        
         PATH_AUDIO : '../audio/',
 
         DOM_BTN_ALPHABET : '.btn',
         DOM_MESSAGE_WIN : '#popup-message-win',
+        
+        
         PARAM_DOM_TIMER : '#timer'
+       
         
     };
 
     var App = {
-        userName : 'jhon doe',
-        level : -1, // default level 1
-        //timer : null, // default timeless
-        uri : vars.URI,
-        data : {
-            level : -1,
-            indice : 0, // id alphabet
-            points : 0, // # de puntos actuales
-            
-        }, // all data 
+
         urlLocal : vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path(),
         alphabetPosition : 0,
         // AUDIO
         sm : soundManager,
         mySound : null,
+        // static
         pointsValue : 10,
-        points : 0,
-        score : 0,
 
         init : function() {
             console.log("init App");
@@ -70,18 +64,12 @@ $(function(){
         },
         // 01 : Get level
         readAllDataLevel : function() {
-            var uri = vars.URI;
-            var data = uri.search(true);
-            // read all data when is send by http
-            console.log ("LECTURA URI INIT", data);
-            console.log (App.level);
-            if (parseInt(data.level) > 0) {
-                App.level = data.level;
-                
-                App.data = data;
-                App.uri.query(data);
-                console.log('f.readAllDataLevel', App.data);
-            }
+            
+            
+            vars.URI.data = vars.URI.search(true);
+            
+console.log("INIIIIT", vars.URI.search(true));
+            //App.data = data;
         },
         // cargar los sonidos correspondientes a la pagina
         // Requiere the library soundmanager2
@@ -119,7 +107,11 @@ $(function(){
                 + '?' + App.uri.query();
                 
             }
-        },        
+        },
+        redirect : function(stringFileHtml) {
+            
+            window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
+        },
         
         listenerButtonsAlphabet : function() {
             // LISTENER DESPUES DE CREAR LOS OBJETOS
@@ -127,24 +119,37 @@ $(function(){
             $(vars.DOM_BTN_ALPHABET).bind('click',function() {
                 var attribute = $(this).attr('data-audio');
                 
-                console.log('App.data ANTES', App.data);
+                
                 if (attribute.length > 0) {
                     //App.mySound.play();
                     $(vars.DOM_MESSAGE_WIN).show();
                     
-                    // setting URL
-                    console.log('App.data ANTES', App.data);
+                    // PUNTUACION OK
+                    console.log('App.data ANTES', vars.URI.data);
+                    
+                    
+                    var myIndice = parseInt(vars.URI.data.indice) || 0;
+                    var myPoints = parseInt(vars.URI.data.points) || 0;
+                    var myTotalPoints = parseInt(vars.URI.data.totalPoints) || 0;
+                    var myLevel = parseInt(vars.URI.data.level) || 1;
+                    
                     vars.URI.query({
-                        indice : parseInt(App.data.indice) + 1,
-                        points:  parseInt(App.data.points) + parseInt(App.pointsValue)
+                        level : myLevel,
+                        indice : (myIndice + 1),
+                        points: App.pointsValue,
+                        totalPoints : myTotalPoints + parseInt(App.pointsValue)
                     });
+                    
+                    vars.URI.data = vars.URI.query(true);
                     // update set
-                    App.data = vars.URI.query(true);
+                
+                    console.log("App.data DESPUES", vars.URI.query());
                     
-                    console.log("App.data DESPUES", App.data);
                     
-                    App.redirectTo();
-                    
+                    setTimeout(function() {
+                        var fileHtml = myLevel + '_' + vars.URI.data.indice;
+                        App.redirect(fileHtml + '.html?' + vars.URI.query());
+                    }, 1000);
                 } else {
                     alert("error");
                 }
