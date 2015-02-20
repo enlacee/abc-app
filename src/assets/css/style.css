@@ -14,7 +14,7 @@
 
 html,
 body {
-    width: 100%;ƒ√
+    width: 100%;
     height: 100%;
     margin:0;
     padding: 0;
@@ -605,10 +605,19 @@ background-size: cover;
     }
 }
 
+/* interaction*/
+.popup-message {
+    display: block;
+    position: absolute;
+    top: 3%;
+    min-width: 350px;
+    right: 0px;
+    /*height: 100%;*/
+}
 
-
-
-
-
-
+.text-abc {
+    position: absolute;
+    font-size: 60px;
+    margin: 11% 0 0 12%;
+}
 

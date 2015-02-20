@@ -34,6 +34,7 @@ $(function(){
         PATH_AUDIO : '../audio/',
 
         DOM_BTN_ALPHABET : '.btn',
+        DOM_MESSAGE_WIN : '#popup-message-win',
         PARAM_DOM_TIMER : '#timer'
         
     };
@@ -42,11 +43,19 @@ $(function(){
         userName : 'jhon doe',
         level : -1, // default level 1
         //timer : null, // default timeless
-        dataUri : {}, // all data 
+        uri : vars.URI,
+        data : {
+            level : -1,
+            indice : 0, // id alphabet
+            points : 0, // # de puntos actuales
+            
+        }, // all data 
+        urlLocal : vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path(),
         alphabetPosition : 0,
         // AUDIO
         sm : soundManager,
         mySound : null,
+        pointsValue : 10,
         points : 0,
         score : 0,
 
@@ -64,9 +73,14 @@ $(function(){
             var uri = vars.URI;
             var data = uri.search(true);
             // read all data when is send by http
+            console.log ("LECTURA URI INIT", data);
+            console.log (App.level);
             if (parseInt(data.level) > 0) {
                 App.level = data.level;
-                App.dataUri = data;
+                
+                App.data = data;
+                App.uri.query(data);
+                console.log('f.readAllDataLevel', App.data);
             }
         },
         // cargar los sonidos correspondientes a la pagina
@@ -92,8 +106,20 @@ $(function(){
                 autoPlay: false,                
             });
             //mySound.play();
-            App.mySound = mySound;            
+            //App.mySound = mySound;            
         },
+        redirectTo : function() {
+            window.setTimeout(slowAlert, 1000);
+            
+            function slowAlert() {
+                alert("hi");
+                console.log('vars.URI   ',vars.URI.normalizeHash());
+              
+                window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path()
+                + '?' + App.uri.query();
+                
+            }
+        },        
         
         listenerButtonsAlphabet : function() {
             // LISTENER DESPUES DE CREAR LOS OBJETOS
@@ -101,15 +127,31 @@ $(function(){
             $(vars.DOM_BTN_ALPHABET).bind('click',function() {
                 var attribute = $(this).attr('data-audio');
                 
+                console.log('App.data ANTES', App.data);
                 if (attribute.length > 0) {
                     App.mySound.play();
+                    $(vars.DOM_MESSAGE_WIN).show();
+                    
+                    // setting URL
+                    console.log('App.data ANTES', App.data);
+                    vars.URI.query({
+                        indice : parseInt(App.data.indice) + 1,
+                        points:  parseInt(App.data.points) + parseInt(App.pointsValue)
+                    });
+                    // update set
+                    App.data = vars.URI.query(true);
+                    
+                    console.log("App.data DESPUES", App.data);
+                    
+                    App.redirectTo();
+                    
                 } else {
                     alert("error");
                 }
-                console.log('attribute', attribute);
 
             });
-        },        
+        },
+
         // 02 : render vista
         render: function() {
         
