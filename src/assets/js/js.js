@@ -106,7 +106,7 @@ $(function(){
                 autoPlay: false,                
             });
             //mySound.play();
-            //App.mySound = mySound;            
+            App.mySound = mySound;            
         },
         redirectTo : function() {
             window.setTimeout(slowAlert, 1000);
@@ -129,7 +129,7 @@ $(function(){
                 
                 console.log('App.data ANTES', App.data);
                 if (attribute.length > 0) {
-                    App.mySound.play();
+                    //App.mySound.play();
                     $(vars.DOM_MESSAGE_WIN).show();
                     
                     // setting URL
