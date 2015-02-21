@@ -23,6 +23,7 @@ generate icono support Android IOS
 
 https://github.com/AlexDisler/cordova-icon
 
+http://www.phpjabbers.com/javascript-countdown-timer-php46.html
 
 Screenshot reference
 
