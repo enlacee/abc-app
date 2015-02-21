@@ -146,10 +146,10 @@ console.log("INIIIIT", vars.URI.search(true));
                     console.log("App.data DESPUES", vars.URI.query());
                     
                     
-                    setTimeout(function() {
+                   /* setTimeout(function() {*/
                         var fileHtml = myLevel + '_' + vars.URI.data.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 500);
+                    /*}, 500);*/
                 } else {
                     console.log("error");
                 }

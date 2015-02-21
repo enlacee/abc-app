@@ -423,8 +423,9 @@ footer {
     border:5px solid #ec008c;
     background-color: #fdc214;
     margin: 0 0 15px 0;
-    padding: 0 22%;
-    font-size: 45px;
+
+padding: 0px 10%;
+font-size: 32px;    
     /*box-shadow: 5px 5px 5px #ccc;*/
     border-radius: 25px;
     box-shadow: inset -5px -5px 10px 5px;
