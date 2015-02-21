@@ -117,44 +117,61 @@ console.log("INIIIIT", vars.URI.search(true));
             // LISTENER DESPUES DE CREAR LOS OBJETOS
             $(vars.DOM_BTN_ALPHABET).unbind();
             $(vars.DOM_BTN_ALPHABET).bind('click',function() {
-                var attribute = $(this).attr('data-audio');
+                var attribute = $(this).attr('data-audio') || '';
                 
+                getDomButtonCorrect();
+                console.log('App.data ANTES', vars.URI.data);
+                var myIndice = parseInt(vars.URI.data.indice) || 0;
+                var myPoints = parseInt(vars.URI.data.points) || 0;
+                var myTotalPoints = parseInt(vars.URI.data.totalPoints) || 0;
+                var myLevel = parseInt(vars.URI.data.level) || 1;
                 
                 if (attribute.length > 0) {
                     //App.mySound.play();
                     //$(vars.DOM_MESSAGE_WIN).show();
                     
-                    // PUNTUACION OK
-                    console.log('App.data ANTES', vars.URI.data);
-                    
-                    
-                    var myIndice = parseInt(vars.URI.data.indice) || 0;
-                    var myPoints = parseInt(vars.URI.data.points) || 0;
-                    var myTotalPoints = parseInt(vars.URI.data.totalPoints) || 0;
-                    var myLevel = parseInt(vars.URI.data.level) || 1;
-                    
+                    // PUNTUACION OK                    
                     vars.URI.query({
                         level : myLevel,
                         indice : (myIndice + 1),
                         points: App.pointsValue,
                         totalPoints : myTotalPoints + parseInt(App.pointsValue)
                     });
-                    
                     vars.URI.data = vars.URI.query(true);
-                    // update set
-                
                     console.log("App.data DESPUES", vars.URI.query());
-                    
-                    
-                   /* setTimeout(function() {*/
-                        var fileHtml = myLevel + '_' + vars.URI.data.indice;
-                        App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    /*}, 500);*/
                 } else {
-                    console.log("error");
+                    // WRONG                
+                    vars.URI.query({
+                        level : myLevel,
+                        indice : (myIndice + 1),
+                        points: 0,
+                        totalPoints : myTotalPoints + 0
+                    });
+                    vars.URI.data = vars.URI.query(true);
+                    console.log("error");                  
                 }
+                
+                /* setTimeout(function() {*/
+                     var fileHtml = myLevel + '_' + vars.URI.data.indice;
+                     App.redirect(fileHtml + '.html?' + vars.URI.query());
+                 /*}, 500);*/
 
             });
+            
+            // private function
+            function getDomButtonCorrect() {
+                var button = false;
+                $(vars.DOM_BTN_ALPHABET).each(function(index, element) {
+                    var uriAudio = $(this).attr( "data-audio" ) || '';
+                    if (uriAudio.length > 0) {
+                        button = element;
+                        button.className = button.className + " x-btn-1-green";
+                        return false;
+                    }
+                });
+                
+                return button;
+            }
         },
 
         // 02 : render vista

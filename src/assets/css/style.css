@@ -455,7 +455,6 @@ background: -o-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Op
 background: -ms-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', endColorstr='#fdbb13',GradientType=0 ); /* IE6-9 */
-
 }
 .x-btn-1:hover {
     color: #ec008c;;
@@ -464,7 +463,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
     background: #ec008c;
     box-shadow: none;   
 }
-
+.x-btn-1-green {
+    box-shadow: inset -5px -5px 10px 5px;
+    box-shadow: inset 8px -5px 8px -2px #8af04f;
+    background: #8af04f; /* Old browsers */
+    background: -moz-linear-gradient(top,  #8af04f 0%, #7ee146 47%, #4ea429 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8af04f), color-stop(47%,#7ee146), color-stop(100%,#4ea429)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #8af04f 0%,#7ee146 47%,#4ea429 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #8af04f 0%,#7ee146 47%,#4ea429 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #8af04f 0%,#7ee146 47%,#4ea429 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #8af04f 0%,#7ee146 47%,#4ea429 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8af04f', endColorstr='#4ea429',GradientType=0 ); /* IE6-9 */
+}
 
 
 
@@ -576,6 +586,10 @@ background-size: cover;
     -2px -2px 0 #fff,
     2px -2px 0 #fff,
     -2px 2px 0 #fff;     
+}
+
+.win-content-message{
+    font-size: 1.58em;  
 }
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {

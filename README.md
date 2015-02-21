@@ -18,6 +18,11 @@ Por favor, en el PSD con las palabras solo utiliza la imagen y la letra, Ya no v
 Por favor también a tu criterio elige las otras 3 palabras que se mostrarán al niño. Todas empiezan con la misma letra. Ten en cuenta que lis niños tienen de 4 a 6 años, así que busca palabras sencillas.
 
 
+## Resources
+generate icono support Android IOS
+
+https://github.com/AlexDisler/cordova-icon
+
 
 Screenshot reference
 
