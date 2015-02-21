@@ -77,7 +77,7 @@ console.log("INIIIIT", vars.URI.search(true));
             // step 01
             var stringSound = '';
             $(vars.DOM_BTN_ALPHABET).each(function(index, element) {
-                var uriAudio = $(this).attr( "data-audio" );
+                var uriAudio = $(this).attr( "data-audio" ) || '';
                 console.log ('uriAudio', uriAudio);
                 if (uriAudio.length > 0) {
                     stringSound = uriAudio;

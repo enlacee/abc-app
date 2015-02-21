@@ -413,6 +413,9 @@ footer {
     line-height: 2.1em;    
 }
 
+.img-main-alphabet {
+    margin: 0 0 5% 0;
+}
 .img-main-alphabet img {
     height: 150px;
 }
@@ -424,8 +427,10 @@ footer {
     background-color: #fdc214;
     margin: 0 0 15px 0;
 
-padding: 0px 10%;
-font-size: 32px;    
+    margin: 0 0 3% 0;
+    padding: 2% 0%;
+    font-size: 32px;
+    width:94%;
     /*box-shadow: 5px 5px 5px #ccc;*/
     border-radius: 20px;
     box-shadow: inset -5px -5px 10px 5px;
@@ -488,12 +493,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
         padding: 0;
     }
     .x-btn-1 {
-        padding: 0 14%;
+        /*padding: 0 14%;*/
     }
     
 }
 @media (max-width: 390px) {
-    .col-xs-6 {
+    .row .col-xs-6 {
         width: 100%;
         /*border:5px solid red;*/
         padding: 0;
@@ -585,7 +590,7 @@ background-size: cover;
 
     }
     .win-content-subtitle {
-        font-size: 41px;
+        font-size: 35px;
     }
     
 }
