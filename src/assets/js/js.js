@@ -56,10 +56,16 @@ $(function(){
             console.log("loading sound");
             this.loadSoundManager2();            
             this.listenerButtonsAlphabet();
+            
+            
+            
+            
+            
             // init timer
             var myLevel = parseInt(vars.URI.data.level) || 1;
-            if (myLevel === 2) {
-                var seconds = 4;
+            if (myLevel === 2 || myLevel === 3) {
+                var seconds = (myLevel === 3) ? 2 : 4; // countDown
+                
                 this.countdownTimer = setInterval( function() {
                     var remainingSeconds = seconds % 60;
                     console.log('remainingSeconds', remainingSeconds);
@@ -90,10 +96,7 @@ $(function(){
                     }
                     
                 }, 1000);
-            } else if (myLevel === 3) {
-                //this.countdownTimer = setInterval('countDownInSeconds()', 1000);
             }
-            
             
             
         },
@@ -157,7 +160,7 @@ $(function(){
                 } else if (myLevel === 2) {
                     isLevel2($(this));
                 } else if (myLevel === 3) {
-                    
+                    isLevel2($(this));
                 }
                 
                 
@@ -257,7 +260,7 @@ $(function(){
                  }, 700);            
             }
             
-            
+                       
         },
 
         // 02 : render vista
