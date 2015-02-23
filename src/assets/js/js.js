@@ -151,10 +151,10 @@ console.log("INIIIIT", vars.URI.search(true));
                     console.log("error");                  
                 }
                 
-                /* setTimeout(function() {*/
+                 setTimeout(function() {
                      var fileHtml = myLevel + '_' + vars.URI.data.indice;
                      App.redirect(fileHtml + '.html?' + vars.URI.query());
-                 /*}, 500);*/
+                 }, 900);
 
             });
             
