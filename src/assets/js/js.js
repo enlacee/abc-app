@@ -54,6 +54,7 @@ $(function(){
             console.log("loading sound");
             this.loadSoundManager2();            
             this.listenerButtonsAlphabet();
+            
         },
         // 01 : Get level
         readAllDataLevel : function() {
@@ -85,55 +86,32 @@ $(function(){
             //mySound.play();
             App.mySound = mySound;            
         },
-        redirect : function(stringFileHtml) {            
+        redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
         },        
         listenerButtonsAlphabet : function() {
+            //var event1 = this.isLevel1();
             // LISTENER DESPUES DE CREAR LOS OBJETOS
             $(vars.DOM_BTN_ALPHABET).unbind();
             $(vars.DOM_BTN_ALPHABET).bind('click',function() {
-                var attribute = $(this).attr('data-audio') || '';
+                
                 
                 getDomButtonCorrect();
-                console.log('App.data ANTES', vars.URI.data);
-                var myIndice = parseInt(vars.URI.data.indice) || 0;
-                var myPoints = parseInt(vars.URI.data.points) || 0;
-                var myTotalPoints = parseInt(vars.URI.data.totalPoints) || 0;
                 var myLevel = parseInt(vars.URI.data.level) || 1;
-                
-                if (attribute.length > 0) {
-                    //App.mySound.play();
-                    //$(vars.DOM_MESSAGE_WIN).show();
+                if (myLevel === 1) {
+                    isLevel1($(this));
+                } else if (myLevel === 2) {
                     
-                    // PUNTUACION OK                    
-                    vars.URI.query({
-                        level : myLevel,
-                        indice : (myIndice + 1),
-                        points: App.pointsValue,
-                        totalPoints : myTotalPoints + parseInt(App.pointsValue)
-                    });
-                    vars.URI.data = vars.URI.query(true);
-                    console.log("App.data DESPUES", vars.URI.query());
-                } else {
-                    // WRONG                
-                    vars.URI.query({
-                        level : myLevel,
-                        indice : (myIndice + 1),
-                        points: 0,
-                        totalPoints : myTotalPoints + 0
-                    });
-                    vars.URI.data = vars.URI.query(true);
-                    console.log("error");                  
+                } else if (myLevel === 3) {
+                    
                 }
                 
-                 setTimeout(function() {
-                     var fileHtml = myLevel + '_' + vars.URI.data.indice;
-                     App.redirect(fileHtml + '.html?' + vars.URI.query());
-                 }, 900);
+                
+
 
             });
             
-            // private function
+            // private function Select Correct
             function getDomButtonCorrect() {
                 var button = false;
                 $(vars.DOM_BTN_ALPHABET).each(function(index, element) {
@@ -147,6 +125,45 @@ $(function(){
                 
                 return button;
             }
+            
+            // level 1
+            function isLevel1(el) {
+                var attribute = el.attr('data-audio') || '';
+                console.log('App.data ANTES', vars.URI.data);
+                var myIndice = parseInt(vars.URI.data.indice) || 0;
+                var myPoints = parseInt(vars.URI.data.points) || 0;
+                var myTotalPoints = parseInt(vars.URI.data.totalPoints) || 0;
+                var myLevel = parseInt(vars.URI.data.level) || 1;
+                //console.log('attribute', attribute);
+                if (attribute.length > 0) {
+                    //App.mySound.play();
+                    //$(vars.DOM_MESSAGE_WIN).show();                  
+                    vars.URI.query({
+                        level : myLevel,
+                        indice : (myIndice + 1),
+                        points: App.pointsValue,
+                        totalPoints : myTotalPoints + parseInt(App.pointsValue)
+                    });
+                    vars.URI.data = vars.URI.query(true);
+                    console.log("App.data DESPUES", vars.URI.query());
+                } else { // WRONG                
+                    vars.URI.query({
+                        level : myLevel,
+                        indice : (myIndice + 1),
+                        points: 0,
+                        totalPoints : myTotalPoints + 0
+                    });
+                    vars.URI.data = vars.URI.query(true);
+                    console.log("App.data DESPUES", vars.URI.query());
+                }
+                // redirect
+                 setTimeout(function() {
+                     var fileHtml = myLevel + '_' + vars.URI.data.indice;
+                     App.redirect(fileHtml + '.html?' + vars.URI.query());
+                 }, 700);
+                 
+            }
+            
         },
 
         // 02 : render vista
@@ -155,7 +172,8 @@ $(function(){
         },
         //
         isLevel1: function() {
-        
+            //
+      
 
         },
         islevel2: function() {
@@ -168,11 +186,11 @@ $(function(){
         }
     };
     
-    //
+    // Object Sound building (ready)
     soundManager.onready(function() {
-  // soundManager.createSound() etc. may now be called
-     //inlinePlayer = new InlinePlayer();
-     App.init();
+    // soundManager.createSound() etc. may now be called
+    //inlinePlayer = new InlinePlayer();
+        App.init();
     });
 });
 
