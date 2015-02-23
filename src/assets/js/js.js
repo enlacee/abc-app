@@ -33,18 +33,13 @@ $(function(){
         URI : new URI(location.href),
         
         PATH_AUDIO : '../audio/',
-
         DOM_BTN_ALPHABET : '.btn',
-        DOM_MESSAGE_WIN : '#popup-message-win',
+        DOM_MESSAGE_WIN : '#popup-message-win',        
         
-        
-        PARAM_DOM_TIMER : '#timer'
-       
-        
+        PARAM_DOM_TIMER : '#timer'        
     };
 
     var App = {
-
         urlLocal : vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path(),
         alphabetPosition : 0,
         // AUDIO
@@ -57,18 +52,13 @@ $(function(){
             console.log("init App");
             this.readAllDataLevel();
             console.log("loading sound");
-            this.loadSoundManager2();
-            
+            this.loadSoundManager2();            
             this.listenerButtonsAlphabet();
-
         },
         // 01 : Get level
         readAllDataLevel : function() {
-            
-            
-            vars.URI.data = vars.URI.search(true);
-            
-console.log("INIIIIT", vars.URI.search(true));
+            vars.URI.data = vars.URI.search(true);            
+            console.log("INIIIIT", vars.URI.search(true));
             //App.data = data;
         },
         // cargar los sonidos correspondientes a la pagina
@@ -77,8 +67,7 @@ console.log("INIIIIT", vars.URI.search(true));
             // step 01
             var stringSound = '';
             $(vars.DOM_BTN_ALPHABET).each(function(index, element) {
-                var uriAudio = $(this).attr( "data-audio" ) || '';
-                console.log ('uriAudio', uriAudio);
+                var uriAudio = $(this).attr( "data-audio" ) || '';                
                 if (uriAudio.length > 0) {
                     stringSound = uriAudio;
                     return false;
@@ -96,23 +85,9 @@ console.log("INIIIIT", vars.URI.search(true));
             //mySound.play();
             App.mySound = mySound;            
         },
-        redirectTo : function() {
-            window.setTimeout(slowAlert, 1000);
-            
-            function slowAlert() {
-                alert("hi");
-                console.log('vars.URI   ',vars.URI.normalizeHash());
-              
-                window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path()
-                + '?' + App.uri.query();
-                
-            }
-        },
-        redirect : function(stringFileHtml) {
-            
+        redirect : function(stringFileHtml) {            
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
-        },
-        
+        },        
         listenerButtonsAlphabet : function() {
             // LISTENER DESPUES DE CREAR LOS OBJETOS
             $(vars.DOM_BTN_ALPHABET).unbind();
@@ -199,9 +174,6 @@ console.log("INIIIIT", vars.URI.search(true));
      //inlinePlayer = new InlinePlayer();
      App.init();
     });
-    
-    
-    
 });
 
 
