@@ -610,6 +610,22 @@ background-size: cover;
     color: #fff;
 }
 
+/* level 3 */
+.popup-life {
+    display: block;
+    position: absolute;
+    top: 1%;
+    width: auto;
+    right: 0px;
+    margin: 0 1.5%;
+}
+.popup-life-items {
+    float:left;
+}
+.popup-life-items img {
+    height: auto;
+} 
+
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {
     .win-title {
@@ -635,6 +651,13 @@ background-size: cover;
         font-size: 3em;
         padding: 16% 31% 0 0;
     }
+    /* level 3*/
+    .popup-life {
+        margin: 0 12px 0 0;
+    }
+    .popup-life-items img {
+        height: 80px;
+    }  
 }
 
 @media (max-width: 390px) {
@@ -658,8 +681,15 @@ background-size: cover;
     }
     .popup-timer-2-text{
         font-size: 2em;
-        width: auto;
         padding: 9% 0 0 16%;
+        width: auto;
+    }
+    /* level 3*/
+    .popup-life {
+        margin: 0 12px 0 0;
+    }
+    .popup-life-items img {
+        height: 60px;
     }    
     
 }
@@ -672,7 +702,7 @@ background-size: cover;
     .popup-timer-2-text{
         font-size: 60px; 
         padding: 25%;
-    }    
+    }
 }
 
 /* interaction*/

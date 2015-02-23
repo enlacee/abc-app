@@ -63,8 +63,8 @@ $(function(){
             
             // init timer
             var myLevel = parseInt(vars.URI.data.level) || 1;
-            if (myLevel === 2 || myLevel === 3) {
-                var seconds = (myLevel === 3) ? 2 : 4; // countDown
+            if (myLevel === 2 || myLevel === 9) {
+                var seconds = (myLevel === 9) ? 2 : 4; // countDown
                 
                 this.countdownTimer = setInterval( function() {
                     var remainingSeconds = seconds % 60;
