@@ -590,6 +590,26 @@ background-size: cover;
 .win-content-message{
     font-size: 1.58em;  
 }
+
+/* interaction Timer level2 */
+.popup-timer-2 {
+    display: block;
+    position: absolute;
+    top: 1%;
+    width: 169px;
+}
+.popup-timer-2 .row {
+    margin: 0;
+}
+.popup-timer-2-text {
+    position: absolute;
+    font-size: 60px;
+    text-align: center;
+    width: 169px;
+    padding: 25%;
+    color: #fff;
+}
+
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {
     .win-title {
@@ -605,7 +625,16 @@ background-size: cover;
     .win-content-subtitle {
         font-size: 35px;
     }
-    
+    /* level 2*/
+    .popup-timer-2 img{
+        display: block;
+        width: 70%;
+        /*background-color: red;*/
+    }
+    .popup-timer-2-text{
+        font-size: 3em;
+        padding: 16% 31% 0 0;
+    }
 }
 
 @media (max-width: 390px) {
@@ -622,6 +651,28 @@ background-size: cover;
     .win-content-subtitle {
         font-size: 25px;
     }
+    /* level 2*/
+    .popup-timer-2 img {
+        display: block;
+        width: 42%;
+    }
+    .popup-timer-2-text{
+        font-size: 2em;
+        width: auto;
+        padding: 9% 0 0 16%;
+    }    
+    
+}
+/* maximo de acho donde aplicara todo este estilo*/
+@media (min-width: 767px) {
+    .popup-timer-2 img {
+        display: block;
+        width: 100%;
+    }
+    .popup-timer-2-text{
+        font-size: 60px; 
+        padding: 25%;
+    }    
 }
 
 /* interaction*/
@@ -633,10 +684,8 @@ background-size: cover;
     right: 0px;
     /*height: 100%;*/
 }
-
 .text-abc {
     position: absolute;
     font-size: 60px;
     margin: 11% 0 0 12%;
 }
-

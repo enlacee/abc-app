@@ -73,12 +73,12 @@
             </div>
         </header>
         
-        <div id ="popup-message-win" class="popup-message blue" style="display:block">
-            <div class="row text-abc">
-                 Avion
+        <div class="popup-timer-2 blue" style="display:block">
+            <div class="row popup-timer-2-text" id="countdown">
+                 5
             </div>
             <div class="row">
-                <img  src="assets/img/message.png"/>
+                <img class="img-responsive" src="assets/img/bg-timer2.png"/>
             </div>
 
         </div>
@@ -88,5 +88,26 @@
         <script src="assets/js/plugins/soundmanager2/script/soundmanager2.js"></script>       
         <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
         <script type="text/javascript" src="assets/js/js.js"></script>
+        <span id="countdown" class="timer"></span>
+<script>
+var seconds = 5;
+function secondPassed() {
+    
+    var remainingSeconds = seconds % 60;
+    console.log('remainingSeconds', remainingSeconds);
+    if (remainingSeconds < 10) {
+        remainingSeconds = remainingSeconds;  
+    }
+    document.getElementById('countdown').innerHTML =  remainingSeconds;
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = remainingSeconds; //"Buzz Buzz";
+    } else {
+        seconds--;
+    }
+}
+ 
+var countdownTimer = setInterval('secondPassed()', 1000);
+</script>
     </body>
 </html>
