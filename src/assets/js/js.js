@@ -65,8 +65,7 @@ $(function(){
                     console.log('remainingSeconds', remainingSeconds);
                     $(vars.DOM_COUNT_DOWN).text(remainingSeconds);
                     if (seconds === 0) {
-                        //countdownTimerStop();
-                        $(vars.DOM_COUNT_DOWN).text(remainingSeconds); //"Buzz Buzz";
+                        $(vars.DOM_COUNT_DOWN).text(remainingSeconds);
                         
                         setTimeout(function() {
                             var myIndice = parseInt(vars.URI.data.indice) + 1;
