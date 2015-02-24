@@ -86,8 +86,10 @@
         
         var messageHtml = '';
         if ((27*10) === myTotalPoints) {
-
+            // save LocalStore
+            sessionStorage.setItem("level2", true);
         } else {
+            sessionStorage.setItem("level2", false);
             messageHtml = '<a href="2_0.html?level=2" data-role="button" rel="external">'
             + '<img class="img-responsive" src="assets/img/return.png">'
             + '</a>';

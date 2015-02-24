@@ -422,7 +422,7 @@ footer {
 }
 
 /**********************/
-.x-btn-1 {
+.x-btn-1, .x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple {
     font-family: 'arial rounded';
     border:4px solid #ec008c;
     background-color: #fdc214;
@@ -445,7 +445,6 @@ footer {
     -2px -2px 0 #fff,
     2px -2px 0 #fff,
     -2px 2px 0 #fff;
-
 
 background: #ffff1b; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffff1b 0%, #fed516 47%, #fdbb13 100%); /* FF3.6+ */
@@ -476,6 +475,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8af04f', endColorstr='#4ea429',GradientType=0 ); /* IE6-9 */
 }
 
+.x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple {
+    border: 5px solid #ec008c;
+    font-size: 2.5em;
+    width: 94%;
+    border-radius: 50px;
+    padding: 8px 0;
+}
+.x-btn-main-blue {
+    border: 5px solid #0049f9;
+}
+.x-btn-main-purple {
+    border: 5px solid #9e04ec;
+}
+
+
+.x-btn-link-red, .x-btn-link-blue, .x-btn-link-purple {
+    text-decoration: none !important;;
+}
+.x-btn-link-red:hover {
+    text-decoration: none !important;;
+    /*color: #EE2E9E;*/
+}
+.x-btn-link-blue:hover {
+    text-decoration: none !important;;
+    color: #fdc214;
+}
+.x-btn-link-purple:hover {
+    text-decoration: none !important;;
+    color: #fdc214;
+}
+
+.x-btn-arrow-red {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-shadow: none;
+    vertical-align: sub;
+    font-size: 1.2em;
+    margin: 0 0 0 10%;
+}
 
 
 /* maximo de acho donde aplicara todo este estilo*/
@@ -487,7 +526,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
         font-size: 2em;
         line-height: 4em;
         padding: 0 35px; 
-    }    
+    }
+    .x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple {
+        font-size: 3.5em;
+    }      
 }
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {

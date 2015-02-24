@@ -40,29 +40,60 @@
             </div>
             <div class="col-xs-6 space-button text-left">
                 <div class="row">
-                    <div class="div-btn-float">
-                        <a href="1_0.html?level=1" data-role="button" rel="external">
-                            <img class="img-responsive" src="assets/img/btn-level-1.png" alt="">
+                    <div class="div-btn-float  btn x-btn-main-red">
+                        <a href="1_0.html?level=1" data-role="button" rel="external" class="x-btn-link-red color-red">
+                            NIVEL 1
                         </a>
+                        
+                        <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-red" aria-hidden="true"></span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="div-btn-float">
-                        <a href="2_0.html?level=2" data-role="button" rel="external">
-                            <img class="img-responsive" src="assets/img/btn-level-2.png" alt="">
+                    <div class="div-btn-float  btn x-btn-main-blue" disabled="disabled" id="level2button">
+                        <a href="2_0.html?level=2" data-role="button" rel="external" class="x-btn-link-red color-blue">
+                            NIVEL 2
                         </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="div-btn-float">
-                        <a href="3_0.html?level=3" data-role="button" rel="external">
-                            <img  class="img-responsive" src="assets/img/btn-level-3.png" alt="">
-                        </a>
+                        
+                        <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-blue" aria-hidden="true"></span>
                     </div>                    
                 </div>
+                <div class="row">
+                    <div class="div-btn-float  btn x-btn-main-purple" disabled="disabled" id="level3button">
+                        <a href="3_0.html?level=3" data-role="button" rel="external" class="x-btn-link-red color-purple">
+                            NIVEL 2 <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-purple" aria-hidden="true"></span>
+                        </a>
+                        
+                        
+                    </div>                    
+                </div>                    
+                 
             </div>
         </div>
 
     </header>
+    <script type="text/javascript" src="assets/js/function.js" ></script>
+    <script>
+        // test local
+        if (typeof(Storage) != "undefined") {
+            // Store
+            var level1 = sessionStorage.getItem('level1');
+            var level2 = sessionStorage.getItem('level2');
+            if (typeof(level1) != 'undefined' && level1 == 'true') {
+                document.getElementById('level2button').removeAttribute('disabled');
+                
+                if (typeof(level2) != 'undefined' && level2 == 'true') {
+                    document.getElementById('level3button').removeAttribute('disabled');
+                }
+            }  
+          
+            
+        } else {
+            alert ("Sorry, your browser does not support web Storage 'localStore'");
+            //document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+
+
+
+    </script>
 </body>
 </html>
