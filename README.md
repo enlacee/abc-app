@@ -25,6 +25,11 @@ https://github.com/AlexDisler/cordova-icon
 
 http://www.phpjabbers.com/javascript-countdown-timer-php46.html
 
+Resource for sound native
+
+https://github.com/cfjedimaster/Cordova-Examples
+
+
 Screenshot reference
 
 ![screenshot abc app](docs/screenshot-abc.png)
