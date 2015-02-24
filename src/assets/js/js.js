@@ -63,8 +63,8 @@ $(function(){
             
             // init timer
             var myLevel = parseInt(vars.URI.data.level) || 1;
-            if (myLevel === 2 || myLevel === 9) {
-                var seconds = (myLevel === 9) ? 2 : 4; // countDown
+            if (myLevel === 2 || myLevel === 3) {
+                var seconds = (myLevel === 3) ? 3 : 4; // countDown
                 
                 this.countdownTimer = setInterval( function() {
                     var remainingSeconds = seconds % 60;
@@ -153,14 +153,15 @@ $(function(){
             $(vars.DOM_BTN_ALPHABET).unbind();
             $(vars.DOM_BTN_ALPHABET).bind('click',function() {
                 
-                getDomButtonCorrect();
                 var myLevel = parseInt(vars.URI.data.level) || 1;
                 if (myLevel === 1) {
+                    getDomButtonCorrect();
                     isLevel1($(this));
                 } else if (myLevel === 2) {
+                    getDomButtonCorrect();
                     isLevel2($(this));
                 } else if (myLevel === 3) {
-                    isLevel2($(this));
+                    isLevel3($(this));
                 }
                 
                 
@@ -259,6 +260,72 @@ $(function(){
                      App.redirect(fileHtml + '.html?' + vars.URI.query());
                  }, 700);            
             }
+            
+            /*
+             * Action Level 3
+             */
+            function isLevel3(el) {
+                console.log('App.data ANTES', vars.URI.data);
+                var attribute = el.attr('data-audio') || '';
+                var myIndice = parseInt(vars.URI.data.indice) || 0;
+                var myPoints = parseInt(vars.URI.data.points) || 0;
+                var myTotalPoints = parseInt(vars.URI.data.totalPoints) || 0;
+                var myLevel = parseInt(vars.URI.data.level) || 1;
+                //console.log('attribute', attribute);
+                if (attribute.length > 0) {
+                    getDomButtonCorrect();
+                    //App.mySound.play();                
+                    vars.URI.query({
+                        level : myLevel,
+                        indice : (myIndice + 1),
+                        points: App.pointsValue,
+                        totalPoints : myTotalPoints + parseInt(App.pointsValue)
+                    });
+                    vars.URI.data = vars.URI.query(true);
+                    console.log("App.data DESPUES", vars.URI.query());
+                    
+                    // redirect
+                     setTimeout(function() {
+                         var fileHtml = myLevel + '_' + vars.URI.data.indice;
+                         App.redirect(fileHtml + '.html?' + vars.URI.query());
+                     }, 700); 
+                    
+                    
+                } else { // WRONG                
+                    console.log("WRONG", vars.URI.query());
+                    
+                    var flagredirect = false;
+                    $($(".popup-life-items img").get().reverse()).each(function(index, element) {
+                        
+                        if (element.getAttribute('src') === 'assets/img/life.png') {
+                            element.setAttribute('src', 'assets/img/life-off.png');
+                            flagredirect = false;
+                            return false;
+                        } else {
+                            flagredirect = true;
+                        }
+                    });
+                    
+
+                    // redirect perdio todas sus vidas
+                    if (flagredirect === true) {
+                        vars.URI.query({
+                             level : myLevel,
+                             indice : (myIndice + 1),
+                             points: 0,
+                             totalPoints : myTotalPoints + 0
+                         });
+                         vars.URI.data = vars.URI.query(true);
+
+                         setTimeout(function() {
+                             var fileHtml = myLevel + '_' + vars.URI.data.indice;
+                             App.redirect(fileHtml + '.html?' + vars.URI.query());
+                         }, 700);
+                    }
+                    
+                }/* endIF */
+           
+            }            
             
                        
         },

@@ -415,6 +415,7 @@ footer {
 
 .img-main-alphabet {
     margin: 0 0 3% 0;
+    z-index: 1;
 }
 .img-main-alphabet img {
     height: 150px;
