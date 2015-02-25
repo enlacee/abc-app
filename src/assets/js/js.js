@@ -102,6 +102,7 @@
             vars.URIdata.level = myLevel;
             vars.URIdata.points = myPoints;
             vars.URIdata.totalPoints = myTotalPoints;
+            vars.URI.query(vars.URIdata);
             
             console.log("INIT");
             console.log(vars.URIdata);
@@ -121,10 +122,9 @@
             });
     
             // setting sound
-            /*var mp3URL = this.cordova_getMediaURL(stringSound);
-            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play();
-            */
-            this.mySoundCorrect = 'media';         
+            var mp3URL = this.cordova_getMediaURL(stringSound);
+            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play(); 
+            this.mySoundCorrect = media;         
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -167,7 +167,7 @@
              * at this level are accumulated all points played
              */
             function isLevel1(el) {
-                console.log('app.data antes : vars.URIdata', vars.URIdata);
+
                 var attribute = el.attr('data-audio') || '';
                 var myIndice = parseInt(vars.URIdata.indice) || 0;
                 var myPoints = parseInt(vars.URIdata.points) || 0;
@@ -180,14 +180,18 @@
                     vars.URIdata.indice = (myIndice + 1);
                     vars.URIdata.points = App.pointsValue;
                     vars.URIdata.totalPoints = myTotalPoints + parseInt(App.pointsValue);
+                    vars.URI.query(vars.URIdata);
                     
-                    console.log(vars.URIdata);
-                    //App.mySoundCorrect.play();
+                    
+                    
+                    console.log('vars.URIdata', vars.URIdata);
+                    console.log('vars.URI.query()', vars.URI.query());
+                    
+                    App.mySoundCorrect.play();
                     
                     
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
-
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
                 } else { // WRONG                
                     vars.URI.query({
@@ -331,17 +335,13 @@
             alert(JSON.stringify(e));
         },
         cordova_callbackAbcMediaStatus: function(e) {
-            alert('estado MEDIA es  ' + JSON.stringify(e));
-            //logic game redirect to next level
+            //alert('estado MEDIA es  ' + JSON.stringify(e));
             
-            if (4 == e) { // STATUS FINISH AUDIO
-                alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
-                alert('fileHtml', fileHtml);
-                var fileHtml = (parseInt(vars.URIdata.level)+1) + '_' + (parseInt(vars.URIdata.indice)+1);
-                App.redirect(fileHtml + '.html?' + vars.URI.query()); 
+            if (4 == e) { // Media.MEDIA_STOPPED = 4;
+                var fileHtml = vars.URIdata.level + '_' + vars.URIdata.indice + '.html?' + vars.URI.query();
+                console.log(' fileHtml = '+fileHtml)
+                App.redirect(fileHtml);
             }
-            
-
         }
         
     };
@@ -354,7 +354,7 @@
 
 
 /*});*/
-App.init();
+
 
 /******************************************************************************/
 // Android
