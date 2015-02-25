@@ -8,13 +8,14 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <title>APP ABC</title>
         <link rel="stylesheet" href="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.css" />
+        <!-- Bootstrap -->
+        <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
+        
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-
-    <!-- Bootstrap -->
-    <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/style.css?q=121" rel="stylesheet" type="text/css" />
-</head>
+        <script type="text/javascript" src="cordova.js"></script>        
+    </head>
 <body>
     <div data-role="page" id="page3">
         <div data-role="header" data-theme="c">
@@ -49,9 +50,9 @@
 
                 <div class="row">
                     <div class="div-btn-float">
-                        <a href="index.html" data-role="button" rel="external">
+                        <!--<a href="index.html" data-role="button" rel="external">
                             <img class="img-responsive" src="assets/img/next-blue.png" alt="">
-                        </a>
+                        </a>-->
                     </div>
 
                 </div>
@@ -68,6 +69,7 @@
 
 
     </header>
+    <!--app--> 
     <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
     <script type="text/javascript">
     var URI = new URI(location.href)

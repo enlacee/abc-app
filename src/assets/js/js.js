@@ -362,7 +362,7 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     App.init();
-    alert("App.init android");
+    //alert("App.init android");
 };
 
 
