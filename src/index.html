@@ -15,15 +15,6 @@
         <!-- Bootstrap -->
         <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/style.css?q=121" rel="stylesheet" type="text/css" />
-        <script>
-            
-            $(document).ready(function(){
-                //console.log("READY");
-                //$.mobile.navigate( "bar.html" );
-            });
-            
-            
-        </script>
 </head>
 <body>
     <div data-role="page" id="page1">
@@ -55,7 +46,7 @@
                 <div class="row">
                     <a href="3_0.html?level=3" data-role="button" rel="external" 
                        class="btn x-btn-main-purple x-btn-main-disabled" id="level3button">
-                        NIVEL 2 <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-purple" aria-hidden="true"></span>                        
+                        NIVEL 3 <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-purple" aria-hidden="true"></span>                        
                     </a>
                 </div>                    
                  
@@ -63,30 +54,24 @@
         </div>
 
     </header>
-    <script type="text/javascript" src="assets/js/function.js" ></script>
-    <script>
-        // test local
+    <script type="text/javascript">
+        // 01 LOCAL STORE MANAGER OF LEVEL GAME
         if (typeof(Storage) != "undefined") {
             // Store
             var level1 = sessionStorage.getItem('level1');
             var level2 = sessionStorage.getItem('level2');
             if (typeof(level1) != 'undefined' && level1 == 'true') {
                 $('#level2button').removeClass('x-btn-main-disabled');
-                //document.getElementById('level2button').removeAttribute('class', 'x-btn-main-disabled');
                 if (typeof(level2) != 'undefined' && level2 == 'true') {
                     $('#level3button').removeClass('x-btn-main-disabled');
-                    //document.getElementById('level3button').removeAttribute('class', 'x-btn-main-disabled');
                 }
-            }  
-          
-            
+            }
         } else {
             alert ("Sorry, your browser does not support web Storage 'localStore'");
-            //document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
         }
-
-
-
+        
+        // 02 BACKGROUND SOUND 'init phonegap'
     </script>
+    <script type="text/javascript" src="assets/js/index.html.js"></script>
 </body>
 </html>

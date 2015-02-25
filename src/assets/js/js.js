@@ -8,22 +8,8 @@
 * uri.search(true); // returns { foo: "bar", hello : ["world", "mars"] }
 */
 
-/**
- * Sound manager
- */
-soundManager.setup({
-    url: 'plugins/soundmanager2/swf/',
 
-    ontimeout: function() {
-        alert("Lo sentimos este sonido no se pudo reproducir...");
-    }
-});
-
-
-/**
- * 
- */
-$(function(){
+/*$(function(){*/
     
     var vars = {
         CONTENTSLOT : "#contentSlot",
@@ -43,8 +29,8 @@ $(function(){
         urlLocal : vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path(),
         alphabetPosition : 0,
         // AUDIO
-        sm : soundManager,
-        mySound : null,
+        mySoundWrong : null,
+        mySoundCorrect : null,
         // static
         pointsValue : 10,
         // timer ID
@@ -133,22 +119,15 @@ $(function(){
                 }
             });
     
-            // step 02
-            var urlAudio = stringSound;
-            var mySound = App.sm.createSound({
-                id: 'some-id-for-your-sound',
-                url: urlAudio,
-                autoLoad: true,
-                autoPlay: false,                
-            });
-            //mySound.play();
-            App.mySound = mySound;            
+            // setting sound
+            var mp3URL = this.cordova_getMediaURL(stringSound);
+            var media = new Media(mp3URL, null, this.cordova_mediaError); //media.play();
+            this.mySoundCorrect = media;         
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
         },        
         listenerButtonsAlphabet : function() {
-            //var event1 = this.isLevel1();
             // LISTENER DESPUES DE CREAR LOS OBJETOS
             $(vars.DOM_BTN_ALPHABET).unbind();
             $(vars.DOM_BTN_ALPHABET).bind('click',function() {
@@ -164,9 +143,6 @@ $(function(){
                     isLevel3($(this));
                 }
                 
-                
-
-
             });
             
             // private function Select Correct
@@ -197,7 +173,8 @@ $(function(){
                 var myLevel = parseInt(vars.URI.data.level) || 1;
                 //console.log('attribute', attribute);
                 if (attribute.length > 0) {
-                    //App.mySound.play();                
+                    //App.mySoundCorrect.play();
+                    App.mySoundCorrect.play();
                     vars.URI.query({
                         level : myLevel,
                         indice : (myIndice + 1),
@@ -235,7 +212,7 @@ $(function(){
                 var myLevel = parseInt(vars.URI.data.level) || 1;
                 //console.log('attribute', attribute);
                 if (attribute.length > 0) {
-                    //App.mySound.play();                
+                    //App.mySoundCorrect.play();                
                     vars.URI.query({
                         level : myLevel,
                         indice : (myIndice + 1),
@@ -274,7 +251,7 @@ $(function(){
                 //console.log('attribute', attribute);
                 if (attribute.length > 0) {
                     getDomButtonCorrect();
-                    //App.mySound.play();                
+                    //App.mySoundCorrect.play();                
                     vars.URI.query({
                         level : myLevel,
                         indice : (myIndice + 1),
@@ -333,17 +310,41 @@ $(function(){
         // 02 : render vista
         render: function() {
         
-        }
+        },
+        // ------------------ NATIVO ANDROID -------------
+        // get path file 
+        cordova_getMediaURL: function(s) {
+            if (typeof(device) != "undefined") {
+                if(device.platform.toLowerCase() === "android") return "/android_asset/www/" + s;
+                return s;   
+            } else {
+                return false;
+            }
+        },
+        cordova_mediaError: function(e) {
+            alert('Media Error');
+            alert(JSON.stringify(e));
+        }        
+        
     };
     
     // Object Sound building (ready)
-    soundManager.onready(function() {
     // soundManager.createSound() etc. may now be called
     //inlinePlayer = new InlinePlayer();
-        App.init();
-    });
-});
+    
+    //App.init();
 
 
+/*});*/
+
+
+/******************************************************************************/
+// Android
+/******************************************************************************/
+document.addEventListener('deviceready', onDeviceReady, false);
+function onDeviceReady() {
+    App.init();
+    alert("App.init android");
+};
 
 
