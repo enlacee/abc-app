@@ -2,11 +2,16 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     //document.querySelector("#playMp3").addEventListener("load", playMP3, false);
-    playMP3();
+    var soundMp3 = ''; //'assets/audio/background.mp3';
+    if (soundMp3.length > 0) {
+        playMP3(soundMp3);
+    } else {
+        console.log('no sound!');
+    }
 };
 
-function playMP3() {
-    var mp3URL = getMediaURL("audio/background.mp3");
+function playMP3(myPathFileMp3) {
+    var mp3URL = getMediaURL(myPathFileMp3);
     var media = new Media(mp3URL, null, mediaError);
     media.play();
 }
