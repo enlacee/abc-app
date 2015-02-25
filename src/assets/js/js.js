@@ -96,15 +96,15 @@
             var myPoints = parseInt(vars.URIdata.points) || 0;
             var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
             var myLevel = parseInt(vars.URIdata.level) || -1;
-            vars.URI.query({
-                level : myLevel,
-                indice : myIndice,
-                points: myPoints,
-                totalPoints : myTotalPoints
-            });
-            // get data 02
-            vars.URIdata = vars.URI.query(true);            
-            console.log("init 2: vars.URI.query(true)", vars.URI.search(true));
+            // get data 02  
+            //vars.URIdata = vars.URI.query(true);
+            vars.URIdata.indice = myIndice;
+            vars.URIdata.level = myLevel;
+            vars.URIdata.points = myPoints;
+            vars.URIdata.totalPoints = myTotalPoints;
+            
+            console.log("INIT");
+            console.log(vars.URIdata);
             //App.data = data;
         },
         // cargar los sonidos correspondientes a la pagina
@@ -121,9 +121,10 @@
             });
     
             // setting sound
-            var mp3URL = this.cordova_getMediaURL(stringSound);
+            /*var mp3URL = this.cordova_getMediaURL(stringSound);
             var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play();
-            this.mySoundCorrect = media;         
+            */
+            this.mySoundCorrect = 'media';         
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -172,17 +173,19 @@
                 var myPoints = parseInt(vars.URIdata.points) || 0;
                 var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
                 var myLevel = parseInt(vars.URIdata.level) || 1;
-                //console.log('attribute', attribute);
+
                 if (attribute.length > 0) {
-                    vars.URI.query({
-                        indice: vars.URIdata.indice,
-                        myLevel: vars.URIdata.level,
-                        points: App.pointsValue,
-                        totalPoints : myTotalPoints + parseInt(App.pointsValue)
-                    });
-                    vars.URIdata = vars.URI.query(true);
+                    //console.log(vars.URIdata);
                     
-                    App.mySoundCorrect.play();
+                    vars.URIdata.indice = (myIndice + 1);
+                    vars.URIdata.points = App.pointsValue;
+                    vars.URIdata.totalPoints = myTotalPoints + parseInt(App.pointsValue);
+                    
+                    console.log(vars.URIdata);
+                    //App.mySoundCorrect.play();
+                    
+                    
+                    
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
 
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
@@ -351,7 +354,7 @@
 
 
 /*});*/
-
+App.init();
 
 /******************************************************************************/
 // Android
