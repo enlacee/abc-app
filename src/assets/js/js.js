@@ -30,6 +30,7 @@
 
     var App = {
         urlLocal : vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path(),
+        self : this,
         alphabetPosition : 0,
         // AUDIO
         mySoundWrong : null,
@@ -56,7 +57,7 @@
             if (myLevel === 2 || myLevel === 3) {
                 var seconds = (myLevel === 3) ? 5 : 8; // countDown
                 
-                this.countdownTimer = setInterval( function() {
+                self.countdownTimer = setInterval( function() {
                     var remainingSeconds = seconds % 60;
                     console.log('remainingSeconds', remainingSeconds);
                     $(vars.DOM_COUNT_DOWN).text(remainingSeconds);
@@ -157,9 +158,9 @@
             });
     
             // setting sound
-            var mp3URL = this.cordova_getMediaURL(stringSound);
-            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play(); 
-            this.mySoundCorrect = media;         
+//            var mp3URL = this.cordova_getMediaURL(stringSound);
+//            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play(); 
+            this.mySoundCorrect = 'media';         
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -174,9 +175,11 @@
                     getDomButtonCorrect();
                     isLevel1($(this));
                 } else if (myLevel === 2) {
+                    clearInterval(self.countdownTimer);
                     getDomButtonCorrect();
                     isLevel2($(this));
                 } else if (myLevel === 3) {
+                    clearInterval(self.countdownTimer);
                     isLevel3($(this));
                 }
                 
