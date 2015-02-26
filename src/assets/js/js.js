@@ -34,7 +34,9 @@ $(function(){
         
         PATH_AUDIO : '../audio/',
         DOM_BTN_ALPHABET : '.btn',
-        DOM_MESSAGE_WIN : '#popup-message-win',        
+        DOM_MESSAGE_WIN : '#popup-message-win',
+        //DOM_MESSAGE_WIN_POINTS : '#popup-message-win-points',
+        
         
         DOM_COUNT_DOWN : '#countdown'        
     };
@@ -197,6 +199,8 @@ $(function(){
                 var myLevel = parseInt(vars.URI.data.level) || 1;
                 //console.log('attribute', attribute);
                 if (attribute.length > 0) {
+                    $(vars.DOM_MESSAGE_WIN).fadeIn();  
+                    $(vars.DOM_MESSAGE_WIN).find('div').html("100 puntos");
                     //App.mySound.play();                
                     vars.URI.query({
                         level : myLevel,

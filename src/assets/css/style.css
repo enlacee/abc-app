@@ -667,7 +667,16 @@ background-size: cover;
 }
 .popup-life-items img {
     height: auto;
-} 
+}
+.popup-restart {
+    display: block;
+    position: absolute;
+    top: 1%;
+    width: auto;
+    right: 0px;
+    margin: 0 1.5%;
+    z-index: 1;
+}
 
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {
@@ -750,15 +759,19 @@ background-size: cover;
 
 /* interaction*/
 .popup-message {
-    display: block;
+
     position: absolute;
-    top: 3%;
-    min-width: 350px;
-    right: 0px;
-    /*height: 100%;*/
+    top: 10%;
+    min-width: 200px;
+    min-height: 200px;
+    z-index: 1;
+    right: 0;
+    margin: 0%;
 }
-.text-abc {
+#popup-message-win-points {
     position: absolute;
-    font-size: 60px;
-    margin: 11% 0 0 12%;
+    font-size: 2.2em;
+    margin: 0%;
+    color: #fff;
+    text-shadow: 3px 2px 2px #000;    
 }
