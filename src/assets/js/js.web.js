@@ -8,8 +8,19 @@
 * uri.search(true); // returns { foo: "bar", hello : ["world", "mars"] }
 */
 
+/**
+ * Sound manager
+ */
+soundManager.setup({
+    url: 'plugins/soundmanager2/swf/',
 
-/*$(function(){*/
+    ontimeout: function() {
+        alert("Lo sentimos este sonido no se pudo reproducir...");
+    }
+});
+
+
+$(function(){
     
     var vars = {
         CONTENTSLOT : "#contentSlot",
@@ -32,6 +43,7 @@
         urlLocal : vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path(),
         alphabetPosition : 0,
         // AUDIO
+        sm : soundManager,        
         mySoundWrong : null,
         mySoundCorrect : null,
         // static
@@ -53,7 +65,7 @@
             
             // init timer
             var myLevel = parseInt(vars.URIdata.level) || 1;
-            if (myLevel === 2 || myLevel === 3) {
+            if (false/*myLevel === 2 || myLevel === 3*/) {
                 var seconds = (myLevel === 3) ? 5 : 8; // countDown
                 
                 this.countdownTimer = setInterval( function() {
@@ -156,10 +168,22 @@
                 }
             });
     
-            // setting sound
-            var mp3URL = this.cordova_getMediaURL(stringSound);
-            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play(); 
-            this.mySoundCorrect = media;         
+//            // setting sound
+//            var mp3URL = this.cordova_getMediaURL(stringSound);
+//            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play(); 
+//            this.mySoundCorrect = media;
+
+            var urlAudio = stringSound;
+            var mySound = App.sm.createSound({
+                id: 'some-id-for-your-sound',
+                url: urlAudio,
+                autoLoad: true,
+                autoPlay: false,                
+            });
+            //mySound.play();
+            this.mySoundCorrect = mySound;  
+
+            
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -223,8 +247,12 @@
                     console.log('vars.URIdata', vars.URIdata);
                     console.log('vars.URI.query()', vars.URI.query());
                     
+                    //App.mySoundCorrect.play();
                     App.mySoundCorrect.play();
-
+                    setTimeout(function() {
+                        var fileHtml = myLevel + '_' + vars.URIdata.indice;
+                        App.redirect(fileHtml + '.html?' + vars.URI.query());
+                    }, 700);  
 
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
@@ -273,6 +301,12 @@
                     });
                     vars.URIdata = vars.URI.query(true);
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
+                    App.mySoundCorrect.play();
+                    setTimeout(function() {
+                        var fileHtml = myLevel + '_' + vars.URIdata.indice;
+                        App.redirect(fileHtml + '.html?' + vars.URI.query());
+                    }, 700);  
+                    
                 } else { // WRONG                
                     vars.URI.query({
                         level : myLevel,
@@ -300,6 +334,7 @@
                 var myPoints = parseInt(vars.URIdata.points) || 0;
                 var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
                 var myLevel = parseInt(vars.URIdata.level) || 1;
+                var life = parseInt(vars.URIdata.life) || vars.LIFE_BASE;
                 //console.log('attribute', attribute);
                 if (attribute.length > 0) {
                     getDomButtonCorrect();
@@ -308,7 +343,8 @@
                         level : myLevel,
                         indice : (myIndice + 1),
                         points: App.pointsValue,
-                        totalPoints : myTotalPoints + parseInt(App.pointsValue)
+                        totalPoints : myTotalPoints + parseInt(App.pointsValue),
+                        life :life
                     });
                     vars.URIdata = vars.URI.query(true);
                     console.log('app.data despues : vars.URIdata', vars.URIdata);
@@ -320,12 +356,14 @@
                      }, 700); 
                     
                     
-                } else { // WRONG                
+                } else { // WRONG
                     console.log("WRONG", vars.URI.query());
+                        vars.URIdata.life = (life-1);
+                        console.log('echo',vars.URIdata);
+                        vars.URI.query(vars.URIdata);    
                     
                     var flagredirect = false;
                     $($(".popup-life-items img").get().reverse()).each(function(index, element) {
-                        
                         if (element.getAttribute('src') === 'assets/img/life.png') {
                             element.setAttribute('src', 'assets/img/life-off.png');
                             flagredirect = false;
@@ -338,18 +376,25 @@
 
                     // redirect perdio todas sus vidas
                     if (flagredirect === true) {
-                        vars.URI.query({
+                        vars.URIdata.indice = myIndice;
+                        vars.URIdata.level = myLevel;
+                        vars.URIdata.points = myPoints;
+                        vars.URIdata.totalPoints = myTotalPoints;
+                     
+                        
+                        /*vars.URI.query({
                              level : myLevel,
                              indice : (myIndice + 1),
                              points: 0,
                              totalPoints : myTotalPoints + 0
-                         });
-                         vars.URIdata = vars.URI.query(true);
+                         });*/
+                         //vars.URIdata = vars.URI.query(true);
+                         console.log('data es', vars.URI.query(true));
 
-                         setTimeout(function() {
-                             var fileHtml = myLevel + '_' + vars.URIdata.indice;
-                             App.redirect(fileHtml + '.html?' + vars.URI.query());
-                         }, 700);
+//                         setTimeout(function() {
+//                             var fileHtml = myLevel + '_' + vars.URIdata.indice;
+//                             App.redirect(fileHtml + '.html?' + vars.URI.query());
+//                         }, 700);
                     }
                     
                 }/* endIF */
@@ -385,14 +430,14 @@
         
     };
     
-    // Object Sound building (ready)
-    // soundManager.createSound() etc. may now be called
-    //inlinePlayer = new InlinePlayer();
-    
-    //App.init();
+
+    soundManager.onready(function() {
+        //
+        App.init();
+    });
 
 
-/*});*/
+});
 
 
 /******************************************************************************/
@@ -403,5 +448,4 @@ function onDeviceReady() {
     App.init();
     //alert("App.init android");
 };
-
 

@@ -8,19 +8,8 @@
 * uri.search(true); // returns { foo: "bar", hello : ["world", "mars"] }
 */
 
-/**
- * Sound manager
- */
-soundManager.setup({
-    url: 'plugins/soundmanager2/swf/',
 
-    ontimeout: function() {
-        alert("Lo sentimos este sonido no se pudo reproducir...");
-    }
-});
-
-
-$(function(){
+/*$(function(){*/
     
     var vars = {
         CONTENTSLOT : "#contentSlot",
@@ -43,7 +32,6 @@ $(function(){
         urlLocal : vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.path(),
         alphabetPosition : 0,
         // AUDIO
-        sm : soundManager,        
         mySoundWrong : null,
         mySoundCorrect : null,
         // static
@@ -168,22 +156,10 @@ $(function(){
                 }
             });
     
-//            // setting sound
-//            var mp3URL = this.cordova_getMediaURL(stringSound);
-//            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play(); 
-//            this.mySoundCorrect = media;
-
-            var urlAudio = stringSound;
-            var mySound = App.sm.createSound({
-                id: 'some-id-for-your-sound',
-                url: urlAudio,
-                autoLoad: true,
-                autoPlay: false,                
-            });
-            //mySound.play();
-            this.mySoundCorrect = mySound;  
-
-            
+            // setting sound
+            var mp3URL = this.cordova_getMediaURL(stringSound);
+            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play(); 
+            this.mySoundCorrect = media;         
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -247,12 +223,8 @@ $(function(){
                     console.log('vars.URIdata', vars.URIdata);
                     console.log('vars.URI.query()', vars.URI.query());
                     
-                    //App.mySoundCorrect.play();
                     App.mySoundCorrect.play();
-                                        setTimeout(function() {
-                        var fileHtml = myLevel + '_' + vars.URIdata.indice;
-                        App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 700);  
+
 
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
@@ -413,14 +385,14 @@ $(function(){
         
     };
     
+    // Object Sound building (ready)
+    // soundManager.createSound() etc. may now be called
+    //inlinePlayer = new InlinePlayer();
+    
+    //App.init();
 
-    soundManager.onready(function() {
-        //
-        App.init();
-    });
 
-
-});
+/*});*/
 
 
 /******************************************************************************/
@@ -431,4 +403,5 @@ function onDeviceReady() {
     App.init();
     //alert("App.init android");
 };
+
 

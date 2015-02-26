@@ -25,49 +25,30 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center row">
-
-        <div class="row">
-            <div class="win-title">MUY BIÉN</div>
-            <!--<div class="win-subtitle">+ <span id="points">0</span>  PUNTOS</div>-->
-        </div>    
-        <div class="row">
-            <div class="col-xs-5 space-parrot win-parrot">
-                <img class="img-responsive" src="assets/img/win-parrot-abc.png">
-            </div>
-            <div class="col-xs-6 space-button text-left">
-
-                <div class="row">
-                    <div class="win-content-title">TIENES:</div>
-                    <div class="win-content-subtitle "><span id="total-points">0</span> PUNTOS</div>
-                    <div class="win-content-message" id="message">
-                        Mision completada 
-                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  
-                    </div>
-
+            <div class="row">
+                <div class="win-title">MUY BIÉN</div>
+                <!--<div class="win-subtitle">+ <span id="points">0</span>  PUNTOS</div>-->
+            </div>    
+            <div class="row">
+                <div class="col-xs-5 space-parrot win-parrot">
+                    <img class="img-responsive" src="assets/img/win-parrot-abc.png">
                 </div>
-
-                <div class="row">
-                    <div class="div-btn-float">
-                        <a href="index.html" data-role="button" rel="external">
-                            <img class="img-responsive" src="assets/img/next-blue.png" alt="">
-                        </a>
+                <div class="col-xs-6 space-button text-left">
+                    <div class="row">
+                        <div class="win-content-title">TIENES:</div>
+                        <div class="win-content-subtitle "><span id="total-points">0</span> PUNTOS</div>
+                        <div class="win-content-message" id="message">
+                            Mision completada 
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  
+                        </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
-
-        </div>
-
-
-
-
 
     </header>
+    <!--app--> 
     <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
     <script type="text/javascript">
     var URI = new URI(location.href)
@@ -88,6 +69,9 @@
         if ((27*10) === myTotalPoints) {
             // save LocalStore
             sessionStorage.setItem("level2", true);
+            messageHtml = '<a href="index.html" data-role="button" rel="external">'
+            + '<img class="img-responsive" src="assets/img/next-blue.png">'
+            + '</a>';                
         } else {
             sessionStorage.setItem("level2", false);
             messageHtml = '<a href="2_0.html?level=2" data-role="button" rel="external">'

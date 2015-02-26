@@ -701,7 +701,7 @@ background-size: cover;
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {
     .content-header {
-        background-color: red;
+/*        background-color: red;*/
         margin:0;
     }
     .win-title {
@@ -738,7 +738,7 @@ background-size: cover;
 
 @media (max-width: 390px) {
     .content-header {
-        background-color: blue;
+/*        background-color: blue;*/
         margin:0
     }    
     .win-title {
@@ -776,7 +776,7 @@ background-size: cover;
 /* maximo de acho donde aplicara todo este estilo*/
 @media (min-width: 767px) {
     .content-header {
-        background-color: purple;
+/*        background-color: purple;*/
         margin: 23% 0 0 0;
     }    
     .popup-timer-2 img {
