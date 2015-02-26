@@ -11,11 +11,10 @@
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
 
-
-    <!-- Bootstrap -->
-    <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
-</head>
+        <!-- Bootstrap -->
+        <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
+    </head>
     <body>
         <div data-role="page" id="page1">
             <div data-role="header" data-theme="c">
@@ -23,20 +22,20 @@
             </div>
         </div>
 
-
         <!-- Header -->
         <header id="top" class="header">
 
-
-
             <div class="text-vertical-center row">
-                <div class="bg-play">
-                    <div class="">
+                <div class="bg-play">                        
+                    <div class="content-header">
                         <div class="row">
                             <div class="col-xs-12 img-main-alphabet">
                                 <img class="img-responsive_" src="assets/img/alphabet/v/2.png" >
                             </div>
                         </div>
+                    </div><!--End.content-header-->
+                        
+                    <div class="content-footer">
                         <div class="row">
                             <div class="col-xs-6 ">
                                <a  data-href="#" class="btn  x-btn-1">
@@ -72,12 +71,19 @@
         </header>
         
         <div class="popup-timer-2" style="display:block">
-            <div class="row popup-timer-2-text" id="countdown">5</div>
-            <div class="row">
-                <img class="img-responsive" src="assets/img/bg-timer2.png"/>
-            </div>
-        </div> 
-        <script src="assets/js/plugins/soundmanager2/script/soundmanager2.js"></script>       
+            <div class="row popup-timer-2-text" id="countdown"></div><div class="row"><img class="img-responsive" src="assets/img/bg-timer2.png"/></div>
+        </div>
+        
+        <div id ="popup-message-win" class="popup-message" style="display:none">
+            <div class="row" id="popup-message-win-points">0 puntos</div>
+        </div>
+        
+        <div class="popup-restart">         
+            <a href="2_0.html?level=2" data-role="button" class="" rel="external"><img src="assets/img/restart.png" /></a>
+        </div>          
+
+        <!--app--> 
+        <script src="assets/js/plugins/soundmanager2/script/soundmanager2.js"></script>           
         <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
         <script type="text/javascript" src="assets/js/js.js"></script>
     </body>
