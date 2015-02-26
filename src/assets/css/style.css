@@ -419,7 +419,7 @@ footer {
 }
 
 /**********************/
-.x-btn-1, .x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple {
+.x-btn-1 .x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple {
     font-family: 'arial rounded';
     border:4px solid #ec008c;
     background-color: #fdc214;
@@ -485,7 +485,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
 .x-btn-main-purple {
     border: 5px solid #9e04ec;
 }
-.x-btn-main-disabled, x-btn-main-disabled:active, .btn.active, .btn:active  {
+.x-btn-main-disabled, x-btn-main-disabled:active  {
     border: 5px solid #959595;
     box-shadow: inset -5px -5px 10px 5px;
     box-shadow: inset 8px -5px 8px -2px #fff;    

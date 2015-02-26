@@ -54,7 +54,7 @@
             // init timer
             var myLevel = parseInt(vars.URIdata.level) || 1;
             if (myLevel === 2 || myLevel === 3) {
-                var seconds = (myLevel === 3) ? 3 : 4; // countDown
+                var seconds = (myLevel === 3) ? 5 : 8; // countDown
                 
                 this.countdownTimer = setInterval( function() {
                     var remainingSeconds = seconds % 60;
@@ -220,8 +220,8 @@
                     vars.URIdata.totalPoints = totalPointsQuery;
                     vars.URI.query(vars.URIdata);
                     
-                    console.log('vars.URIdata', vars.URIdata);
-                    console.log('vars.URI.query()', vars.URI.query());
+                    console.log('vars.URIdata', JSON.stringify(vars.URIdata));
+                    console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     
                     App.mySoundCorrect.play();
 
@@ -253,6 +253,7 @@
              * Action Level 2
              */
             function isLevel2(el) {
+                
                 console.log('app.data antes : vars.URIdata', vars.URIdata);
                 var attribute = el.attr('data-audio') || '';
                 var myIndice = parseInt(vars.URIdata.indice) || 0;
@@ -264,15 +265,21 @@
                     var totalPointsQuery =  myTotalPoints + parseInt(App.pointsValue);
                     $(vars.DOM_MESSAGE_WIN).fadeIn();  
                     $(vars.DOM_MESSAGE_WIN).find('div').html( totalPointsQuery +" puntos");                    
-                    //App.mySound.play();
-                    vars.URI.query({
-                        level : myLevel,
-                        indice : (myIndice + 1),
-                        points: App.pointsValue,
-                        totalPoints : totalPointsQuery
-                    });
-                    vars.URIdata = vars.URI.query(true);
-                    console.log("app.data despues : vars.URI.query()", vars.URI.query());
+                    
+                    vars.URIdata.indice = (myIndice + 1);
+                    vars.URIdata.points = App.pointsValue;
+                    vars.URIdata.totalPoints = totalPointsQuery;
+                    vars.URI.query(vars.URIdata);
+                    
+                    console.log('vars.URIdata', JSON.stringify(vars.URIdata));
+                    console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
+                    
+                    App.mySoundCorrect.play();
+                    
+                    
+                    
+                    
+                
                 } else { // WRONG                
                     vars.URI.query({
                         level : myLevel,
@@ -282,18 +289,21 @@
                     });
                     vars.URIdata = vars.URI.query(true);
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
+                    
+                    // redirect
+                    setTimeout(function() {
+                        var fileHtml = myLevel + '_' + vars.URIdata.indice;
+                        App.redirect(fileHtml + '.html?' + vars.URI.query());
+                    }, 700);
                 }
-                // redirect
-                 setTimeout(function() {
-                     var fileHtml = myLevel + '_' + vars.URIdata.indice;
-                     App.redirect(fileHtml + '.html?' + vars.URI.query());
-                 }, 700);            
+           
             }
             
             /*
              * Action Level 3
              */
             function isLevel3(el) {
+                
                 console.log('app.data antes : vars.URIdata', vars.URIdata);
                 var attribute = el.attr('data-audio') || '';
                 var myIndice = parseInt(vars.URIdata.indice) || 0;
@@ -303,21 +313,16 @@
                 //console.log('attribute', attribute);
                 if (attribute.length > 0) {
                     getDomButtonCorrect();
-                    //App.mySoundCorrect.play();
-                    vars.URI.query({
-                        level : myLevel,
-                        indice : (myIndice + 1),
-                        points: App.pointsValue,
-                        totalPoints : myTotalPoints + parseInt(App.pointsValue)
-                    });
-                    vars.URIdata = vars.URI.query(true);
-                    console.log('app.data despues : vars.URIdata', vars.URIdata);
+                    var totalPointsQuery =  myTotalPoints + parseInt(App.pointsValue);
+                    $(vars.DOM_MESSAGE_WIN).fadeIn();  
+                    $(vars.DOM_MESSAGE_WIN).find('div').html( totalPointsQuery +" puntos");    
                     
-                    // redirect
-                     setTimeout(function() {
-                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
-                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                     }, 700); 
+                    vars.URIdata.indice = (myIndice + 1);
+                    vars.URIdata.points = App.pointsValue;
+                    vars.URIdata.totalPoints = totalPointsQuery;
+                    vars.URI.query(vars.URIdata);
+                    
+                    App.mySoundCorrect.play();
                     
                     
                 } else { // WRONG                
