@@ -677,9 +677,16 @@ background-size: cover;
     margin: 0 1.5%;
     z-index: 1;
 }
+.content-header {
+    margin: 23% 0 0 0;
+}
 
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {
+    .content-header {
+        background-color: red;
+        margin:0;
+    }
     .win-title {
         font-size: 60px;  
     }
@@ -713,6 +720,10 @@ background-size: cover;
 }
 
 @media (max-width: 390px) {
+    .content-header {
+        background-color: blue;
+        margin:0
+    }    
     .win-title {
         font-size: 55px;  
     }
@@ -747,6 +758,10 @@ background-size: cover;
 }
 /* maximo de acho donde aplicara todo este estilo*/
 @media (min-width: 767px) {
+    .content-header {
+        background-color: purple;
+        margin: 23% 0 0 0;
+    }    
     .popup-timer-2 img {
         display: block;
         width: 100%;
@@ -775,3 +790,4 @@ background-size: cover;
     color: #fff;
     text-shadow: 3px 2px 2px #000;    
 }
+
