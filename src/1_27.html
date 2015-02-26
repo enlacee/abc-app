@@ -28,7 +28,7 @@
 
         <div class="row">
             <div class="win-title">MUY BIÉN</div>
-            <div class="win-subtitle">+ <span id="points">0</span>  PUNTOS</div>
+            <!--<div class="win-subtitle">+ <span id="points">0</span>  PUNTOS</div>-->
         </div>    
         <div class="row">
             <div class="col-xs-5 space-parrot win-parrot">
@@ -80,7 +80,7 @@
     var myLevel = parseInt(URI.data.level) || 1;
     
     $(document).ready(function(){
-        $('#points').text(URI.data.points);
+        //$('#points').text(URI.data.points);
         $('#total-points').text(URI.data.totalPoints);
         
         var messageHtml = '';

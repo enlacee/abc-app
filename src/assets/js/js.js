@@ -31,6 +31,8 @@ $(function(){
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l','m',
             'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
         URI : new URI(location.href),
+        LIFE_BASE: 3,
+        LIFE_CURRENT: 0,
         
         PATH_AUDIO : '../audio/',
         DOM_BTN_ALPHABET : '.btn',
@@ -55,6 +57,7 @@ $(function(){
         init : function() {
             console.log("init App");
             this.readAllDataLevel();
+            this.renderMyLifes();
             console.log("loading sound");
             this.loadSoundManager2();            
             this.listenerButtonsAlphabet();
@@ -65,7 +68,7 @@ $(function(){
             
             // init timer
             var myLevel = parseInt(vars.URI.data.level) || 1;
-            if (myLevel === 2 || myLevel === 3) {
+            if (false/*myLevel === 2 || myLevel === 3*/) {
                 var seconds = (myLevel === 3) ? 3 : 4; // countDown
                 
                 this.countdownTimer = setInterval( function() {
@@ -112,16 +115,52 @@ $(function(){
             var myPoints = parseInt(vars.URI.data.points) || 0;
             var myTotalPoints = parseInt(vars.URI.data.totalPoints) || 0;
             var myLevel = parseInt(vars.URI.data.level) || -1;
+            var life = parseInt(vars.URI.data.life) || vars.LIFE_BASE;
             vars.URI.query({
                 level : myLevel,
                 indice : myIndice,
                 points: myPoints,
-                totalPoints : myTotalPoints
+                totalPoints : myTotalPoints,
+                life : life
             });
             vars.URI.data = vars.URI.query(true);            
             console.log("INIIIIT 2", vars.URI.search(true));
             //App.data = data;
         },
+        renderMyLifes : function() {
+            
+            console.log('LIFE',vars.URI.data.life);
+            if (parseInt(vars.LIFE_BASE) === parseInt(vars.URI.data.life)) {
+                // nothing
+            } else {
+            
+            var counter = 0;    
+            $($(".popup-life-items img").get().reverse()).each(function(index, element) {
+                console.log('index', index);
+               // vars.URI.data.life = 1;
+                
+                if (parseInt(vars.URI.data.life) === 2 && counter < 2) {
+                    if (element.getAttribute('src') === 'assets/img/life.png') {
+                        element.setAttribute('src', 'assets/img/life-off.png');
+                        counter = counter +1;
+                    }
+                    
+                } else if (parseInt(vars.URI.data.life) === 1 && counter < 1){
+                    if (element.getAttribute('src') === 'assets/img/life.png') {
+                        element.setAttribute('src', 'assets/img/life-off.png');
+                        counter = counter +1;
+                    }
+                }
+
+            });    
+                
+                
+            }
+
+          
+            
+        },        
+        
         // cargar los sonidos correspondientes a la pagina
         // Requiere the library soundmanager2
         loadSoundManager2 : function() {
@@ -239,6 +278,8 @@ $(function(){
                 var myLevel = parseInt(vars.URI.data.level) || 1;
                 //console.log('attribute', attribute);
                 if (attribute.length > 0) {
+                    $(vars.DOM_MESSAGE_WIN).fadeIn();  
+                    $(vars.DOM_MESSAGE_WIN).find('div').html("100 puntos");                    
                     //App.mySound.play();                
                     vars.URI.query({
                         level : myLevel,
