@@ -162,8 +162,11 @@
     
             // setting sound
             var mp3URL = this.cordova_getMediaURL(stringSound);
-            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play();
-            this.mySoundCorrect = media;         
+            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus);
+            var mediaWrong = new Media(this.cordova_getMediaURL('assets/audio/extra/error.mp3'), null, this.cordova_mediaError); 
+  
+            this.mySoundCorrect = media;
+            this.mySoundWrong = mediaWrong;
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -346,7 +349,7 @@
                          
                     
                 } else { // WRONG
-                    
+                    App.mySoundWrong.play();
                     // INIT validation of live
                     vars.URIdata.life = parseInt(vars.URIdata.life)-1;
                     vars.URI.query(vars.URIdata);
@@ -370,7 +373,9 @@
                     // validation life
                     if (vars.URIdata.life==0) {
                         //alert("perdiste");
-                        App.redirect('index.html');
+                        setTimeout(function() {
+                            App.redirect('index.html');
+                        }, 500);
                     }
 
                     // redirect perdio todas sus vidas
