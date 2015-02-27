@@ -10,7 +10,7 @@
 
 
 /*$(function(){*/
-    
+
     var vars = {
         CONTENTSLOT : "#contentSlot",
         ALPHABET : [
@@ -68,13 +68,15 @@
                             var myIndice = parseInt(vars.URIdata.indice) + 1;
                             var myPoints = parseInt(vars.URIdata.points) || 0;
                             var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
-                            vars.URI.query({
-                                level : myLevel,
-                                indice : myIndice,
-                                points: myPoints,
-                                totalPoints : myTotalPoints
-                            });               
-                            vars.URIdata = vars.URI.query(true); 
+                            var life = parseInt(vars.URIdata.life) || vars.LIFE_BASE;
+                            
+                            vars.URIdata.indice = myIndice;
+                            vars.URIdata.level = myLevel;
+                            vars.URIdata.points = myPoints;
+                            vars.URIdata.totalPoints = myTotalPoints;
+                            vars.URIdata.life = life;
+                            vars.URI.query(vars.URIdata);
+
                             var fileHtml = vars.URIdata.level + '_' + myIndice;
                             console.log('fileHtml', fileHtml);
                             console.log('vars.URIdata', vars.URIdata);
@@ -159,9 +161,9 @@
             });
     
             // setting sound
-//            var mp3URL = this.cordova_getMediaURL(stringSound);
-//            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play(); 
-            this.mySoundCorrect = 'media';         
+            var mp3URL = this.cordova_getMediaURL(stringSound);
+            var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus); //media.play();
+            this.mySoundCorrect = media;         
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -180,7 +182,7 @@
                     getDomButtonCorrect();
                     isLevel2($(this));
                 } else if (myLevel === 3) {
-                    clearInterval(self.countdownTimer);
+                    
                     isLevel3($(this));
                 }
                 
@@ -228,7 +230,7 @@
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     
                     App.mySoundCorrect.play();
-
+                    
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
@@ -297,7 +299,7 @@
                     setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 700);
+                    }, 100);
                 }
            
             }
@@ -315,7 +317,9 @@
                 var myLevel = parseInt(vars.URIdata.level) || 1;
                 //console.log('attribute', attribute);
                 if (attribute.length > 0) {
+                    //alert("111");
                     getDomButtonCorrect();
+                    clearInterval(self.countdownTimer);
                     var totalPointsQuery =  myTotalPoints + parseInt(App.pointsValue);
                     $(vars.DOM_MESSAGE_WIN).fadeIn();  
                     $(vars.DOM_MESSAGE_WIN).find('div').html( totalPointsQuery +" puntos");    
@@ -324,9 +328,22 @@
                     vars.URIdata.points = App.pointsValue;
                     vars.URIdata.totalPoints = totalPointsQuery;
                     vars.URI.query(vars.URIdata);
-                    
+                    console.log('app.data despues : vars.URIdata', vars.URIdata);
+                    console.log('vars.URIdata', JSON.stringify(vars.URIdata));
+                    console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
+                    //alert("2222");
                     App.mySoundCorrect.play();
-                    
+                    //alert("333");
+                    console.log("ECHO ECHO sonido.sonido.sonido LEVEL 3");
+                             /*                
+                    var fileHtml = myLevel + '_' + vars.URIdata.indice + '.html?'+ vars.URI.query();
+                    console.log('fileHtml', fileHtml);
+                    alert("redirect a "+ fileHtml);
+                        setTimeout(function() {
+                             
+                             App.redirect(fileHtml);
+                         }, 700);*/
+                         
                     
                 } else { // WRONG
                     
@@ -335,7 +352,7 @@
                     vars.URI.query(vars.URIdata);
                     //console.log("WRONG data", vars.URIdata);
                     // End validation of live
-                    
+                    console.log('app.data despues : vars.URIdata', vars.URIdata);
                     var flagredirect = false;
                     $($(".popup-life-items img").get().reverse()).each(function(index, element) {
 
@@ -347,11 +364,12 @@
                             flagredirect = true;
                         }
                     });
-                    
+                    //alert("flagredirect : "+flagredirect);
+                    //alert("life : "+vars.URIdata.life);
 
                     // validation life
-                    if (vars.URIdata.life<=0) {
-                        //flagredirect = true;
+                    if (vars.URIdata.life==0) {
+                        //alert("perdiste");
                         App.redirect('index.html');
                     }
 
@@ -397,7 +415,7 @@
             
             if (4 == e) { // Media.MEDIA_STOPPED = 4;
                 var fileHtml = vars.URIdata.level + '_' + vars.URIdata.indice + '.html?' + vars.URI.query();
-                console.log(' fileHtml = '+fileHtml)
+                //alert(' fileHtml = '+fileHtml);
                 App.redirect(fileHtml);
             }
         }
@@ -422,5 +440,6 @@ function onDeviceReady() {
     App.init();
     //alert("App.init android");
 };
-
-
+//
+//alert('App.init();');
+//App.init();
