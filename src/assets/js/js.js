@@ -126,13 +126,14 @@
                     console.log('index', index);
                    // vars.URIdata.life = 1;
 
-                    if (parseInt(vars.URIdata.life) === 2 && counter < 2) {
+                    if (parseInt(vars.URIdata.life) === 2 && counter < (vars.LIFE_BASE-vars.URIdata.life)) { // 3-2
                         if (element.getAttribute('src') === 'assets/img/life.png') {
                             element.setAttribute('src', 'assets/img/life-off.png');
                             counter = counter +1;
                         }
 
-                    } else if (parseInt(vars.URIdata.life) === 1 && counter < 1){
+                    } else if (parseInt(vars.URIdata.life) === 1 && counter < (vars.LIFE_BASE-vars.URIdata.life)){ //3-1 
+                        
                         if (element.getAttribute('src') === 'assets/img/life.png') {
                             element.setAttribute('src', 'assets/img/life-off.png');
                             counter = counter +1;
@@ -227,7 +228,6 @@
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     
                     App.mySoundCorrect.play();
-
 
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
@@ -328,12 +328,17 @@
                     App.mySoundCorrect.play();
                     
                     
-                } else { // WRONG                
-                    console.log("WRONG", vars.URI.query());
+                } else { // WRONG
+                    
+                    // INIT validation of live
+                    vars.URIdata.life = parseInt(vars.URIdata.life)-1;
+                    vars.URI.query(vars.URIdata);
+                    //console.log("WRONG data", vars.URIdata);
+                    // End validation of live
                     
                     var flagredirect = false;
                     $($(".popup-life-items img").get().reverse()).each(function(index, element) {
-                        
+
                         if (element.getAttribute('src') === 'assets/img/life.png') {
                             element.setAttribute('src', 'assets/img/life-off.png');
                             flagredirect = false;
@@ -343,6 +348,12 @@
                         }
                     });
                     
+
+                    // validation life
+                    if (vars.URIdata.life<=0) {
+                        //flagredirect = true;
+                        App.redirect('index.html');
+                    }
 
                     // redirect perdio todas sus vidas
                     if (flagredirect === true) {
