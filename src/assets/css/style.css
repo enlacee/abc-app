@@ -271,7 +271,9 @@ footer {
 .color-purple {
     color: #9e04ec;
 }
-
+.color-white {
+    color:#fff;
+}
 
 .space-button {
    margin: 5% 0 0 0;
@@ -677,7 +679,7 @@ background-size: cover;
     top: 1%;
     width: auto;
     right: 0px;
-    margin: 0 1.5%;
+    padding: 0 16% 0 0;
 }
 .popup-life-items {
     float:left;
@@ -731,9 +733,7 @@ background-size: cover;
     .popup-life {
         margin: 0 12px 0 0;
     }
-    .popup-life-items img {
-        height: 80px;
-    }  
+ 
 }
 
 @media (max-width: 390px) {
@@ -767,12 +767,21 @@ background-size: cover;
     /* level 3*/
     .popup-life {
         margin: 0 12px 0 0;
+        padding: 0 17%;
+        /*border:1px solid red;*/
+        
     }
-    .popup-life-items img {
+    .popup-life-items img, .popup-restart img {
         height: 60px;
-    }    
+    }
     
 }
+@media (max-width: 767px) {
+    .popup-life-items img, .popup-restart img {
+        height: 60px;
+    }
+}
+
 /* maximo de acho donde aplicara todo este estilo*/
 @media (min-width: 767px) {
     .content-header {
@@ -787,8 +796,8 @@ background-size: cover;
         font-size: 60px; 
         padding: 25%;
     }
-}
-
+    }   
+    
 /* interaction*/
 .popup-message {
 
@@ -806,5 +815,17 @@ background-size: cover;
     margin: 0%;
     color: #fff;
     text-shadow: 3px 2px 2px #000;    
+}
+.text-message-purple {
+    color: #8d2c92;
+    text-shadow: 
+    2px 0 0 #fff,
+    -2px 0 0 #fff,
+    0 2px 0 #fff,
+    0 -2px 0 #fff,
+    1px 1px #fff,
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff;
 }
 

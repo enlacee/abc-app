@@ -20,4 +20,9 @@ Los botones de las opciones de la respuesta se encuentran muy juntos. Al momento
 
 ## resueltos
 1 = ok
-2 = 
+2 = ok/barra blanca ?
+3 = ok/mensaje agregado (1_27.html)
+4 = ok
+5 = ok/se agrego el boton back
+6 = ? juntos q tan juntos
+7 = -
