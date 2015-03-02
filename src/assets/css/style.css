@@ -417,7 +417,8 @@ footer {
     z-index: 1;
 }
 .img-main-alphabet img {
-    height: 150px;
+    /*height: 150px;*/
+    height: 190px;
 }
 
 /**********************/
@@ -483,9 +484,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
 }
 .x-btn-main-blue {
     border: 5px solid #0049f9;
+    color: #0049f9;
 }
 .x-btn-main-purple {
     border: 5px solid #9e04ec;
+    color: #9e04ec;
 }
 .x-btn-main-disabled, x-btn-main-disabled:active, .btn.active, .btn:active  {
     border: 5px solid #959595;
@@ -562,6 +565,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
         width: 50%;
         /*border:5px solid black;*/
         padding: 0;
+        margin: 0 0 2% 0;
     }
     .x-btn-1 {
         /*padding: 0 14%;*/
@@ -697,15 +701,17 @@ background-size: cover;
     z-index: 1;
 }
 .content-header {
-    margin: 23% 0 0 0;
+    margin: 8% 0 0 0;
 }
 
+.content-footer {
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+}
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {
-    .content-header {
-/*        background-color: red;*/
-        margin:0;
-    }
+
     .win-title {
         font-size: 60px;  
     }
@@ -737,10 +743,7 @@ background-size: cover;
 }
 
 @media (max-width: 390px) {
-    .content-header {
-/*        background-color: blue;*/
-        margin:0
-    }    
+   
     .win-title {
         font-size: 55px;  
     }
@@ -780,14 +783,22 @@ background-size: cover;
     .popup-life-items img, .popup-restart img {
         height: 60px;
     }
+    .content-header {
+        margin: 2% 0 0 0;
+        /*background-color: yellow;*/
+    }
 }
 
 /* maximo de acho donde aplicara todo este estilo*/
 @media (min-width: 767px) {
     .content-header {
-/*        background-color: purple;*/
-        margin: 23% 0 0 0;
-    }    
+        /*background-color: purple;*/
+        margin: 20% 0 0 0;
+    }
+    .content-footer {
+        margin: 0 0 20% 0;
+    }
+    
     .popup-timer-2 img {
         display: block;
         width: 100%;
@@ -796,8 +807,17 @@ background-size: cover;
         font-size: 60px; 
         padding: 25%;
     }
-    }   
+}
     
+@media (min-width: 1023px) {
+    .content-header {
+        /*background-color: green;*/
+        margin: 2% 0 0 0;
+    }
+    .content-footer {
+        margin: 0 0 2% 0;
+    }    
+}
 /* interaction*/
 .popup-message {
 
