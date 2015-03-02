@@ -25,7 +25,8 @@
         DOM_MESSAGE_WIN : '#popup-message-win',
         //DOM_MESSAGE_WIN_POINTS : '#popup-message-win-points',
         
-        DOM_COUNT_DOWN : '#countdown'        
+        DOM_COUNT_DOWN : '#countdown',
+        DOM_BTN_RESTART: '.popup-restart'
     };
 
     var App = {
@@ -43,6 +44,7 @@
         init : function() {
             console.log("readAllDataLevel()");
             this.readAllDataLevel();
+            this.rebuildDomView();
             this.renderMyLifes();
             console.log("loadSoundManager2()");
             this.loadSoundManager2();            
@@ -54,7 +56,7 @@
             
             // init timer
             var myLevel = parseInt(vars.URIdata.level) || 1;
-            if (myLevel === 2 || myLevel === 3) {
+            if (/*myLevel === 2 || myLevel === 3*/ false) {
                 var seconds = (myLevel === 3) ? 5 : 8; // countDown
                 
                 self.countdownTimer = setInterval( function() {
@@ -145,8 +147,35 @@
                 });
             }
             
-        },        
+        },
+        // btn 
+        rebuildDomView : function() {
         
+            if (vars.URIdata.indice == 0) {
+                var btnRestart = $(vars.DOM_BTN_RESTART).find('a');
+                btnRestart.attr('href', 'index.html');
+            }
+
+            // Change Color by level
+            if (vars.URIdata.level == 2) {
+                $(vars.DOM_BTN_ALPHABET).css('color', '#0049f9')
+                        .css('border-color', '#0049f9');
+
+                $(vars.DOM_BTN_RESTART)
+                        .find('img')
+                        .attr('src', 'assets/img/restart-blue.png');
+
+            } else if (vars.URIdata.level == 3) {
+                $(vars.DOM_BTN_ALPHABET).css('color', '#9e04ec')
+                        .css('border-color', '#9e04ec');
+
+                $(vars.DOM_BTN_RESTART)
+                        .find('img')
+                        .attr('src', 'assets/img/restart-purple.png');
+            }
+        
+            
+        },
         // cargar los sonidos correspondientes a la pagina
         // Requiere the library soundmanager2
         loadSoundManager2 : function() {
@@ -161,12 +190,12 @@
             });
     
             // setting sound
-            var mp3URL = this.cordova_getMediaURL(stringSound);
+/*            var mp3URL = this.cordova_getMediaURL(stringSound);
             var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus);
             var mediaWrong = new Media(this.cordova_getMediaURL('assets/audio/extra/error.mp3'), null, this.cordova_mediaError); 
-  
-            this.mySoundCorrect = media;
-            this.mySoundWrong = mediaWrong;
+  */
+            this.mySoundCorrect = 'media';
+            this.mySoundWrong = 'mediaWrong';
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -232,8 +261,12 @@
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     
-                    App.mySoundCorrect.play();
-                    
+                    //App.mySoundCorrect.play();
+                    // redirect
+                    setTimeout(function() {
+                        var fileHtml = myLevel + '_' + vars.URIdata.indice;
+                        App.redirect(fileHtml + '.html?' + vars.URI.query());
+                    }, 700);      
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
@@ -282,8 +315,12 @@
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     
-                    App.mySoundCorrect.play();
-                    
+                    //App.mySoundCorrect.play();
+                    // redirect
+                    setTimeout(function() {
+                        var fileHtml = myLevel + '_' + vars.URIdata.indice;
+                        App.redirect(fileHtml + '.html?' + vars.URI.query());
+                    }, 700); 
                     
                     
                     
@@ -335,21 +372,21 @@
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     //alert("2222");
-                    App.mySoundCorrect.play();
+                    //App.mySoundCorrect.play();
                     //alert("333");
                     console.log("ECHO ECHO sonido.sonido.sonido LEVEL 3");
-                             /*                
+                                             
                     var fileHtml = myLevel + '_' + vars.URIdata.indice + '.html?'+ vars.URI.query();
                     console.log('fileHtml', fileHtml);
                     alert("redirect a "+ fileHtml);
                         setTimeout(function() {
                              
                              App.redirect(fileHtml);
-                         }, 700);*/
+                         }, 700);
                          
                     
                 } else { // WRONG
-                    App.mySoundWrong.play();
+                    //App.mySoundWrong.play();
                     // INIT validation of live
                     vars.URIdata.life = parseInt(vars.URIdata.life)-1;
                     vars.URI.query(vars.URIdata);
@@ -447,4 +484,4 @@ function onDeviceReady() {
 };
 //
 //alert('App.init();');
-//App.init();
+App.init();
