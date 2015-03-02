@@ -56,7 +56,7 @@
             
             // init timer
             var myLevel = parseInt(vars.URIdata.level) || 1;
-            if (/*myLevel === 2 || myLevel === 3*/ false) {
+            if (myLevel === 2 || myLevel === 3) {
                 var seconds = (myLevel === 3) ? 5 : 8; // countDown
                 
                 self.countdownTimer = setInterval( function() {
@@ -190,12 +190,12 @@
             });
     
             // setting sound
-/*            var mp3URL = this.cordova_getMediaURL(stringSound);
+            var mp3URL = this.cordova_getMediaURL(stringSound);
             var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus);
             var mediaWrong = new Media(this.cordova_getMediaURL('assets/audio/extra/error.mp3'), null, this.cordova_mediaError); 
-  */
-            this.mySoundCorrect = 'media';
-            this.mySoundWrong = 'mediaWrong';
+
+            this.mySoundCorrect = media;
+            this.mySoundWrong = mediaWrong;
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -261,12 +261,12 @@
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     
-                    //App.mySoundCorrect.play();
+                    App.mySoundCorrect.play();
                     // redirect
-                    setTimeout(function() {
+                    /*setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 700);      
+                    }, 700);*/      
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
@@ -315,12 +315,12 @@
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     
-                    //App.mySoundCorrect.play();
+                    App.mySoundCorrect.play();
                     // redirect
-                    setTimeout(function() {
+                    /*setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 700); 
+                    }, 700); */
                     
                     
                     
@@ -372,21 +372,21 @@
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
                     //alert("2222");
-                    //App.mySoundCorrect.play();
+                    App.mySoundCorrect.play();
                     //alert("333");
-                    console.log("ECHO ECHO sonido.sonido.sonido LEVEL 3");
+                    /*console.log("ECHO ECHO sonido.sonido.sonido LEVEL 3");
                                              
                     var fileHtml = myLevel + '_' + vars.URIdata.indice + '.html?'+ vars.URI.query();
                     console.log('fileHtml', fileHtml);
-                    alert("redirect a "+ fileHtml);
+                    //alert("redirect a "+ fileHtml);
                         setTimeout(function() {
                              
                              App.redirect(fileHtml);
-                         }, 700);
+                         }, 700);*/
                          
                     
                 } else { // WRONG
-                    //App.mySoundWrong.play();
+                    App.mySoundWrong.play();
                     // INIT validation of live
                     vars.URIdata.life = parseInt(vars.URIdata.life)-1;
                     vars.URI.query(vars.URIdata);
@@ -484,4 +484,4 @@ function onDeviceReady() {
 };
 //
 //alert('App.init();');
-App.init();
+//App.init();
