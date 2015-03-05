@@ -20,6 +20,8 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center row">
+            
+            
             <div class="col-xs-5 space-parrot">
                 <img class="img-responsive" src="assets/img/parrot-abc.png">
             </div>
@@ -45,6 +47,8 @@
                 </div>                    
                  
             </div>
+            
+            
         </div>
 
     </header>
@@ -53,23 +57,7 @@
         <script type="text/javascript" src="cordova.js"></script>    
     
         <script type="text/javascript">
-            // 01 LOCAL STORE MANAGER OF LEVEL GAME
-            if (typeof(Storage) != "undefined") {
-                // Store
-                var level1 = sessionStorage.getItem('level1');
-                var level2 = sessionStorage.getItem('level2');
-                if (typeof(level1) != 'undefined' && level1 == 'true') {
-                    $('#level2button').removeClass('x-btn-main-disabled');
-                    if (typeof(level2) != 'undefined' && level2 == 'true') {
-                        $('#level3button').removeClass('x-btn-main-disabled');
-                    }
-                }
-            } else {
-                alert ("Sorry, your browser does not support web Storage 'localStore'");
-            }
 
-            // 02 BACKGROUND SOUND 'init phonegap'
         </script>
-        <script type="text/javascript" src="assets/js/index.html.js"></script>
 </body>
 </html>

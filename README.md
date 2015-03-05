@@ -30,6 +30,17 @@ Resource for sound native
 https://github.com/cfjedimaster/Cordova-Examples
 
 
+## Cordova plugin Requeriments
+
+    # 01 add plugin for sound 'MEDIA'
+    
+    # 02 add plugin for splashcreen ()
+    cordova plugin add org.apache.cordova.splashscreen
+
+
+
+
+
 Screenshot reference
 
 ![screenshot abc app](docs/screenshot-abc.png)
