@@ -207,11 +207,9 @@
                 
                 var myLevel = parseInt(vars.URIdata.level) || 1;
                 if (myLevel === 1) {
-                    getDomButtonCorrect();
                     isLevel1($(this));
                 } else if (myLevel === 2) {
                     clearInterval(self.countdownTimer);
-                    getDomButtonCorrect();
                     isLevel2($(this));
                 } else if (myLevel === 3) {
                     
@@ -235,6 +233,12 @@
                 return button;
             }
             
+            function getDomButtonWrong(el) {
+                var button = false;
+                el.toggleClass( "x-btn-1-wrong" );
+                return button;
+            }            
+            
             /*
              * Action Level 1
              * at this level are accumulated all points played
@@ -248,6 +252,7 @@
                 var myLevel = parseInt(vars.URIdata.level) || 1;
 
                 if (attribute.length > 0) {
+                    getDomButtonCorrect();
                     var totalPointsQuery =  myTotalPoints + parseInt(App.pointsValue);
                     $(vars.DOM_MESSAGE_WIN).fadeIn();  
                     $(vars.DOM_MESSAGE_WIN).find('div').html( totalPointsQuery +" puntos");                       
@@ -270,7 +275,9 @@
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
-                } else { // WRONG                
+                } else { // WRONG
+                    getDomButtonWrong(el);
+                    getDomButtonCorrect();
                     vars.URI.query({
                         level : myLevel,
                         indice : (myIndice + 1),
@@ -279,7 +286,7 @@
                     });
                     vars.URIdata = vars.URI.query(true);
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
-                
+                    
                     // redirect
                     setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
@@ -303,6 +310,7 @@
                 var myLevel = parseInt(vars.URIdata.level) || 1;
                 
                 if (attribute.length > 0) {
+                    getDomButtonCorrect();
                     var totalPointsQuery =  myTotalPoints + parseInt(App.pointsValue);
                     $(vars.DOM_MESSAGE_WIN).fadeIn();  
                     $(vars.DOM_MESSAGE_WIN).find('div').html( totalPointsQuery +" puntos");                    
@@ -325,7 +333,9 @@
                     
                     
                 
-                } else { // WRONG                
+                } else { // WRONG
+                    getDomButtonWrong(el);
+                    getDomButtonCorrect();
                     vars.URI.query({
                         level : myLevel,
                         indice : (myIndice + 1),
@@ -386,6 +396,8 @@
                          
                     
                 } else { // WRONG
+                    getDomButtonWrong(el);
+                    getDomButtonCorrect();
                     App.mySoundWrong.play();
                     // INIT validation of live
                     vars.URIdata.life = parseInt(vars.URIdata.life)-1;
