@@ -38,6 +38,19 @@ https://github.com/cfjedimaster/Cordova-Examples
     cordova plugin add org.apache.cordova.splashscreen
 
 
+## config developer
+
+Install: for Sound
+    cordova plugin add org.apache.cordova.media
+    cordova plugin add org.apache.cordova.device
+
+
+Install: for Icon
+https://github.com/AlexDisler/cordova-icon (OK)
+
+
+Install: for spash screen
+https://github.com/AlexDisler/cordova-splash (OK)
 
 
 
