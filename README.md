@@ -51,6 +51,12 @@ https://github.com/AlexDisler/cordova-icon (OK)
 
 Install: for spash screen
 https://github.com/AlexDisler/cordova-splash (OK)
+    
+    cordova plugin add org.apache.cordova.splashscreen
+
+    config: config.xml
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />    
 
 
 
