@@ -1,0 +1,28 @@
+
+1) Encontramos horrores ortográficos:
+Cóndor, Delfín, Cóndor, Inca, Jabalí, Oídos, Orión, Xilófono, Zampoña, Muy Bien (sin tilde), Química, Lúcuma, .
+
+2) En los tres niveles de dificultad, para la letra X sólo aparece la opción “Xilófono”.
+Cuando se gira la pantalla, se muestra una barra blanca por unos segundos.
+
+3) Cuando se termina el nivel y se el niño obtiene una respuesta mala no se interpreta que tiene que responder todas las respuestas correctamente para  que pase al siguiente nivel.
+
+4) El botón con la fecha atrás ubicado en la esquina superior derecha no funciona cuando se encuentra en la letra A, debería redireccionar al menú de inicio.
+
+5) Cuando te encuentras en el 3er nivel no es posible salir del juego. Cuando se presiona back aparece la opción anterior y el botón de regresar ha sido removido para colocar el contador de vidas.
+
+6) No se nota a simple vista la diferencia entre los 3 niveles (2do nivel con tiempo y 3er nivel con vidas).
+Los botones de las opciones de la respuesta se encuentran muy juntos. Al momento de presionar un botón por error se selecciono otra respuesta.
+
+7) Centrar mas las opciones, se nota mucho espacio vacío por la parte inferior cuando se encuentra en forma vertical (portrait) y se tiene que deslizar cuando se encuentra en horizontal (landscape).
+
+
+
+## resueltos
+1 = ok
+2 = ok/barra blanca ?
+3 = ok/mensaje agregado (1_27.html)
+4 = ok
+5 = ok/se agrego el boton back
+6 = ? juntos q tan juntos
+7 = -
