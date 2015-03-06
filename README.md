@@ -55,8 +55,24 @@ https://github.com/AlexDisler/cordova-splash (OK)
     cordova plugin add org.apache.cordova.splashscreen
 
     config: config.xml
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />    
+    
+    <?xml version='1.0' encoding='utf-8'?>
+    <widget id="com.example.appabc" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+        <name>AppAbc</name>
+        <description>
+            A sample Apache Cordova application that responds to the deviceready event.
+        </description>
+        <author email="dev@cordova.apache.org" href="http://cordova.io">
+            Apache Cordova Team
+        </author>
+        <content src="index.html" />
+        <access origin="*" />
+        
+        <preference name="SplashScreen" value="screen" />
+        <preference name="SplashScreenDelay" value="3000" />
+
+        <preference name="exit-on-suspend" value="false"/>
+    </widget>
 
 
 
