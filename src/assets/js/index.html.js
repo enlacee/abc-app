@@ -1,8 +1,8 @@
-document.addEventListener('deviceready', validadationStartVoice, false);
+document.addEventListener('deviceready', validationStartVoice, false);
 
 function onDeviceReady() {
     //document.querySelector("#playMp3").addEventListener("load", playMP3, false);
-    var soundMp3 = 'assets/audio-others/como-se-juega.mp3';
+    var soundMp3 = '';
     if (soundMp3.length > 0) {
         playMP3(soundMp3);
     } else {
@@ -28,11 +28,11 @@ function mediaError(e) {
 
 
 // function validation of voice to Start
-function validadationStartVoice() {
+function validationStartVoice() {
 
     var flag = sessionStorage.getItem('voiceStart');
-    if (typeof(flag) == 'undefined') {
-        var soundMp3 = 'assets/audio-others/como-se-juega.mp3';
+    if (typeof(flag) == 'object' && flag == null) {
+        var soundMp3 = 'assets/audio-others/bienvenido.mp3';
         if (soundMp3.length > 0) {
             playMP3(soundMp3);
             sessionStorage.setItem('voiceStart', true);
