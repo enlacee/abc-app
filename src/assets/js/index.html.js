@@ -1,8 +1,8 @@
-document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener('deviceready', validadationStartVoice, false);
 
 function onDeviceReady() {
     //document.querySelector("#playMp3").addEventListener("load", playMP3, false);
-    var soundMp3 = ''; //'assets/audio/background.mp3';
+    var soundMp3 = 'assets/audio-others/como-se-juega.mp3';
     if (soundMp3.length > 0) {
         playMP3(soundMp3);
     } else {
@@ -24,4 +24,19 @@ function getMediaURL(s) {
 function mediaError(e) {
     alert('Media Error');
     alert(JSON.stringify(e));
+}
+
+
+// function validation of voice to Start
+function validadationStartVoice() {
+
+    var flag = sessionStorage.getItem('voiceStart');
+    if (typeof(flag) == 'undefined') {
+        var soundMp3 = 'assets/audio-others/como-se-juega.mp3';
+        if (soundMp3.length > 0) {
+            playMP3(soundMp3);
+            sessionStorage.setItem('voiceStart', true);
+        }
+    }
+    
 }
