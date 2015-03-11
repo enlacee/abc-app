@@ -78,4 +78,9 @@ https://github.com/AlexDisler/cordova-splash (OK)
 
 Screenshot reference
 
+
+## OJOoooooo :D
+- dar permisos a los sonidos chmod 777 * (para lectura app)
+
+
 ![screenshot abc app](docs/screenshot-abc.png)

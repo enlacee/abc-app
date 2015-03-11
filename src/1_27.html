@@ -49,7 +49,6 @@
     <script type="text/javascript" src="cordova.js"></script>     
     <!--app--> 
     <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
-    <script type="text/javascript" src="assets/js/playSound.js"></script>
     <script type="text/javascript">
     var URI = new URI(location.href)
         URI.data = {};
@@ -83,36 +82,9 @@
         $('#message').html(messageHtml);
     });
     </script>
+    <script type="text/javascript" src="assets/js/1_27.js"></script>
     
-    
-    <script type="text/javascript">
-    // Sound for APP || INIT JQUERY MOBILE
-    /******************************************************************************/
-    // Android
-    /******************************************************************************/
-    
-    document.addEventListener('deviceready', iniAppSound(URI.data), false);
-   
-    
-    function iniAppSound(data) {
-        // load sound
-        var loser = new AppSound();
-        loser.loadSound('assets/audio-others/cuando-nopasadenivel.mp3');
-        var win = AppSound();
-        win.loadSound('assets/audio-others/muy-bien-final.mp3');
-        
-        // play sound
-        //console.log('level', data);
-        if ((27*10) === parseInt(data.totalPoints)) {
-            loser.play();
-        } else {
-            win.play();
-        }
-        
-    }
-    
-    //iniAppSound(URI.data);
-    
-    </script>
+
+
 </body>
 </html>
