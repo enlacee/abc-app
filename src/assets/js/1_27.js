@@ -1,14 +1,7 @@
-document.addEventListener('deviceready', onDeviceReady(URI.data), false);
 
-function onDeviceReady(data) {
-    //document.querySelector("#playMp3").addEventListener("load", playMP3, false);
-    var soundMp3 = '';
-    if (soundMp3.length > 0) {
-        playMP3(soundMp3);
-    } else {
-        console.log('no sound!');
-    }
-};
+
+document.addEventListener('deviceready', function() { validationStartVoice(URI.data); } , false);
+
 
 function playMP3(myPathFileMp3) {
     var mp3URL = getMediaURL(myPathFileMp3);
@@ -26,3 +19,28 @@ function mediaError(e) {
     alert(JSON.stringify(e));
 }
 
+
+// function validation of voice to Start
+function validationStartVoice(data) {
+    
+    if ((27*10) === parseInt(data.totalPoints)) {
+        
+        if (3 === parseInt(data.level)) {
+            var soundMp3 = 'assets/audio-others/muy-bien-final.mp3';
+        } else {
+            var soundMp3 = 'assets/audio-others/paso-nivel.mp3';
+        }
+        
+        
+        if (soundMp3.length > 0) {
+            playMP3(soundMp3);
+        } 
+    } else {
+        var soundMp3 = 'assets/audio-others/cuando-nopasadenivel.mp3';
+        if (soundMp3.length > 0) {
+            playMP3(soundMp3);
+        }   
+    }
+
+    
+}

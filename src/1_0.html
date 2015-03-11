@@ -80,7 +80,8 @@
         <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
   <script>
-document.addEventListener('deviceready', validationStartVoice, false);
+/*
+document.addEventListener('deviceready', function() { validationStartVoice('someVar'); } , false);
 
 
 function playMP3(myPathFileMp3) {
@@ -101,7 +102,7 @@ function mediaError(e) {
 
 
 // function validation of voice to Start
-function validationStartVoice() {
+function validationStartVoice(data) { alert('da' +data);
 
         var soundMp3 = 'assets/audio-others/bienvenido.mp3';
         if (soundMp3.length > 0) {
@@ -111,10 +112,22 @@ function validationStartVoice() {
    
     
 }
+*/
   </script>        
         <!--app-->
         <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
         <script type="text/javascript" src="assets/js/js.js"></script>
+        
+        
+        <!--
+        <script>
+        var URI = new URI(location.href)
+        URI.data = {};
+        URI.data.totalPoints = 270;
+        URI.data.level = 1;
+        </script>
+        <script type="text/javascript" src="assets/js/1_27.js"></script>
+        -->
 
 
     </body>
