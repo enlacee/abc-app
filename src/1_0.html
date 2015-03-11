@@ -80,7 +80,7 @@
         <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
   <script>
-document.addEventListener('deviceready', validationStartVoice('abc'), false);
+document.addEventListener('deviceready', validationStartVoice, false);
 
 
 function playMP3(myPathFileMp3) {
@@ -101,7 +101,7 @@ function mediaError(e) {
 
 
 // function validation of voice to Start
-function validationStartVoice(a) {
+function validationStartVoice() {
 
         var soundMp3 = 'assets/audio-others/bienvenido.mp3';
         if (soundMp3.length > 0) {
