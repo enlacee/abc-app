@@ -83,4 +83,17 @@ Screenshot reference
 - dar permisos a los sonidos chmod 777 * (para lectura app)
 
 
+## 
+Position div INDEX (assets/css/style.css)
+.img-main-alphabet          = O      # imagen del abecedario (center)
+#popup-message-win-points   = 1      # message score (center)
+.popup-restart              = 3      # button restart(rigth)
+.content-footer             = 4      # footer buttom
+
+
+## Support Responsive
+
+Support responsive device with min : 300px
+
+
 ![screenshot abc app](docs/screenshot-abc.png)

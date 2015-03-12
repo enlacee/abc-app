@@ -415,7 +415,7 @@ footer {
 
 .img-main-alphabet {
     margin: 0 0 3% 0;
-    z-index: 1;
+    z-index: 0;
 }
 .img-main-alphabet img {
     height: 150px;
@@ -551,7 +551,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
     font-size: 1.5em;
     margin: 0 0 0 10%;
 }
-
+/* interaction*/
+.popup-message {
+    width: 180px;
+    height: 100px;
+    z-index: 1; /* index ok with button back */
+    right: 0;
+    margin: 0% auto;
+}
+#popup-message-win-points {
+    position: absolute;
+    font-size: 2.2em;
+    margin: 0%;
+    color: #fff;
+    text-shadow: 3px 2px 2px #000;    
+}
 
 /* maximo de acho donde aplicara todo este estilo*/
 @media (min-width: 767px) {
@@ -565,7 +579,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
     }
     .x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple {
         font-size: 3.5em;
-    }      
+    }
+
 }
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {
@@ -591,7 +606,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
         width: 100%;
         /*border:5px solid red;*/
         padding: 0;
-    } 
+    }
+    /* interaction*/
+    .popup-message {
+        width: 100px;
+        height: 100px;
+        z-index: 1; /* index ok with button back */
+        right: 0;
+        margin: 0% auto;
+    }    
+    #popup-message-win-points{
+        font-size: 1.5em;
+
+    }
 }
 
 
@@ -722,6 +749,7 @@ background-size: cover;
     bottom: 0px;
     position: absolute;
     width: 100%;
+    z-index: 4;
 }
 /* maximo de acncho donde aplicara el estilo */
 @media (min-width: 390px) {
@@ -807,7 +835,7 @@ background-size: cover;
 @media (min-width: 767px) {
     .content-header {
         /*background-color: purple;*/
-        margin: 20% 0 0 0;
+        margin: 15% 0 0 0;
     }
     .content-footer {
         margin: 0 0 20% 0;
@@ -832,24 +860,7 @@ background-size: cover;
         margin: 0 0 2% 0;
     }    
 }
-/* interaction*/
-.popup-message {
 
-    position: absolute;
-    top: 10%;
-    min-width: 200px;
-    min-height: 200px;
-    z-index: 2; /* index(1) imagen abc */
-    right: 0;
-    margin: 0%;
-}
-#popup-message-win-points {
-    position: absolute;
-    font-size: 2.2em;
-    margin: 0%;
-    color: #fff;
-    text-shadow: 3px 2px 2px #000;    
-}
 .text-message-purple {
     color: #8d2c92;
     text-shadow: 
