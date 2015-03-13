@@ -458,6 +458,7 @@ footer {
 .x-btn-1-disabled, .x-btn-1-disabled:active , .x-btn-1-disabled:hover, .x-btn-1-disabled:active {
     color: #898989 !important;
     border: 4px solid #959595;
+    border-radius: 20px;
     box-shadow: inset -5px -5px 10px 5px;
     box-shadow: inset 8px -5px 8px -2px #fff;
     

@@ -14,7 +14,7 @@
                 
     </head>
     <body>
-    <div data-role="page" id="page3">
+    <div data-role="page" id="page1">
 
     </div>
 
@@ -50,6 +50,25 @@
     <!--app--> 
     <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
     <script type="text/javascript">
+    /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
+    /*      background force to jquery-mobile  */
+    document.getElementById('page1').style.backgroundColor = "#83e749";
+    document.body.style.backgroundColor = "#83e749";
+
+    $( window ).on( "orientationchange", function( event ) {
+        setTimeout(function(){
+            $.mobile.loading('show');
+        },100);
+
+        $( "header" ).fadeOut( 1, function() {
+            setTimeout(function(){
+                $( "header" ).fadeIn();
+                $.mobile.loading('hide');
+            },2000);
+        });
+    });
+    /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
+    
     var URI = new URI(location.href)
         URI.data = {};
         

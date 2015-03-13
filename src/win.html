@@ -10,13 +10,12 @@
         <link rel="stylesheet" href="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.css" />
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-
     <!-- Bootstrap -->
     <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css?q=121" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div data-role="page" id="page3">
+    <div data-role="page" id="page1">
         <div data-role="header" data-theme="c">
             <h1>App ABC</h1>
         </div>
@@ -62,5 +61,25 @@
 
 
     </header>
+        <script type="text/javascript">
+        /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
+        /*      background force to jquery-mobile  */
+        document.getElementById('page1').style.backgroundColor = "#83e749";
+        document.body.style.backgroundColor = "#83e749";
+
+        $( window ).on( "orientationchange", function( event ) {
+            setTimeout(function(){
+                $.mobile.loading('show');
+            },100);
+
+            $( "header" ).fadeOut( 1, function() {
+                setTimeout(function(){
+                    $( "header" ).fadeIn();
+                    $.mobile.loading('hide');
+                },2000);
+            });
+        });
+        /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
+        </script>
 </body>
 </html>
