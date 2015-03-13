@@ -245,20 +245,40 @@ $( window ).on( "orientationchange", function( event ) {
                 $(vars.DOM_BTN_ALPHABET).each(function(index, element) {
                     var uriAudio = $(this).attr( "data-audio" ) || '';
                     if (uriAudio.length > 0) {
+                        if ( $(element).hasClass( "x-btn-1-disabled" ) ) {
+                            $(element).removeClass('x-btn-1-disabled');
+                        }
                         button = element;
                         button.className = button.className + " x-btn-1-green";
+                        
                         return false;
                     }
                 });
                 
                 return button;
             }
-            
+            // private function : show wrong
             function getDomButtonWrong(el) {
-                var button = false;
-                el.toggleClass( "x-btn-1-wrong" );
-                return button;
-            }            
+                $(vars.DOM_BTN_ALPHABET).each(function(key, element) {
+                    if ($.trim(el.text()) === $.trim($(element).text())) {
+                        if ( $(element).hasClass( "x-btn-1-disabled" ) ) {
+                            $(element).removeClass('x-btn-1-disabled');
+                        }
+                        el.toggleClass( "x-btn-1-wrong" );
+                        return false;
+                    }
+                });
+                
+                return true;
+            }
+            // private function lock button
+            function getDomButtonLock() {
+                $(vars.DOM_BTN_ALPHABET).each(function(key, element) {
+                    $(element).toggleClass('x-btn-1-disabled');
+                });
+                
+                return true;
+            }
             
             /*
              * Action Level 1
@@ -271,7 +291,8 @@ $( window ).on( "orientationchange", function( event ) {
                 var myPoints = parseInt(vars.URIdata.points) || 0;
                 var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
                 var myLevel = parseInt(vars.URIdata.level) || 1;
-
+                
+                getDomButtonLock();
                 if (attribute.length > 0) {
                     getDomButtonCorrect();
                     var totalPointsQuery =  myTotalPoints + parseInt(App.pointsValue);
@@ -312,7 +333,7 @@ $( window ).on( "orientationchange", function( event ) {
                     setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 700);                    
+                    }, 1000);                    
                     
                 }
 
@@ -330,6 +351,7 @@ $( window ).on( "orientationchange", function( event ) {
                 var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
                 var myLevel = parseInt(vars.URIdata.level) || 1;
                 
+                getDomButtonLock();
                 if (attribute.length > 0) {
                     getDomButtonCorrect();
                     var totalPointsQuery =  myTotalPoints + parseInt(App.pointsValue);
@@ -370,7 +392,7 @@ $( window ).on( "orientationchange", function( event ) {
                     setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 100);
+                    }, 1000);
                 }
            
             }
@@ -386,7 +408,8 @@ $( window ).on( "orientationchange", function( event ) {
                 var myPoints = parseInt(vars.URIdata.points) || 0;
                 var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
                 var myLevel = parseInt(vars.URIdata.level) || 1;
-                //console.log('attribute', attribute);
+                
+                getDomButtonLock();
                 if (attribute.length > 0) {
                     //alert("111");
                     getDomButtonCorrect();
@@ -437,8 +460,6 @@ $( window ).on( "orientationchange", function( event ) {
                             flagredirect = true;
                         }
                     });
-                    //alert("flagredirect : "+flagredirect);
-                    //alert("life : "+vars.URIdata.life);
 
                     // validation life
                     if (vars.URIdata.life==0) {
@@ -491,7 +512,7 @@ $( window ).on( "orientationchange", function( event ) {
             if (4 == e) { // Media.MEDIA_STOPPED = 4;
                 var fileHtml = vars.URIdata.level + '_' + vars.URIdata.indice + '.html?' + vars.URI.query();
                 //alert(' fileHtml = '+fileHtml);
-                App.redirect(fileHtml);
+                    App.redirect(fileHtml);
             }
         }
         
