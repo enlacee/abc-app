@@ -422,7 +422,7 @@ footer {
 }
 
 /**********************/
-.x-btn-1, .x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple {
+.x-btn-1, .x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple, .x-btn-1-disabled {
     font-family: 'arial rounded';
     border:4px solid #ec008c;
     background-color: #fdc214;
@@ -446,21 +446,38 @@ footer {
     2px -2px 0 #fff,
     -2px 2px 0 #fff;
 
-background: #ffff1b; /* Old browsers */
-background: -moz-linear-gradient(top,  #ffff1b 0%, #fed516 47%, #fdbb13 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffff1b), color-stop(47%,#fed516), color-stop(100%,#fdbb13)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', endColorstr='#fdbb13',GradientType=0 ); /* IE6-9 */
+    background: #ffff1b; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffff1b 0%, #fed516 47%, #fdbb13 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffff1b), color-stop(47%,#fed516), color-stop(100%,#fdbb13)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffff1b 0%,#fed516 47%,#fdbb13 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', endColorstr='#fdbb13',GradientType=0 ); /* IE6-9 */
 }
+.x-btn-1-disabled, .x-btn-1-disabled:active , .x-btn-1-disabled:hover, .x-btn-1-disabled:active {
+    color: #898989 !important;
+    border: 4px solid #959595;
+    box-shadow: inset -5px -5px 10px 5px;
+    box-shadow: inset 8px -5px 8px -2px #fff;
+    
+    cursor: default;
+    background: #dfdfdf !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dfdfdf 0%, #c6c6c6 48%, #b9b9b9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dfdfdf), color-stop(48%,#c6c6c6), color-stop(100%,#b9b9b9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dfdfdf 0%,#c6c6c6 48%,#b9b9b9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dfdfdf 0%,#c6c6c6 48%,#b9b9b9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dfdfdf 0%,#c6c6c6 48%,#b9b9b9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dfdfdf 0%,#c6c6c6 48%,#b9b9b9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfdfdf', endColorstr='#b9b9b9',GradientType=0 ); /* IE6-9 */    
+}
+
+
 .x-btn-1:hover {
     color: #ec008c;;
 }
 .x-btn-1:active {
-    background: #ec008c;
-    box-shadow: none;   
+    background: #ec008c;  
 }
 .x-btn-1-green {
     box-shadow: inset -5px -5px 10px 5px;
@@ -489,6 +506,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
 
 }
 
+
 .x-btn-main-red, .x-btn-main-blue, .x-btn-main-purple {
     border: 5px solid #ec008c;
     font-size: 2.5em;
@@ -504,7 +522,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff1b', end
     border: 5px solid #9e04ec;
     color: #9e04ec;
 }
-.x-btn-main-disabled, x-btn-main-disabled:active, .btn.active, .btn:active  {
+.x-btn-main-red:active, .x-btn-main-blue:active, .x-btn-main-purple:active {
+    background: #ec008c;
+    box-shadow: none;
+}
+
+.x-btn-main-disabled, x-btn-main-disabled:active {
     border: 5px solid #959595;
     box-shadow: inset -5px -5px 10px 5px;
     box-shadow: inset 8px -5px 8px -2px #fff;    
@@ -826,7 +849,7 @@ background-size: cover;
         height: 60px;
     }
     .content-header {
-        margin: 2% 0 0 0;
+        margin: 17% 0 0 0;
         /*background-color: yellow;*/
     }
 }
@@ -854,7 +877,7 @@ background-size: cover;
 @media (min-width: 1023px) {
     .content-header {
         /*background-color: green;*/
-        margin: 2% 0 0 0;
+        margin: 4% 0 0 0;
     }
     .content-footer {
         margin: 0 0 2% 0;

@@ -7,6 +7,25 @@
 * get data map:
 * uri.search(true); // returns { foo: "bar", hello : ["world", "mars"] }
 */
+/*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
+/*      background force to jquery-mobile  */
+document.getElementById('page1').style.backgroundColor = "#83e749";
+document.body.style.backgroundColor = "#83e749";
+
+$( window ).on( "orientationchange", function( event ) {
+    setTimeout(function(){
+        $.mobile.loading('show');
+    },100);
+
+    $( "header" ).fadeOut( 1, function() {
+        setTimeout(function(){
+            $( "header" ).fadeIn();
+            $.mobile.loading('hide');
+        },2000);
+    });
+});
+/*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
+
 
 
 /*$(function(){*/
@@ -151,6 +170,8 @@
         // btn 
         rebuildDomView : function() {
         
+            $(vars.DOM_MESSAGE_WIN).find('div').html( vars.URIdata.totalPoints +" puntos");
+            
             if (vars.URIdata.indice == 0) {
                 var btnRestart = $(vars.DOM_BTN_RESTART).find('a');
                 btnRestart.attr('href', 'index.html');
@@ -173,8 +194,8 @@
                         .find('img')
                         .attr('src', 'assets/img/restart-purple.png');
             }
-        
             
+        
         },
         // cargar los sonidos correspondientes a la pagina
         // Requiere the library soundmanager2

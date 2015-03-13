@@ -12,7 +12,7 @@
         <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
     </head>
-<body>
+    <body>
     <div data-role="page" id="page1">
 
     </div>
@@ -43,16 +43,19 @@
                         NIVEL 3 <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-purple" aria-hidden="true"></span>                        
                     </a>
                 </div>                    
-                 
+
             </div>
         </div>
 
     </header>
-        <!--app-->
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>    
+        <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
     
         <script type="text/javascript">
+            /*      background force to jquery-mobile  */
+            document.getElementById('page1').style.backgroundColor = "#83e749";
+            document.body.style.backgroundColor = "#83e749";
             // 01 LOCAL STORE MANAGER OF LEVEL GAME
             if (typeof(Storage) != "undefined") {
                 // Store
@@ -67,9 +70,11 @@
             } else {
                 alert ("Sorry, your browser does not support web Storage 'localStore'");
             }
+            
+            // 02 LandSpace with jquery mobile
 
-            // 02 BACKGROUND SOUND 'init phonegap'
-        </script>
+            // 03 BACKGROUND SOUND 'init phonegap'
+            </script>
         <script type="text/javascript" src="assets/js/index.html.js"></script>
 </body>
 </html>
