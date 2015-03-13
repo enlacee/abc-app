@@ -43,9 +43,10 @@ $( window ).on( "orientationchange", function( event ) {
         DOM_BTN_ALPHABET : '.btn',
         DOM_MESSAGE_WIN : '#popup-message-win',
         //DOM_MESSAGE_WIN_POINTS : '#popup-message-win-points',
-        
         DOM_COUNT_DOWN : '#countdown',
-        DOM_BTN_RESTART: '.popup-restart'
+        DOM_BTN_RESTART: '.popup-restart',
+        
+        DOM_FOOTER : '.content-footer',
     };
 
     var App = {
@@ -90,12 +91,12 @@ $( window ).on( "orientationchange", function( event ) {
                             var myPoints = parseInt(vars.URIdata.points) || 0;
                             var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
                             var life = parseInt(vars.URIdata.life) || vars.LIFE_BASE;
-                            
+
                             vars.URIdata.indice = myIndice;
                             vars.URIdata.level = myLevel;
                             vars.URIdata.points = myPoints;
                             vars.URIdata.totalPoints = myTotalPoints;
-                            vars.URIdata.life = life;
+                            vars.URIdata.life = life; //(life - 1); alert('vars.URIdata.life '+vars.URIdata.life) // si llegaste aqui pierdes 1 vida.
                             vars.URI.query(vars.URIdata);
 
                             var fileHtml = vars.URIdata.level + '_' + myIndice;
@@ -112,7 +113,7 @@ $( window ).on( "orientationchange", function( event ) {
                 }, 1000);
             }
             
-            
+                 
         },
         // 01 : Get level
         readAllDataLevel : function() {
@@ -241,7 +242,6 @@ $( window ).on( "orientationchange", function( event ) {
             
             // private function Select Correct
             function getDomButtonCorrect() {
-                var button = false;
                 $(vars.DOM_BTN_ALPHABET).each(function(index, element) {
                     var uriAudio = $(this).attr( "data-audio" ) || '';
                     if (uriAudio.length > 0) {
@@ -250,12 +250,11 @@ $( window ).on( "orientationchange", function( event ) {
                         }
                         button = element;
                         button.className = button.className + " x-btn-1-green";
-                        
                         return false;
                     }
                 });
                 
-                return button;
+                return true;
             }
             // private function : show wrong
             function getDomButtonWrong(el) {
@@ -278,6 +277,12 @@ $( window ).on( "orientationchange", function( event ) {
                 });
                 
                 return true;
+            }
+            
+            function getDomButtonLockLevel3() {
+                $(vars.DOM_BTN_ALPHABET).each(function(key, element) {
+                    $(element).toggleClass('disabled');
+                });
             }
             
             /*
@@ -409,7 +414,7 @@ $( window ).on( "orientationchange", function( event ) {
                 var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
                 var myLevel = parseInt(vars.URIdata.level) || 1;
                 
-                getDomButtonLock();
+                //getDomButtonLock();
                 if (attribute.length > 0) {
                     //alert("111");
                     getDomButtonCorrect();
@@ -463,10 +468,14 @@ $( window ).on( "orientationchange", function( event ) {
 
                     // validation life
                     if (vars.URIdata.life==0) {
+                        clearInterval(self.countdownTimer);
+                        getDomButtonLockLevel3();
+                        $(vars.DOM_FOOTER).before( '<p class="text-message-loser">Perdiste tus 3 vidas. Vuélvelo a intentar.</p>' );
+                        
                         //alert("perdiste");
                         setTimeout(function() {
                             App.redirect('index.html');
-                        }, 500);
+                        }, 2700);
                     }
 
                     // redirect perdio todas sus vidas

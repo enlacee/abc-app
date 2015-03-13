@@ -910,3 +910,9 @@ background-size: cover;
     -1px 1px 0 #fff;
 }
 
+.text-message-loser {
+    font-size: 21px;
+    color: red;
+    text-shadow: 3px 2px 2px #FA7680;
+}
+
