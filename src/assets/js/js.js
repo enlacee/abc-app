@@ -279,12 +279,6 @@ $( window ).on( "orientationchange", function( event ) {
                 return true;
             }
             
-            function getDomButtonLockLevel3() {
-                $(vars.DOM_BTN_ALPHABET).each(function(key, element) {
-                    $(element).toggleClass('disabled');
-                });
-            }
-            
             /*
              * Action Level 1
              * at this level are accumulated all points played
@@ -416,7 +410,7 @@ $( window ).on( "orientationchange", function( event ) {
                 
                 //getDomButtonLock();
                 if (attribute.length > 0) {
-                    //alert("111");
+                    getDomButtonLock();
                     getDomButtonCorrect();
                     clearInterval(self.countdownTimer);
                     var totalPointsQuery =  myTotalPoints + parseInt(App.pointsValue);
@@ -445,6 +439,7 @@ $( window ).on( "orientationchange", function( event ) {
                          
                     
                 } else { // WRONG
+                    getDomButtonLock();
                     getDomButtonWrong(el);
                     getDomButtonCorrect();
                     App.mySoundWrong.play();
@@ -469,8 +464,7 @@ $( window ).on( "orientationchange", function( event ) {
                     // validation life
                     if (vars.URIdata.life==0) {
                         clearInterval(self.countdownTimer);
-                        getDomButtonLockLevel3();
-                        $(vars.DOM_FOOTER).before( '<p class="text-message-loser">Perdiste tus 3 vidas. Vuélvelo a intentar.</p>' );
+                        $(vars.DOM_FOOTER).before( '<p class="text-message-loser">Perdiste tus 3 vidas. Intentar nuevamente.</p>' );
                         
                         //alert("perdiste");
                         setTimeout(function() {
