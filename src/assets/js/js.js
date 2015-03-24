@@ -534,6 +534,9 @@ $( window ).on( "orientationchange", function( event ) {
 /******************************************************************************/
 // Android
 /******************************************************************************/
+document.addEventListener("backbutton", onBackKeyDown, false); // disabled boton back
+function onBackKeyDown(e) { e.preventDefault();}
+
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     App.init();

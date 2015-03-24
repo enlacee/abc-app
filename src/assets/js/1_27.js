@@ -1,4 +1,6 @@
 
+document.addEventListener("backbutton", onBackKeyDown, false); // disabled boton back
+function onBackKeyDown(e) { e.preventDefault();}
 
 document.addEventListener('deviceready', function() { validationStartVoice(URI.data); } , false);
 
