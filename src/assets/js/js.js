@@ -214,10 +214,12 @@ $( window ).on( "orientationchange", function( event ) {
             // setting sound
             var mp3URL = this.cordova_getMediaURL(stringSound);
             var media = new Media(mp3URL, null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus);
-            var mediaWrong = new Media(this.cordova_getMediaURL('assets/audio/extra/error.mp3'), null, this.cordova_mediaError); 
+            var mediaWrong = new Media(this.cordova_getMediaURL('assets/audio/extra/error.mp3'), null, this.cordova_mediaError);
+            var mediaWrongRedirect = new Media(this.cordova_getMediaURL('assets/audio/extra/error.mp3'), null, this.cordova_mediaError, this.cordova_callbackAbcMediaStatus);
 
-            this.mySoundCorrect = media;
-            this.mySoundWrong = mediaWrong;
+            this.mySoundCorrect = media; // redirect
+            this.mySoundWrong = mediaWrong; // no redirect
+            this.mySoundWrongRedirect = mediaWrongRedirect;
         },
         redirect : function(stringFileHtml) {
             window.location.href = vars.URI.protocol() +'://'+ vars.URI.hostname() + vars.URI.directory() + '/' + stringFileHtml;
@@ -319,6 +321,7 @@ $( window ).on( "orientationchange", function( event ) {
                 } else { // WRONG
                     getDomButtonWrong(el);
                     getDomButtonCorrect();
+                    
                     vars.URI.query({
                         level : myLevel,
                         indice : (myIndice + 1),
@@ -329,10 +332,12 @@ $( window ).on( "orientationchange", function( event ) {
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
                     
                     // redirect
-                    setTimeout(function() {
+                    /*setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 1000);                    
+                    }, 1000); */
+                    
+                    App.mySoundWrongRedirect.play();
                     
                 }
 
@@ -386,12 +391,13 @@ $( window ).on( "orientationchange", function( event ) {
                     });
                     vars.URIdata = vars.URI.query(true);
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
-                    
+                    /*
                     // redirect
                     setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 1000);
+                    }, 1000);*/
+                    App.mySoundWrongRedirect.play();
                 }
            
             }
@@ -439,10 +445,10 @@ $( window ).on( "orientationchange", function( event ) {
                          
                     
                 } else { // WRONG
+                    clearInterval(self.countdownTimer);
                     getDomButtonLock();
                     getDomButtonWrong(el);
                     getDomButtonCorrect();
-                    App.mySoundWrong.play();
                     // INIT validation of live
                     vars.URIdata.life = parseInt(vars.URIdata.life)-1;
                     vars.URI.query(vars.URIdata);
@@ -462,14 +468,14 @@ $( window ).on( "orientationchange", function( event ) {
                     });
 
                     // validation life
+                    var flagHome = false;
                     if (vars.URIdata.life==0) {
-                        clearInterval(self.countdownTimer);
                         $(vars.DOM_FOOTER).before( '<p class="text-message-loser">Perdiste tus 3 vidas. Intentar nuevamente.</p>' );
-                        
+                        flagHome = true;
                         //alert("perdiste");
                         setTimeout(function() {
                             App.redirect('index.html');
-                        }, 2700);
+                        }, 2700);                       
                     }
 
                     // redirect perdio todas sus vidas
@@ -487,6 +493,23 @@ $( window ).on( "orientationchange", function( event ) {
                              App.redirect(fileHtml + '.html?' + vars.URI.query());
                          }, 700);
                     }
+                    
+                    // SI NO A SIDO REDIRIGIDO POR NADIE make action :error AL MARCA LA LETRA
+                    if (flagHome == false && flagredirect == false) {
+
+                        //vars.URIdata.life = parseInt(vars.URIdata.life)-1;
+                        vars.URIdata.indice = parseInt(vars.URIdata.indice)+1;
+                        vars.URIdata.points = 0;
+                        vars.URIdata.totalPoints = myTotalPoints + 0;
+                        vars.URI.query(vars.URIdata); // actualiza la data URIDATA
+                    
+                        App.mySoundWrongRedirect.play();
+                        
+                    } else {
+                        App.mySoundWrong.play();
+                    }
+                    
+                    
                     
                 }/* endIF */
            
@@ -534,8 +557,8 @@ $( window ).on( "orientationchange", function( event ) {
 /******************************************************************************/
 // Android
 /******************************************************************************/
-document.addEventListener("backbutton", onBackKeyDown, false); // disabled boton back
-function onBackKeyDown(e) { e.preventDefault();}
+/*document.addEventListener("backbutton", onBackKeyDown, false); // disabled boton back
+function onBackKeyDown(e) { e.preventDefault();}*/
 
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
