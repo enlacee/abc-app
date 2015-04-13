@@ -36,9 +36,10 @@ $( window ).on( "orientationchange", function( event ) {
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l','m',
             'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
         URI : new URI(location.href),
-        URIdata : {level : 0, indice : 0, points : 0, totalPoints : 0},
+        URIdata : {level : 0, indice : 0, points : 0, totalPoints : 0, timerForLevel : 0},
         LIFE_BASE: 3,
         LIFE_CURRENT: 0,
+        TIMER_FOR_LEVEL: 0,
         
         DOM_BTN_ALPHABET : '.btn',
         DOM_MESSAGE_WIN : '#popup-message-win',
@@ -60,6 +61,7 @@ $( window ).on( "orientationchange", function( event ) {
         pointsValue : 10,
         // timer ID
         countdownTimer : false,
+        timerForLevel : 0,
 
         init : function() {
             console.log("readAllDataLevel()");
@@ -69,6 +71,7 @@ $( window ).on( "orientationchange", function( event ) {
             console.log("loadSoundManager2()");
             this.loadSoundManager2();            
             this.listenerButtonsAlphabet();
+            this.initTimerInBackground();
             
             
             
@@ -133,6 +136,8 @@ $( window ).on( "orientationchange", function( event ) {
             vars.URIdata.points = myPoints;
             vars.URIdata.totalPoints = myTotalPoints;
             vars.URIdata.life = life;
+            vars.URIdata.timerForLevel = parseInt(vars.URIdata.timerForLevel) || 0;
+            
             vars.URI.query(vars.URIdata);
             
             console.log("INIT");
@@ -516,6 +521,18 @@ $( window ).on( "orientationchange", function( event ) {
             }            
             
                        
+        },
+        /**
+         * This function Setter the variable time, the objetic is know : Game Duration
+         * @returns void exucte init time
+         */
+        initTimerInBackground : function() {
+          
+            self.timerForLevel = setInterval( function() {
+                vars.URIdata.timerForLevel = parseInt(vars.URIdata.timerForLevel) + 1; // adding One second to Time.
+                vars.URI.query(vars.URIdata); // actualiza la data URIDATA
+                
+            }, 1000);
         },
 
         // ------------------ NATIVO ANDROID -------------
