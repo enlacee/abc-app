@@ -77,7 +77,7 @@ $( window ).on( "orientationchange", function( event ) {
             // init timer
             var myLevel = parseInt(vars.URIdata.level) || 1;
             if (myLevel === 2 || myLevel === 3) {
-                var seconds = (myLevel === 3) ? 5 : 8; // countDown
+                var seconds = (myLevel === 3) ? 15 : 30; // countDown
                 
                 self.countdownTimer = setInterval( function() {
                     var remainingSeconds = seconds % 60;
