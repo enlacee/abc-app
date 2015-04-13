@@ -26,10 +26,10 @@
                 <!--<div class="win-subtitle">+ <span id="points">0</span>  PUNTOS</div>-->
             </div>    
             <div class="row">
-                <div class="col-xs-5 space-parrot win-parrot">
+                <div class="col-xs-4 space-parrot win-parrot">
                     <img class="img-responsive" src="assets/img/win-parrot-abc.png">
                 </div>
-                <div class="col-xs-6 space-button text-left">
+                <div class="col-xs-8 space-button text-left">
                     <div class="row">
                         <div class="win-content-title">TIENES:</div>
                         <div class="win-content-subtitle "><span id="total-points">0</span> PUNTOS</div>
@@ -41,8 +41,51 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="row ranking">
+                <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th colspan="3" class="text-center rank-top">Ranking Top 5</th>
+                        </tr>
+                        <tr>
+                            <th class="col-xs-1">#</th>
+                          <th class="text-center">Nombre</th>
+                                        <th class="text-center">Tiempo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="active">
+                            <th scope="row" class="rank"><strong>1</strong></th>
+                          <td>Mark</td>
+                          <td>1:50</td>         
+                        </tr>
+                        <tr>
+                            <th scope="row" class="rank"><strong>2</strong></th>
+                          <td>Mark</td>
+                          <td>1:59</td>          
+                        </tr>
+                        <tr class="active">
+                          <th scope="row" class="rank"><strong>3</strong></th>
+                          <td>Mark</td>
+                          <td>2:25</td>          
+                        </tr>
+                        <tr>
+                          <th scope="row" class="rank"><strong>4</strong></th>
+                          <td>Mark</td>
+                          <td>2:56</td>          
+                        </tr>
+                        <tr class="active">
+                          <th scope="row" class="rank"><strong>5</strong></th>
+                          <td>Mark</td>
+                          <td>3:01</td>          
+                        </tr>
+                      </tbody>
+                    </table>
+            </div>
         </div>
 
+        <div id="SoccerPlayerList"></div>
     </header>
     <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
@@ -54,19 +97,6 @@
     /*      background force to jquery-mobile  */
     document.getElementById('page1').style.backgroundColor = "#83e749";
     document.body.style.backgroundColor = "#83e749";
-
-    $( window ).on( "orientationchange", function( event ) {
-        setTimeout(function(){
-            $.mobile.loading('show');
-        },100);
-
-        $( "header" ).fadeOut( 1, function() {
-            setTimeout(function(){
-                $( "header" ).fadeIn();
-                $.mobile.loading('hide');
-            },2000);
-        });
-    });
     /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
     
     var URI = new URI(location.href)
@@ -100,8 +130,55 @@
         
         $('#message').html(messageHtml);
     });
+    
+    
+    
+    
+    
+    /**
+     * user
+     */     
+    var string_abcUser = sessionStorage.getItem('abc_user');
+    var abcUser = jQuery.parseJSON(string_abcUser);
+        abcUser.timerForLevel = URI.data.timerForLevel;
+    
+    console.log('abcUser', abcUser);
+    
+    //save OBJ USERS
+    var string_abcUsers = sessionStorage.getItem('abc_users');
+    var abcUsers = jQuery.parseJSON(string_abcUsers);
+    
+    var arrayUsers = [];
+    arrayUsers.push(abcUser);
+    
+    console.log('arrayUsers', arrayUsers);
+    
+    function addUser(objUser) {
+        /*var newUsers = [];
+        [0,1,2,3,4].forEach(function(element, indice, array){
+            console.log('id.element', element.name);
+            newUsers[indice] = 
+                    
+        });*/
+    }
     </script>
     <script type="text/javascript" src="assets/js/1_27.js"></script>
+    <script type="text/javascript" src="assets/js/db.js"></script>
+    <script type="text/javascript">
+        
+        onDeviceReady();
+        
+    function querySuccess(tx,result){
+        $('#SoccerPlayerList').empty();
+        $.each(result.rows,function(index){
+            var row = result.rows.item(index);
+            $('#SoccerPlayerList').append('<li><a href="#"><h3 class="ui-li-heading">'+row['Name']+'</h3><p class="ui-li-desc">Club '+row['Club']+'</p></a></li>');
+        });
+ 
+        $('#SoccerPlayerList').listview();
+    }
+        
+    </script>
 
 </body>
 </html>
