@@ -1,7 +1,15 @@
-## no follow
+#### no follow
 .DS_Store
-
 nbproject
-unzip
 
+#### files
 .log
+.psd
+/docs/unzip/
+
+#### application credenciales
+/app.apk
+/my-release-key.keystore
+
+#### Building app android 
+/platforms/
