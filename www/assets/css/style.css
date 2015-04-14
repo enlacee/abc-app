@@ -917,3 +917,37 @@ background-size: cover;
     text-shadow: 3px 2px 2px #FA7680;
 }
 
+.ranking {
+    padding: 0 15px;
+}
+.ranking .table {
+    background-color: white;
+}
+.ranking .table thead{
+    background-color: graytext;
+    color:white;
+    text-shadow: none;
+}
+
+.rank strong{
+    float: left;
+    line-height: 21px;
+    display: block;
+    color: #424242;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0 0 0 7px;
+    padding: 0 8px;
+    background-color: #FFC418;  
+}
+.rank-top{
+    color: #fff;
+    background: #b80e80;
+    text-shadow: none;
+}
+.input-data{
+    margin: 0 15px 15px 15px !important;
+}
+.form-control{
+    height: 54px;
+}

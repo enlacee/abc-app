@@ -36,9 +36,10 @@ $( window ).on( "orientationchange", function( event ) {
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l','m',
             'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
         URI : new URI(location.href),
-        URIdata : {level : 0, indice : 0, points : 0, totalPoints : 0},
+        URIdata : {level : 0, indice : 0, points : 0, totalPoints : 0, timerForLevel : 0},
         LIFE_BASE: 3,
         LIFE_CURRENT: 0,
+        TIMER_FOR_LEVEL: 0,
         
         DOM_BTN_ALPHABET : '.btn',
         DOM_MESSAGE_WIN : '#popup-message-win',
@@ -60,6 +61,7 @@ $( window ).on( "orientationchange", function( event ) {
         pointsValue : 10,
         // timer ID
         countdownTimer : false,
+        timerForLevel : 0,
 
         init : function() {
             console.log("readAllDataLevel()");
@@ -69,6 +71,7 @@ $( window ).on( "orientationchange", function( event ) {
             console.log("loadSoundManager2()");
             this.loadSoundManager2();            
             this.listenerButtonsAlphabet();
+            this.initTimerInBackground();
             
             
             
@@ -77,7 +80,7 @@ $( window ).on( "orientationchange", function( event ) {
             // init timer
             var myLevel = parseInt(vars.URIdata.level) || 1;
             if (myLevel === 2 || myLevel === 3) {
-                var seconds = (myLevel === 3) ? 5 : 8; // countDown
+                var seconds = (myLevel === 3) ? 15 : 30; // countDown
                 
                 self.countdownTimer = setInterval( function() {
                     var remainingSeconds = seconds % 60;
@@ -133,6 +136,8 @@ $( window ).on( "orientationchange", function( event ) {
             vars.URIdata.points = myPoints;
             vars.URIdata.totalPoints = myTotalPoints;
             vars.URIdata.life = life;
+            vars.URIdata.timerForLevel = this.initTimerGetValueInitial();
+            
             vars.URI.query(vars.URIdata);
             
             console.log("INIT");
@@ -322,14 +327,12 @@ $( window ).on( "orientationchange", function( event ) {
                     getDomButtonWrong(el);
                     getDomButtonCorrect();
                     
-                    vars.URI.query({
-                        level : myLevel,
-                        indice : (myIndice + 1),
-                        points: 0,
-                        totalPoints : myTotalPoints + 0
-                    });
-                    vars.URIdata = vars.URI.query(true);
+                    vars.URIdata.indice = (myIndice + 1);
+                    vars.URIdata.points = 0;
+                    vars.URIdata.totalPoints = myTotalPoints + 0;
+                    vars.URI.query(vars.URIdata);                 
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
+
                     
                     // redirect
                     /*setTimeout(function() {
@@ -365,7 +368,7 @@ $( window ).on( "orientationchange", function( event ) {
                     vars.URIdata.indice = (myIndice + 1);
                     vars.URIdata.points = App.pointsValue;
                     vars.URIdata.totalPoints = totalPointsQuery;
-                    vars.URI.query(vars.URIdata);
+                    vars.URI.query(vars.URIdata); // actualiza la data URIDATA
                     
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
@@ -383,17 +386,14 @@ $( window ).on( "orientationchange", function( event ) {
                 } else { // WRONG
                     getDomButtonWrong(el);
                     getDomButtonCorrect();
-                    vars.URI.query({
-                        level : myLevel,
-                        indice : (myIndice + 1),
-                        points: 0,
-                        totalPoints : myTotalPoints + 0
-                    });
-                    vars.URIdata = vars.URI.query(true);
-                    console.log("app.data despues : vars.URI.query()", vars.URI.query());
-                    /*
+                    vars.URIdata.indice = parseInt(vars.URIdata.indice)+1;
+                    vars.URIdata.points = 0;
+                    vars.URIdata.totalPoints = myTotalPoints + 0;
+                    vars.URI.query(vars.URIdata); // actualiza la data URIDATA  //console.log("app.data despues : vars.URI.query()",vars.URIdata);                  
+                    
                     // redirect
-                    setTimeout(function() {
+
+                    /*setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
                     }, 1000);*/
@@ -426,7 +426,7 @@ $( window ).on( "orientationchange", function( event ) {
                     vars.URIdata.indice = (myIndice + 1);
                     vars.URIdata.points = App.pointsValue;
                     vars.URIdata.totalPoints = totalPointsQuery;
-                    vars.URI.query(vars.URIdata);
+                    vars.URI.query(vars.URIdata); // actualiza la data URIDATA 
                     console.log('app.data despues : vars.URIdata', vars.URIdata);
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
@@ -480,13 +480,11 @@ $( window ).on( "orientationchange", function( event ) {
 
                     // redirect perdio todas sus vidas
                     if (flagredirect === true) {
-                        vars.URI.query({
-                             level : myLevel,
-                             indice : (myIndice + 1),
-                             points: 0,
-                             totalPoints : myTotalPoints + 0
-                         });
-                         vars.URIdata = vars.URI.query(true);
+                        vars.URIdata.indice = (myIndice + 1);
+                        vars.URIdata.points = 0;
+                        vars.URIdata.totalPoints = myTotalPoints + 0;
+                        vars.URI.query(vars.URIdata); // actualiza la data URIDATA
+
 
                          setTimeout(function() {
                              var fileHtml = myLevel + '_' + vars.URIdata.indice;
@@ -516,6 +514,33 @@ $( window ).on( "orientationchange", function( event ) {
             }            
             
                        
+        },
+        /**
+         * This function Setter the variable time, the objetic is know : Game Duration
+         * @returns void exucte init time
+         */
+        initTimerInBackground : function() {
+          
+            self.timerForLevel = setInterval( function() {
+                var counter = parseInt(vars.URIdata.timerForLevel) + 1;
+                vars.URIdata.timerForLevel = counter; // adding One second to Time.
+                sessionStorage.setItem('timerForLevel', counter);
+                vars.URI.query(vars.URIdata); // actualiza la data URIDATA
+                
+            }, 1000);
+        },
+        initTimerGetValueInitial : function (timeInSecond) {            
+
+            if (sessionStorage.getItem('timerForLevel') === null 
+                || sessionStorage.getItem('timerForLevel') === ''
+                || sessionStorage.getItem('timerForLevel') === 0)
+            {
+                sessionStorage.setItem('timerForLevel', 0);
+            } 
+            
+            console.log('get VALUE timerForLevel', sessionStorage.getItem('timerForLevel'));
+            
+            return sessionStorage.getItem('timerForLevel');            
         },
 
         // ------------------ NATIVO ANDROID -------------
