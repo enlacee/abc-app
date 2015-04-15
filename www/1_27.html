@@ -43,7 +43,7 @@
                 
                 <div class="row ranking">
                     <div id="ranking-top-5">
-                        <div id="myModal" style="border:0px solid red">
+                        <div id="myModal" style="display:none; border:0px solid red">
                             <!---->
                             <div class="form-inline">
                               <div class="form-group">    
@@ -53,13 +53,10 @@
                                 </div>
                                   <div id="nombreUserMessage" class="warning text-message-loser"></div>
                               </div>
-                            </div>                       
-                        
-                    </div>                    
-                </div>
-                
-            </div>
-                    
+                            </div>
+                        </div>                    
+                    </div>                
+                </div>                
             </div>
 
     </header>
@@ -104,7 +101,8 @@
         //$('#points').text(URI.data.points);
         $('#total-points').text(URI.data.totalPoints);
         var messageHtml = '';
-        if ((27*10) === myTotalPoints) {            
+        if ((27*10) === myTotalPoints) {
+            $('#myModal').show();
             sessionStorage.setItem("level1", 'true');
             messageHtml = '<a href="index.html" data-role="button" rel="external">'
             + '<img class="img-responsive" src="assets/img/next-blue.png">'
@@ -136,7 +134,6 @@
                 addUserRegister(URI.data, appModel, nombre);
                 // ADD USER  
                 appModel.showRecords(URI.data.level);
-                //$('#myModal').modal('hide'); 
                 $('#nombreUser').val('');
                 
             } else {
