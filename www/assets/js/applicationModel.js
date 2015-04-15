@@ -54,6 +54,7 @@ this.createTable = function() {
 },
 
 this.insertRecord = function(obj) { // Functionality INSERT OR UPDATE    
+
     var id = parseInt(obj.id);
     var name = obj.name.toUpperCase();
     var time = parseInt(obj.timerForLevel);
@@ -204,19 +205,17 @@ this.selectedUserById = function(id) {
  * add User HELPER : agregar o actualizar usuario
  * ===========================================================
  */
-function addUserRegister(data, appModel) {
+function addUserRegister(data, appModel, miName) {
 
-    var string_abcUser = sessionStorage.getItem('abc_user');                
-
-    if (string_abcUser != '') {
-        var user = $.parseJSON(string_abcUser);
+    if (true) {
+        var user = appModel.userObject;        
+        user.name = miName;
         user.timerForLevel = data.timerForLevel;
         user.totalPoints = data.totalPoints;
-        user.level = data.level;
+        user.level = data.level; console.log('USERRRRR', user);
         //add db            
         appModel.insertRecord(user);
         // clear
-        sessionStorage.setItem('abc_user', '');
     } else {
         console.log("No se encontro usuario");
     }
