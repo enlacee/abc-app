@@ -39,68 +39,34 @@
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  
                         </div>
                     </div>
-                    
-                    <div class="row ranking">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th colspan="3" class="text-center rank-top">Ranking Top 5 <span class="color-blue">Nivel 2</span></th>
-                                </tr>
-                                <tr>
-                                    <th class="col-xs-1">#</th>
-                                    <th class="text-center">Nombre</th>
-                                    <th class="text-center">Tiempo</th>                            
-                                </tr>
-                            </thead>
-                            <tbody id="ranking-top-5">
-                                <!--<tr class="active">
-                                  <th scope="row" class="rank"><strong>1</strong></th>
-                                  <td>Mark</td>
-                                  <td>1:50</td>
-                                  <td>1:50</td>  
-                                </tr>-->
-                            </tbody>
-                        </table>
-                    </div> 
-                    
                 </div>
+                
+                <div class="row ranking">
+                    <div id="ranking-top-5">
+                        <div id="myModal" style="display:none; border:0px solid red">
+                            <!---->
+                            <div class="form-inline">
+                              <div class="form-group">    
+                                <div class="input-group-lg">
+                                  <input type="text" class="form-control " placeholder="Nombre" id="nombreUser">
+                                  <button type="submit" class="btn btn-warning btn-lg" id="btnGuardarNombre" >Guardar</button>
+                                </div>
+                                  <div id="nombreUserMessage" class="warning text-message-loser"></div>
+                              </div>
+                            </div>
+                        </div>                    
+                    </div>                
+                </div>                
             </div>
-        </div>
 
-<!--MODAL-->
-<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-        <h4 class="modal-title" id="myModalLabel">Ingresa tu Nombre</h4>
-      </div>
-      <div class="modal-body">
-        
-        <div class="input-group_">
-       
-       <!--<span class="input-group-addon" id="basic-addon1">@</span>-->
-        <input type="text" class="form-control" placeholder="Nombre" id="nombreUser" aria-describedby="basic-addon1">
-        </div>
-          <div id="nombreUserMessage" class="warning text-message-loser"></div>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="btnGuardarNombre" class="btn btn-primary">Guardar</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!--MODAL-->         
-        
     </header>
     <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap-3.3.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>        
+    <script type="text/javascript" src="cordova.js"></script>     
     <!--app--> 
     <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
-    <script type="text/javascript" src="assets/js/applicationModel.js"></script>
+    <script type="text/javascript" src="assets/js/html5sql.js"></script>
+    <script type="text/javascript" src="assets/js/applicationModelSql.js"></script>
     <script type="text/javascript">
     /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
     /*      background force to jquery-mobile  */
@@ -137,7 +103,7 @@
         
         var messageHtml = '';
         if ((27*10) === myTotalPoints) {
-            $('#myModal').modal('show');
+            $('#myModal').show();
             sessionStorage.setItem("level2", true);
             messageHtml = '<a href="index.html" data-role="button" rel="external">'
             + '<img class="img-responsive" src="assets/img/next-blue.png">'
@@ -155,21 +121,21 @@
     
     
     </script>
-    <script type="text/javascript" src="assets/js/1_27.js"></script>    
+    <script type="text/javascript" src="assets/js/1_27.js"></script>
+   
     <script type="text/javascript">
         // 02 SCRIP FOR RANKING
         var appModel = new applicationModel();
         appModel.initDatabase();
-        appModel.showRecords(URI.data.level);
+        //appModel.showRecords(URI.data.level);
         
-        $('#btnGuardarNombre').click(function(){
+        $('#btnGuardarNombre').click(function() {
             var nombre = $('#nombreUser').val();
             if (nombre != '' && (27*10) === myTotalPoints ) {
                 // ADD USER
                 addUserRegister(URI.data, appModel, nombre);
                 // ADD USER  
                 appModel.showRecords(URI.data.level);
-                $('#myModal').modal('hide'); 
                 $('#nombreUser').val('');
                 
             } else {
