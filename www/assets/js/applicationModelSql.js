@@ -98,25 +98,48 @@ var applicationModel = function () {
 
 //
         var $select = $('#ranking-top-5');
-        $select.html('');
+        $select.html('');        
         html5sql.process(
-            //["SELECT * FROM users ORDER by id DESC;"],
-            sqlSelectOrderByTime,
+            sqlSelectOrderByTime,            
             function (transaction, results, rowsArray) {
+                var tr = '';
                 for (var i = 0; i < rowsArray.length; i++) {
-                    var tr = '<tr class="">'
+                    tr = tr + '<tr class="">'
                             + '<th scope="row" class="rank"><strong>' + (i + 1) + '</strong></th>'
                             + '<td>' + rowsArray[i].name + '</td>'
                             + '<td>' + convertSecondToTimeRanking(rowsArray[i].timer) + '</td>'
                             + '</tr>';
-                    $select.append(tr);                    
                     //alert("DATA : " + rowsArray[i].name  + " - " + rowsArray[i].timer + " ");
                 }
+                //html
+                    var htmlTable = '' 
+                    +'<table class="table table-bordered">'
+                    +'    <thead>'
+                    +'        <tr>'
+                    +'            <th colspan="3" class="text-center rank-top">Ranking Top 5 <span class="color-blue">Nivel '+id+'</span></th>'
+                    +'        </tr>'
+                    +'        <tr>'
+                    +'            <th class="col-xs-1">#</th>'
+                    +'            <th class="text-center">Nombre</th>'
+                    +'            <th class="text-center">Tiempo</th>'                            
+                    +'        </tr>'
+                    +'    </thead>'
+                    +'    <tbody>'
+                    + tr
+                    +'    </tbody>'
+                    +'</table>';
+                    $select.html(htmlTable);
+                //html
             },
             function (error, statement) {
                 alert('error');       
             }
         );
+
+
+
+
+
 //
         this.clearData();
         // helper

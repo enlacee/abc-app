@@ -3,8 +3,8 @@
 nbproject
 
 #### files
-.log
-.psd
+*.log
+*.psd
 /docs/unzip/
 
 #### application credenciales
@@ -13,3 +13,6 @@ nbproject
 
 #### Building app android 
 /platforms/
+
+## trash
+/www/test1.html
