@@ -122,6 +122,7 @@ this.showRecords = function(idLevel) {
         tx.executeSql(selectAllStatement, [id], function(tx, result) {
             data = result.rows;
             var $select = $('#ranking-top-5');
+            $('#ranking-top-5').html('');
             $.each(data,function(key, value) {
                 var tr = '<tr class="">'
                     + '<th scope="row" class="rank"><strong>' + (key+1) + '</strong></th>'
@@ -207,17 +208,22 @@ this.selectedUserById = function(id) {
  */
 function addUserRegister(data, appModel, miName) {
 
-    if (true) {
+    if ((typeof(data) == 'object')) {
         var user = appModel.userObject;        
         user.name = miName;
         user.timerForLevel = data.timerForLevel;
         user.totalPoints = data.totalPoints;
-        user.level = data.level; console.log('USERRRRR', user);
+        console.log("=======DATA======");
+        //console.log('user', user);
+        console.log("=======DATA======");
+        //alert('user.name:'+user.name + ', user.timerForLevel:'+ user.timerForLevel+ ', user.totalPoints:' + user.totalPoints)
+
+        user.level = data.level;
         //add db            
         appModel.insertRecord(user);
         // clear
     } else {
-        console.log("No se encontro usuario");
+        alert("No puedo registrar : miname = "+miName);
     }
 
 }
