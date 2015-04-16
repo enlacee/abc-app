@@ -1,81 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <title>APP ABC</title>
-        <link rel="stylesheet" href="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.css" />
-        <!-- Bootstrap -->
-        <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
-    <style>
-        .header {
-            background-attachment: fixed;
-        }
-    </style>
-    </head>
-    <body ng-app='gemStore'>
-        <div data-role="page" id="page1">
-
-        </div>
-
-        <!-- Header -->
-        <header id="top" class="header">
-            <div class="text-vertical-center_x row">
-
-                <div class="row header-glosario">
-
-                    <div class="pull-left logo-glosario"><img src="assets/img/glosario.png" alt=""></div>
-                    <div class="pull-left"><h1 class="win-title f-text-glosario">GLOSARIO</h1></div>
-
-                </div>
-
-                <div class="row" ng-controller="StoreController as controller">
-                    <div class="col-xs-1"></div>
-
-                    <div class="col-xs-10 space-button text-left">
-                        <div class="row" ng-repeat="abc in controller.alphabet">
-                            <div class="col-sm-4 col-xs-5">
-                                <img class="img-responsive" ng-src="{{abc.image}}">
-                            </div>
-                            <div class="col-sm-8 col-xs-7">
-                                <h1 class="subtitle-glosario">{{abc.name}}</h1>
-                                <p class="description-glosario">{{abc.description}}</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <div class="col-xs-1"></div>
-                </div>
+/**
+ * [description]
+ * @return {[type]} [description]
+ */
+    (function() {
+        var app = angular.module('gemStore', []);
+        app.controller('StoreController', ['$scope', function($scope){
+            this.alphabet = abc;
+        }]);
 
 
-                <div class="row"> 
-                </div>
-
-            </div>
-
-        </header>
-        <div class="popup-restart">         
-            <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
-        </div>   
-        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/angular/angular.min.js"></script>        
-        <script type="text/javascript" src="cordova.js"></script>
-
-        <script type="text/javascript">
-        (function() {
-            var app = angular.module('gemStore', []);
-
-            app.controller('StoreController', ['$scope', function($scope){
-                this.alphabet = abc;
-            }]);
-
-
+        // variable
 
 var imgBase = 'assets/img/alphabet/';
 var abc = [
@@ -111,47 +45,47 @@ var abc = [
 },
 {
     name : 'CÓNDOR',
-    image : imgBase +'c/1.png',
-    description : 'El cóndor andino, cóndor de los Andes o simplemente cóndor (Vultur gryphus) es una especie de ave de la familia Cathartidae que habita en Sudamérica.'
+    image : imgBase +'a/1.png',
+    description : 'El cóndor andino, cóndor de los Andes o simplemente cóndor (Vultur gryphus)2 es una especie de ave de la familia Cathartidae que habita en Sudamérica.'
 },
 {
     name : 'CUY',
-    image : imgBase +'c/2.png',
+    image : imgBase +'a/1.png',
     description : 'Cavia porcellus es una especie híbrida doméstica de roedor histricomorfo de la familia Caviidae, resultado del cruce de varias especies del género Cavia realizado en la región andina de América del Sur.'
 },
 {
     name : 'CHINCHILLA',
-    image : imgBase +'c/3.png',
+    image : imgBase +'a/1.png',
     description : 'Chinchilla es un género de roedores histricomorfos de la familia Chinchillidae conocidos vulgarmente como chinchillas. Es endémico de la mitad sur de los Andes.'
 },
 {
     name : 'DADO',
-    image : imgBase +'d/1.png',
+    image : imgBase +'a/1.png',
     description : 'Un dado es un objeto de forma poliédrica (aunque la RAE en su definición solo prevé que sean cúbicos) preparado para mostrar un resultado aleatorio cuando es lanzado sobre una superficie horizontal.'
 },
 {
     name : 'DELFÍN',
-    image : imgBase +'d/2.png',
+    image : imgBase +'a/1.png',
     description : 'Los delfínidos (Delphinidae), llamados comúnmente delfines oceánicos (para distinguirlos de los platanistoideos o delfines de río), son una familia de cetáceos odontocetos bastante heterogénea, que comprende unas 34 especies.'
 },
 {
     name : 'DINOSAURIO',
-    image : imgBase +'d/3.png',
-    description : 'Los dinosaurios (Dinosauria, deinos sauros, \'lagarto terrible\') son un grupo (clado) de reptiles (saurópsidos) que aparecieron durante el período Triásico, hace unos 231 millones de años. Fueron los vertebrados terrestres dominantes durante 135 millones de años.'
+    image : imgBase +'a/1.png',
+    description : 'Los dinosaurios (Dinosauria, deinos sauros, 'lagarto terrible') son un grupo (clado) de reptiles (saurópsidos) que aparecieron durante el período Triásico, hace unos 231 millones de años. Fueron los vertebrados terrestres dominantes durante 135 millones de años.'
 },
 {
     name : 'EDIFICIO',
-    image : imgBase +'e/1.png',
+    image : imgBase +'a/1.png',
     description : 'Un edificio es una construcción dedicada a albergar distintas actividades humanas: vivienda, templo, teatro, comercio, etc.'
 },
 {
     name : 'ELEFANTE',
-    image : imgBase +'e/2.png',
+    image : imgBase +'a/1.png',
     description : 'Los elefantes o elefántidos (Elephantidae) son una familia de mamíferos placentarios del orden Proboscidea. Antiguamente se clasificaban, junto con otros animales de piel gruesa.'
 },
 {
     name : 'ERIZO',
-    image : imgBase +'e/3.png',
+    image : imgBase +'a/1.png',
     description : 'Los erinacinos (Erinaceinae), conocidos vulgarmente como erizos, son una subfamilia de pequeños mamíferos cubiertos de púas; pertenecen al orden Erinaceomorpha, aunque antiguamente eran considerados del orden Insectivora, hoy en día obsoleto.'
 },
 {
@@ -478,7 +412,4 @@ var abc = [
 
 
 
-        })();
-        </script>        
-    </body>
-</html>
+    })();
