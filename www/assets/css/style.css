@@ -275,6 +275,9 @@ footer {
 .color-white {
     color:#fff;
 }
+.color-green {
+    color: #00a651;
+}
 
 .space-button {
    margin: 5% 0 0 0;
@@ -950,4 +953,49 @@ background-size: cover;
 }
 .form-control{
     height: 54px;
+}
+
+/*glosario*/
+.f-text-glosario {
+    color: #00a651;
+    text-shadow: 
+    4px 0 0 #fff,
+    -4px 0 0 #fff,
+    0 4px 0 #fff,
+    0 -4px 0 #fff,
+    2px 2px #fff,
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff; 
+}
+.subtitle-glosario {
+    color: #00a651;
+    text-shadow: 
+    2px 0 0 #fff,
+    -2px 0 0 #fff,
+    0 2px 0 #fff,
+    0 -2px 0 #fff,
+    1px 1px #fff,
+    -2px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff;
+}
+.description-glosario {
+    color: #00a651;
+    text-shadow: 
+    2px 0 0 #fff,
+    -2px 0 0 #fff,
+    0 2px 0 #fff,
+    0 -2px 0 #fff,
+    1px 1px #fff,
+    -2px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff;
+}
+.header-glosario{
+    margin: 0 1%;
+}
+
+.logo-glosario {
+    margin: 13px;
 }
