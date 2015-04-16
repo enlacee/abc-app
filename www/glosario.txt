@@ -1,0 +1,319 @@
+
+var abc = [
+{
+    name : 'AVION',
+    description : ''
+},
+{
+    name : 'ARBOL',
+    description : ''
+},
+{
+    name : 'ALPACA',
+    description : ''
+},
+{
+    name : 'BANDERA',
+    description : ''
+},
+{
+    name : 'BARCO',
+    description : ''
+},
+{
+    name : 'BALLENA',
+    description : ''
+},
+{
+    name : 'CONDOR',
+    description : ''
+},
+{
+    name : 'CUY',
+    description : ''
+},
+{
+    name : 'CHINCHILLA',
+    description : ''
+},
+{
+    name : 'DADO',
+    description : ''
+},
+{
+    name : 'DELFÍN',
+    description : ''
+},
+{
+    name : 'DINOSAURIO',
+    description : ''
+},
+{
+    name : 'EDIFICIO',
+    description : ''
+},
+{
+    name : 'ELEFANTE',
+    description : ''
+},
+{
+    name : 'ERIZO',
+    description : ''
+},
+{
+    name : 'FRESA',
+    description : ''
+},
+{
+    name : 'FLOR',
+    description : ''
+},
+{
+    name : 'FOCA',
+    description : ''
+},
+{
+    name : 'GATO',
+    description : ''
+},
+{
+    name : 'GUITARRA',
+    description : ''
+},
+{
+    name : 'GALLITO',
+    description : ''
+},
+{
+    name : 'HELADO',
+    description : ''
+},
+{
+    name : 'HORMIGA',
+    description : ''
+},
+{
+    name : 'HELICÓPTERO',
+    description : ''
+},
+{
+    name : 'IGLESIA',
+    description : ''
+},
+{
+    name : 'IMÁN',
+    description : ''
+},
+{
+    name : 'IGUANA',
+    description : ''
+},
+{
+    name : 'JIRAFA',
+    description : ''
+},
+{
+    name : 'JAGUAR',
+    description : ''
+},
+{
+    name : 'JABALÍ',
+    description : ''
+},
+{
+    name : 'KIWI',
+    description : ''
+},
+{
+    name : 'KOALA',
+    description : ''
+},
+{
+    name : 'KARATE',
+    description : ''
+},
+{
+    name : 'LUNA',
+    description : ''
+},
+{
+    name : 'LLAMA',
+    description : ''
+},
+{
+    name : 'LÚCUMA',
+    description : ''
+},
+{
+    name : 'MANZANA',
+    description : ''
+},
+{
+    name : 'MAÍZ',
+    description : ''
+},
+{
+    name : 'MARIPOSA',
+    description : ''
+},
+{
+    name : 'NUBE',
+    description : ''
+},
+{
+    name : 'NUTRIA',
+    description : ''
+},
+{
+    name : 'NEVADO',
+    description : ''
+},
+{
+    name : 'ÑU',
+    description : ''
+},
+{
+    name : 'ÑANDU',
+    description : ''
+},
+{
+    name : 'ÑUSTA',
+    description : ''
+},
+{
+    name : 'OSO',
+    description : ''
+},
+{
+    name : 'OJOS',
+    description : ''
+},
+{
+    name : 'OÍDOS',
+    description : ''
+},
+{
+    name : 'PUMA',
+    description : ''
+},
+{
+    name : 'PAPAGAYO',
+    description : ''
+},
+{
+    name : 'PINGÜINO',
+    description : ''
+},
+{
+    name : 'QUESO',
+    description : ''
+},
+{
+    name : 'QUENA',
+    description : ''
+},
+{
+    name : 'QUÍMICA',
+    description : ''
+},
+{
+    name : 'RATÓN',
+    description : ''
+},
+{
+    name : 'RANA',
+    description : ''
+},
+{
+    name : 'RUEDA',
+    description : ''
+},
+{
+    name : 'SOL',
+    description : ''
+},
+{
+    name : 'SOFÁ',
+    description : ''
+},
+{
+    name : 'SILLA',
+    description : ''
+},
+{
+    name : 'TOMATE',
+    description : ''
+},
+{
+    name : 'TITÍ',
+    description : ''
+},
+{
+    name : 'TUCÁN',
+    description : ''
+},
+{
+    name : 'UVA',
+    description : ''
+},
+{
+    name : 'UÑA',
+    description : ''
+},
+{
+    name : 'UNICORNIO',
+    description : ''
+},
+{
+    name : 'VACA',
+    description : ''
+},
+{
+    name : 'VENADO',
+    description : ''
+},
+{
+    name : 'VOLCÁN',
+    description : ''
+},
+{
+    name : 'WATERPOLO',
+    description : ''
+},
+{
+    name : 'WAPITI',
+    description : ''
+},
+{
+    name : 'WINDSURF',
+    description : ''
+},
+{
+    name : 'XILÓFONO',
+    description : ''
+},
+{
+    name : 'YOYO',
+    description : ''
+},
+{
+    name : 'YEGUA',
+    description : ''
+},
+{
+    name : 'YACARÉ',
+    description : ''
+},
+{
+    name : 'ZORRO',
+    description : ''
+},
+{
+    name : 'ZAPATO',
+    description : ''
+},
+{
+    name : 'ZAMPOÑA',
+    description : ''
+},
+];
