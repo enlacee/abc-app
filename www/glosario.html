@@ -12,7 +12,20 @@
         <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
         <style type="text/css">
-
+            html, body {
+                background-color: #00a31f;
+            }
+            
+            body {  
+            position: absolute;
+            background: transparent url(assets/img/bg.jpg) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            
+            }
+            /*
             header {            
             position: absolute;
             background: url(assets/img/bg.jpg) no-repeat center center scroll;
@@ -21,7 +34,7 @@
             background-size: cover;
             -o-background-size: cover;
              background-attachment: fixed;
-            }
+            }*/
         div[data-role=page]
         {
             background-color: #00a31f;
@@ -74,11 +87,17 @@
 
                     <!--<div class="col-xs-1"></div>-->
                 </div>
+                
+                <div class="row">
+                    <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
+                </div>
 
             </div>
 
         </header>
-
+        <div class="popup-restart">         
+            <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
+        </div>  
 
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
         <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->

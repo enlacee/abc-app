@@ -352,7 +352,7 @@ var abc = [
     description : ''
 },
 {
-    name : 'WAPITI',
+    name : 'WAPITÍ',
     image : imgBase +'a/1.png',
     description : ''
 },
