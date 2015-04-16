@@ -12,11 +12,9 @@
         <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
         <style type="text/css">
-            html, body {
-                background-color: #00a31f;
-            }
-            .header {
-            display: table;
+
+            header {
+            
             position: absolute;
             width: 100%;
             height: 100%;
@@ -26,17 +24,29 @@
             background-size: cover;
             -o-background-size: cover;
             }
+        div[data-role=page]
+        {
+            background-color: #00a31f;
+        }
+@media (max-width: 768px) {
+    h1 {
+        font-size: 25px;
+    }
+    .f-text-glosario {
+        font-size: 35px;;
+    }
+}
+
         </style>
         
     </head>
     <body ng-app="gemStore">
-        <div data-role="page" id="page1">
-
-        </div>
+        <!--<div data-role="page" id="page1">
+        </div>-->
 
         <!-- Header -->
-        <header id="top" class="header">
-            <div class="text-vertical-center row">
+        <header id="top" class="header__">
+            <div class="text-vertical-center__ row">
 
                 <div class="row header-glosario">
 
