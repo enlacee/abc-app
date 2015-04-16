@@ -176,11 +176,13 @@ $( window ).on( "orientationchange", function( event ) {
         // btn 
         rebuildDomView : function() {
         
-            $(vars.DOM_MESSAGE_WIN).find('div').html( vars.URIdata.totalPoints +" puntos");
-            
+            $(vars.DOM_MESSAGE_WIN).find('div').html( vars.URIdata.totalPoints +" puntos");            
+            //$(vars.DOM_BTN_RESTART).prepend('<a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/salir.png"></a>');
             if (vars.URIdata.indice == 0) {
                 var btnRestart = $(vars.DOM_BTN_RESTART).find('a');
                 btnRestart.attr('href', 'index.html');
+                
+                
             }
 
             // Change Color by level
