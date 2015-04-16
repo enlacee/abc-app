@@ -979,6 +979,7 @@ background-size: cover;
     -2px -1px 0 #fff,
     1px -1px 0 #fff,
     -1px 1px 0 #fff;
+   margin-top: 0; 
 }
 .description-glosario {
     color: #00a651;
