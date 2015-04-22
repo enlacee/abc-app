@@ -167,6 +167,33 @@ var applicationModel = function () {
                 alert('error');       
             }
         );
+    },
+            
+// =============================================================================
+// HELPERS
+// =============================================================================
+
+    this.fillSelectOfUsers = function() {
+        var SQL = "SELECT * FROM users WHERE level = 1 ORDER BY name ASC LIMIT 0, 5";
+        var $select = $('#nombreUser');
+        $select.html('');        
+        html5sql.process(
+            SQL,            
+            function (transaction, results, rowsArray) {
+                var tr = '';
+                for (var i = 0; i < rowsArray.length; i++) {
+                    $select.append('<option data-value="'+rowsArray[i].name+'" value=' + rowsArray[i].id + '>'+ rowsArray[i].name + '</option>');
+                    console.log('rowsArray', rowsArray[i]);
+                }
+
+            },
+            function (error, statement) {
+                alert('error');       
+            }
+        );
+        //
+
+        return true;
     }
 
 };// end class
