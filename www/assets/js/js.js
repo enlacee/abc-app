@@ -177,7 +177,7 @@ $( window ).on( "orientationchange", function( event ) {
         rebuildDomView : function() {
         
             $(vars.DOM_MESSAGE_WIN).find('div').html( vars.URIdata.totalPoints +" puntos");            
-            $(vars.DOM_BTN_RESTART).prepend('<a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/salir.png"></a>');
+            //$(vars.DOM_BTN_RESTART).prepend('<a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/salir.png"></a>');
             if (vars.URIdata.indice == 0) {
                 var btnRestart = $(vars.DOM_BTN_RESTART).find('a');
                 btnRestart.attr('href', 'index.html');
@@ -191,7 +191,7 @@ $( window ).on( "orientationchange", function( event ) {
                         .css('border-color', '#0049f9');
 
                 $(vars.DOM_BTN_RESTART)
-                        .find('img:eq(1)')
+                        .find('img')
                         .attr('src', 'assets/img/restart-blue.png');
 
             } else if (vars.URIdata.level == 3) {
@@ -199,7 +199,7 @@ $( window ).on( "orientationchange", function( event ) {
                         .css('border-color', '#9e04ec');
 
                 $(vars.DOM_BTN_RESTART)
-                        .find('img:eq(1)')
+                        .find('img')
                         .attr('src', 'assets/img/restart-purple.png');
             }
             
@@ -594,4 +594,4 @@ function onDeviceReady() {
 };
 //
 //alert('App.init();');
-//App.init();
+App.init();
