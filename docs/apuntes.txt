@@ -1,0 +1,1 @@
+http://local.local/develoweb/app-abc/www/1_27.html?level=1&indice=27&points=10&totalPoints=270&life=3&timerForLevel=61

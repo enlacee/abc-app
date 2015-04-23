@@ -146,10 +146,11 @@ var applicationModel = function () {
         function convertSecondToTimeRanking(totalSeconds) {
             hours = Math.floor(totalSeconds / 3600);
             totalSeconds %= 3600;
-            minutes = Math.floor(totalSeconds / 60);
+            minutes = Math.floor(totalSeconds / 60); addMinutes = (hours * 60);
+            minutes = minutes + addMinutes;
             seconds = totalSeconds % 60;
 
-            return hours + ':' + minutes + ':' + seconds;
+            return  minutes + ':' + seconds;
         }
     },
     
@@ -173,29 +174,35 @@ var applicationModel = function () {
 // HELPERS
 // =============================================================================
 
-    this.fillSelectOfUsers = function() {
+    this.fillSelectOfUsers = function(idDom) {
         var SQL = "SELECT * FROM users WHERE level = 1 ORDER BY name ASC LIMIT 0, 5";
         var $select = $('#nombreUser');
+        if (typeof(idDom)!= 'undefined') {
+            var SQL = "SELECT * FROM users WHERE level = 1 ORDER BY name ASC";
+            var $select = $('#nombreUser_data');
+        }
+        
         $select.html('');        
         html5sql.process(
             SQL,            
             function (transaction, results, rowsArray) {
                 var tr = '';
+                var nameUserss = sessionStorage.getItem('nombreUser'); //console.log('nameUserss', nameUserss);
                 for (var i = 0; i < rowsArray.length; i++) {
-                    $select.append('<option data-value="'+rowsArray[i].name+'" value=' + rowsArray[i].id + '>'+ rowsArray[i].name + '</option>');
-                    console.log('rowsArray', rowsArray[i]);
+                    console.log('rowsArray[i].name', rowsArray[i].name);
+                    var addSelected = (nameUserss === rowsArray[i].name) ? ' selected ' : ''; //console.log('rowsArray', rowsArray[i].name);
+                    $select.append('<option '+addSelected+' data-value="'+rowsArray[i].name+'" value=' + rowsArray[i].id + '>'+ rowsArray[i].name + '</option>');
                 }
-
             },
             function (error, statement) {
-                alert('error');       
+                alert('error html5sql');       
             }
         );
         //
 
         return true;
     }
-
+    
 };// end class
 
 

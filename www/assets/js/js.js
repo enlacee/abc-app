@@ -191,7 +191,7 @@ $( window ).on( "orientationchange", function( event ) {
                         .css('border-color', '#0049f9');
 
                 $(vars.DOM_BTN_RESTART)
-                        .find('img')
+                        .find('img:eq(1)')
                         .attr('src', 'assets/img/restart-blue.png');
 
             } else if (vars.URIdata.level == 3) {
@@ -199,7 +199,7 @@ $( window ).on( "orientationchange", function( event ) {
                         .css('border-color', '#9e04ec');
 
                 $(vars.DOM_BTN_RESTART)
-                        .find('img')
+                        .find('img:eq(1)')
                         .attr('src', 'assets/img/restart-purple.png');
             }
             
@@ -585,7 +585,7 @@ $( window ).on( "orientationchange", function( event ) {
 // Android
 /******************************************************************************/
 /*document.addEventListener("backbutton", onBackKeyDown, false); // disabled boton back
-function onBackKeyDown(e) { e.preventDefault();}*/
+function onBackKeyDown(e) { e.preventDefault(); }*/
 
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {

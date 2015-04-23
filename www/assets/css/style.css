@@ -604,7 +604,9 @@ footer {
     font-size: 2.2em;
     margin: 0%;
     color: #fff;
-    text-shadow: 3px 2px 2px #000;    
+    text-shadow: 3px 2px 2px #000;
+    top: 105px;
+    right: 25px;
 }
 
 /* maximo de acho donde aplicara todo este estilo*/
@@ -657,7 +659,6 @@ footer {
     }    
     #popup-message-win-points{
         font-size: 1.5em;
-
     }
 }
 
@@ -868,6 +869,11 @@ background-size: cover;
     .content-header {
         margin: 17% 0 0 0;
         /*background-color: yellow;*/
+    }
+    #popup-message-win-points {
+        font-size: 1.5em;
+        top: 64px;
+        right: 14px; 
     }
 }
 
