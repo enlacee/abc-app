@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>APP ABC</title>
+        <!--<link rel="stylesheet" href="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.css" />-->
+        <!-- Bootstrap -->
+        <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            html, body {
+                background-color: #00a31f;
+            }
+            
+            body {  
+            position: absolute;
+            background: transparent url(assets/img/bg.jpg) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            
+            }
+            /*
+            header {            
+            position: absolute;
+            background: url(assets/img/bg.jpg) no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+             background-attachment: fixed;
+            }*/
+        div[data-role=page]
+        {
+            background-color: #00a31f;
+        }
+        .row{
+            margin: 0;
+            margin-top: 15px;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 25px;
+            }
+            .f-text-glosario {
+                font-size: 35px;;
+            }
+        }
+
+        </style>
+        
+    </head>
+    <body ng-app="gemStore">
+        <!--<div data-role="page" id="page1">
+        </div>-->
+
+        <!-- Header -->
+        <header id="top" class="header__">
+            <div class="text-vertical-center__ row">
+
+                <div class="row header-glosario">
+
+                    <div class="pull-left logo-glosario"><img src="assets/img/ranking.png" alt="ranking"></div>
+                    <div class="pull-left"><h1 class="win-title f-text-glosario">Ranking Top 5</h1></div>
+
+                </div>
+
+                <div class="row" ng-controller="StoreController as controller">
+                    <div class="col-xs-1"></div>
+
+                    <div class="col-xs-10 space-button text-left" id="container-ranking">
+                        
+                        <div class="row ranking">
+                            <div id="ranking-top-5-1"></div>
+                        </div>
+                        
+                        <div class="row ranking">
+                            <div id="ranking-top-5-2"></div>
+                        </div>
+                        
+                        <div class="row ranking">
+                            <div id="ranking-top-5-3"></div>
+                        </div>
+
+                    </div>
+
+                    <!--<div class="col-xs-1"></div>-->
+                </div>
+                
+                <!--<div class="row">
+                    <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
+                </div>-->
+
+            </div>
+
+        </header>
+        
+        <div class="popup-restart">         
+            <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
+        </div>  
+
+        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
+        <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <!--app--> 
+        <script type="text/javascript" src="assets/js/html5sql.js"></script>
+        <script type="text/javascript" src="assets/js/applicationModelSql.js"></script>
+    
+        <script type="text/javascript">
+            //appModel.showRecords(URI.data.level);
+            $(document).ready(function(){
+                console.log("init");
+                
+                // 02 SCRIP FOR RANKING
+                var appModel = new applicationModel();
+                appModel.initDatabase();
+                
+                appModel.clearContentByLevel(1, 'container-ranking');
+
+                appModel.showRecords(1, 'ranking-top-5-1');
+                appModel.showRecords(2, 'ranking-top-5-2'); 
+                appModel.showRecords(3, 'ranking-top-5-3'); 
+               
+            });
+                   
+        </script>
+
+  
+    </body>
+</html>

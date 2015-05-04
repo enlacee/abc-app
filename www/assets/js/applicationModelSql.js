@@ -89,7 +89,7 @@ var applicationModel = function () {
     this.dropTable = function () {
     },
     // Function For Retrive data from Database Display records as list
-    this.showRecords = function (idLevel) {
+    this.showRecords = function (idLevel, domElementId) {
         var id = idLevel;
         var sqlSelectOrderByTime = [{
                 'sql': "SELECT * FROM users WHERE level = ? ORDER BY timer ASC LIMIT 0, 5",
@@ -97,7 +97,12 @@ var applicationModel = function () {
             }];
 
 //
-        var $select = $('#ranking-top-5');
+        if (typeof(domElementId) === 'undefined') {
+            var $select = $('#ranking-top-5');
+        } else {
+            var $select = $('#' + domElementId);
+        }
+        
         $select.html('');        
         html5sql.process(
             sqlSelectOrderByTime,            
@@ -128,7 +133,8 @@ var applicationModel = function () {
                     + tr
                     +'    </tbody>'
                     +'</table>';
-                    $select.html(htmlTable);
+                    
+                $select.html(htmlTable);
                 //html
             },
             function (error, statement) {
@@ -169,6 +175,32 @@ var applicationModel = function () {
             }
         );
     },
+    // Action when the level has data
+    this.clearContentByLevel = function (level, domElementId) {
+        
+        
+        if (typeof(domElementId) === 'undefined') {
+            $content = $('#container-ranking');
+        } else {
+            $content = $('#'+domElementId);
+        }
+        
+        var dataResutl = false;
+        return html5sql.process(
+            [{'sql' : "SELECT count(*) as count FROM users WHERE level = ?;", 'data' : [level] }],
+            function (transaction, results, rowsArray) {
+                if (rowsArray[0].count > 0) {
+                    //
+                } else {
+                    $content.html('<h1>Aún no existen registros.</h1>');
+                }               
+            },
+            function (error, statement) {
+                alert('error');       
+            }
+        );
+
+    }
             
 // =============================================================================
 // HELPERS
