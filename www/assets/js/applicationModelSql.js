@@ -149,8 +149,8 @@ var applicationModel = function () {
             minutes = Math.floor(totalSeconds / 60); addMinutes = (hours * 60);
             minutes = minutes + addMinutes;
             seconds = totalSeconds % 60;
-
-            return  minutes + ':' + seconds;
+            var resultTime = zeroFill(minutes,2) + ':' + zeroFill(seconds,2);
+            return resultTime;
         }
     },
     
@@ -236,4 +236,13 @@ function addUserRegister(data, appModel, miName) {
         alert("No puedo registrar : miname = " + miName);
     }
 
+}
+
+function zeroFill( number, width ) {
+  width -= number.toString().length;
+  if ( width > 0 )
+  {
+    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+  }
+  return number + ""; // always return a string
 }
