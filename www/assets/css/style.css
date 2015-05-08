@@ -1006,3 +1006,10 @@ background-size: cover;
 .logo-glosario {
     margin: 13px;
 }
+
+.btn-additional {
+    border-radius: 15px;
+    border: 5px solid #ec008c;
+    margin-right: 15px;
+    width: auto;
+}
