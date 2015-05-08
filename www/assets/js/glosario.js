@@ -13,39 +13,39 @@
 var imgBase = 'assets/img/alphabet/';
 var abc = [
 {
-    name : 'AVION',
+    name : 'AVIÓN',
     image : imgBase + 'a/1.png',
-    description : 'Un avión utilitario es un aeroplano ligero de propósito general, normalmente usado para transportar personas o carga.'
+    description : 'Aparato de transporte aéreo más pesado que el aire, pero que logra mantenerse suspendido en él gracias a la aplicación de leyes físicas que tienen que ver con la reacción del aire sobre las superficies fijas del vehículo.'
 },
 {
-    name : 'ARBOL',
+    name : 'ÁRBOL',
     image : imgBase + 'a/2.png',
-    description : 'Un árbol es una planta perenne, de tallo leñoso, que se ramifica a cierta altura del suelo. El término hace referencia habitualmente a aquellas plantas cuya altura supera un determinado límite.'
+    description : 'Planta de tronco elevado y leñoso que tiene ramas grandes y numerosas.'
 },
 {
     name : 'ALPACA',
     image : imgBase + 'a/3.png',
-    description : 'La alpaca (del quechua allpaqa, paqu) (Vicugna pacos) es una especie doméstica de mamífero artiodáctilo de la familia Camelidae.'
+    description : 'Mamífero rumiante, doméstico. Es propio de Perú. Tiene el cuerpo cubierto de pelos largos, finos y rojizos, y su tamaño es superior al de una cabra. Su cuello es largo y la cabeza pequeña. Se utiliza como bestia de carga, aunque también se aprovecha su carne y su lana.'
 },
 {
     name : 'BANDERA',
     image : imgBase +'b/1.png',
-    description : 'Una bandera es una pieza de tela, normalmente rectangular, aunque puede adoptar formas muy variadas.'
+    description : ' Pedazo de tela, generalmente rectangular y de varios colores, que se usa como símbolo de un país, una región o cualquier agrupación.'
 },
 {
     name : 'BARCO',
     image : imgBase +'b/2.png',
-    description : 'Un barco es cualquier construcción cóncava y fusiforme, de madera, metal, fibra de vidrio u otro material, incluso de hormigón, como el SS Faith, que por su forma es capaz de flotar en el agua y que se utiliza para navegar como medio de transporte.'
+    description : 'Vehículo de madera o hierro que por sus características físicas es capaz de flotar y moverse en el agua, transportando personas o cargamento.'
 },
 {
     name : 'BALLENA',
     image : imgBase +'b/3.png',
-    description : 'Balaenidae, familia de cetáceos.'
+    description : ' Mamífero marino de gran tamaño. Respira por unos orificios, por donde arroja un chorro de aire caliente cuando sale a la superficie. En lugar de dientes tiene unas láminas duras y elásticas.'
 },
 {
     name : 'CÓNDOR',
     image : imgBase +'c/1.png',
-    description : 'El cóndor andino, cóndor de los Andes o simplemente cóndor (Vultur gryphus) es una especie de ave de la familia Cathartidae que habita en Sudamérica.'
+    description : ' Ave rapaz de hábitos diurnos. Tiene poco más de un metro de largo y tres de ancho, con la cabeza y el cuello desnudos, plumaje fuerte de color negro azulado y collar blanco. Habita en los Andes y es la mayor de las aves que vuelan.'
 },
 {
     name : 'CUY',
@@ -55,62 +55,62 @@ var abc = [
 {
     name : 'CHINCHILLA',
     image : imgBase +'c/3.png',
-    description : 'Chinchilla es un género de roedores histricomorfos de la familia Chinchillidae conocidos vulgarmente como chinchillas. Es endémico de la mitad sur de los Andes.'
+    description : 'Animal mamífero del grupo de los roedores, muy parecido a la ardilla y propio de la América del Sur. Su pelaje es gris y su piel es muy estimada, especialmente para la confección de abrigos.'
 },
 {
     name : 'DADO',
     image : imgBase +'d/1.png',
-    description : 'Un dado es un objeto de forma poliédrica (aunque la RAE en su definición solo prevé que sean cúbicos) preparado para mostrar un resultado aleatorio cuando es lanzado sobre una superficie horizontal.'
+    description : 'Objeto con forma de cubo en cuyos lados aparecen marcados puntos del uno al seis o una figura distinta en cada lado. Se usa en juegos de azar.'
 },
 {
     name : 'DELFÍN',
     image : imgBase +'d/2.png',
-    description : 'Los delfínidos (Delphinidae), llamados comúnmente delfines oceánicos (para distinguirlos de los platanistoideos o delfines de río), son una familia de cetáceos odontocetos bastante heterogénea, que comprende unas 34 especies.'
+    description : 'Mamífero cetáceo de hasta 3 m de largo que vive en los mares. Los delfines son muy sociables entre sí, y también con el hombre, por lo que son fácilmente domesticables.'
 },
 {
     name : 'DINOSAURIO',
     image : imgBase +'d/3.png',
-    description : 'Los dinosaurios (Dinosauria, deinos sauros, \'lagarto terrible\') son un grupo (clado) de reptiles (saurópsidos) que aparecieron durante el período Triásico, hace unos 231 millones de años. Fueron los vertebrados terrestres dominantes durante 135 millones de años.'
+    description : ' Reptil prehistórico vertebrado, cuyos fósiles presentan cabeza pequeña, patas delanteras más cortas que las traseras, y la cola y el cuello largos.'
 },
 {
     name : 'EDIFICIO',
     image : imgBase +'e/1.png',
-    description : 'Un edificio es una construcción dedicada a albergar distintas actividades humanas: vivienda, templo, teatro, comercio, etc.'
+    description : 'Obra o construcción grande, de mayor tamaño que una casa, en la cual habitan distintas familias o hay oficinas, comercios, etc.'
 },
 {
     name : 'ELEFANTE',
     image : imgBase +'e/2.png',
-    description : 'Los elefantes o elefántidos (Elephantidae) son una familia de mamíferos placentarios del orden Proboscidea. Antiguamente se clasificaban, junto con otros animales de piel gruesa.'
+    description : 'Mamífero de gran tamaño y corpulencia, considerado el animal terrestre más grande que existe en nuestros días, pues llega a alcanzar 3 m de alto y 5 de largo. Casi no tiene pelos, es de color gris oscuro, su cabeza es pequeña, los ojos chicos, las orejas grandes y colgantes, la nariz y el labio superior se encuentran unidos y muy prolongados en forma de trompa, la cual extiende y recoge cuando desea y le sirve de mano.'
 },
 {
     name : 'ERIZO',
     image : imgBase +'e/3.png',
-    description : 'Los erinacinos (Erinaceinae), conocidos vulgarmente como erizos, son una subfamilia de pequeños mamíferos cubiertos de púas; pertenecen al orden Erinaceomorpha, aunque antiguamente eran considerados del orden Insectivora, hoy en día obsoleto.'
+    description : 'Animal mamífero de tamaño aproximado a los 20 o 25 cm de largo, que tiene el dorso y los costados cubiertos de púas agudas; su cabeza es pequeña, el hocico afilado, los ojos chicos y las patas y cola cortas.'
 },
 {
     name : 'FRESA',
     image : imgBase +'f/1.png',
-    description : 'Fragaria, llamado comúnmente fresa o frutilla, es un género de plantas rastreras estoloniferas de la familia Rosaceae. Agrupa unos 400 taxones descritos, de los cuales solo unos 20 están aceptados.'
+    description : ' Animal mamífero de tamaño aproximado a los 20 o 25 cm de largo, que tiene el dorso y los costados cubiertos de púas agudas; su cabeza es pequeña, el hocico afilado, los ojos chicos y las patas y cola cortas.'
 },
 {
     name : 'FLOR',
     image : imgBase +'f/2.png',
-    description : 'La flor es la estructura reproductiva característica de las plantas llamadas espermatofitas o fanerógamas. La función de una flor es producir semillas a través de la reproducción sexual. Para las plantas, las semillas son la próxima generación, y sirven como el principal medio a través del cual las especies se perpetúan y se propagan.'
+    description : 'Parte reproductora de las plantas, compuesta generalmente de cáliz, corola, estambres y pistilos; presenta formas y colores muy variados, y la mayoría de ellas emanan agradables olores.'
 },
 {
     name : 'FOCA',
     image : imgBase +'f/3.png',
-    description : 'Los fócidos o focas verdaderas (Phocidae) son una familia de mamíferos pinnípedos marinos adaptados a vivir en medios acuáticos la mayor parte del tiempo. El término en portugués y castellano "foca" deriva directamente del latín phoca.'
+    description : 'Mamífero acuático que habita fundamentalmente en costas marinas de clima frío. Tiene el cuerpo en forma de pez, las extremidades semejan aletas y la cabeza es parecida a la de un perro.'
 },
 {
     name : 'GATO',
     image : imgBase +'g/1.png',
-    description : 'El gato o gato doméstico (Felis silvestris catus) y coloquialmente llamado minino,1 es una subespecie de mamífero carnívoro de la familia Felidae. El gato está en convivencia cercana al ser humano desde hace unos 9500 años,2 periodo superior al estimado anteriormente, que oscilaba entre 3500 y 8000 años.'
+    description : 'Animal doméstico de cabeza redonda y orejas triangulares, cola y bigotes largos, cubierto de pelo suave y abundante, y con agudas uñas. Presenta garras para cazar ratones y despedazar los alimentos.'
 },
 {
     name : 'GUITARRA',
     image : imgBase +'g/2.png',
-    description : 'La guitarra es un instrumento musical de cuerda pulsada, compuesto de una caja de madera, un mástil sobre el que va adosado el diapasón o trastero generalmente con un agujero acústico en el centro de la tapa (boca), y seis cuerdas. Sobre el diapasón van incrustados los trastes, que permiten las diferentes notas. Su nombre específico es guitarra clásica, guitarra española, guitarra criolla o guitarra acústica.'
+    description : 'Instrumento musical de cuerdas, cuyo cuerpo, generalmente de madera, está constituido por una caja plana y ovalada, más estrecha en el centro y con un agujero en la tapa anterior, a partir del cual sale un brazo provisto en su extremo superior de clavijas que sirven para afinar.'
 },
 {
     name : 'GALLITO',
@@ -120,47 +120,47 @@ var abc = [
 {
     name : 'HELADO',
     image : imgBase +'h/1.png',
-    description : 'En su forma más simple, el helado o crema helada es un postre congelado hecho de agua, leche, crema de leche o natilla combinadas con saborizantes, edulcorantes o azúcar.'
+    description : 'Que tiene hielo o está muy frío.'
 },
 {
     name : 'HORMIGA',
     image : imgBase +'h/2.png',
-    description : 'Los formícidos (Formicidae), conocidos comúnmente como hormigas, son una familia de insectos sociales que, como las avispas y las abejas, pertenecen al orden de los himenópteros.'
+    description : ' Insecto de variadas especies, de diferentes colores y tamaños. Tiene la cabeza, el tórax y el abdomen abultados y el resto del cuerpo estrecho; presenta dos antenas y patas largas.'
 },
 {
     name : 'HELICÓPTERO',
     image : imgBase +'h/3.png',
-    description : 'Un helicóptero es una aeronave que es sustentada y propulsada por uno o más rotores horizontales, cada uno formado por dos o más palas. Los helicópteros están clasificados como aeronaves de alas giratorias, para distinguirlos de las aeronaves de ala fija.'
+    description : ' Aparato de aviación que se sostiene en el aire y se impulsa hacia adelante por medio de hélices horizontales. Admite pocos pasajeros y puede bajar y subir verticalmente.'
 },
 {
     name : 'IGLESIA',
     image : imgBase +'i/1.png',
-    description : 'Iglesia es la denominación del templo destinado al culto religioso público en el cristianismo. Cada edificio con esa función recibe la misma denominación que la asamblea1 o reunión de fieles que acuden a él y que la institución eclesiástica, así como otras acepciones.'
+    description : 'Templo donde se celebra el culto religioso.'
 },
 {
     name : 'IMÁN',
     image : imgBase +'i/2.png',
-    description : 'Un imán es un cuerpo o dispositivo con un magnetismo significativo, de forma que atrae a otros imanes y/o metales, ferromagnéticos (por ejemplo, hierro, cobalto, níquel y aleaciones de estos). Puede ser natural o artificial.'
+    description : ' Cuerpo que tiene la propiedad de atraer a otros; está formado por dos polos, de uno de los cuales salen líneas de fuerza magnética. Estas líneas conforman el campo magnético de dicho cuerpo. Un efecto similar puede producirse por corrientes eléctricas.'
 },
 {
     name : 'IGUANA',
     image : imgBase +'i/3.png',
-    description : 'Iguana es un género de reptiles escamosos de la familia Iguanidae nativos de zonas tropicales de Centroamérica, Sudamérica y el Caribe.'
+    description : 'Reptil de América parecido al lagarto, pero de tamaño muy grande. De color verdoso oscuro, posee una cresta espinosa alta en el cuello y una bolsa o saco en la garganta. Se alimenta de hierbas y es totalmente inofensivo.'
 },
 {
     name : 'JIRAFA',
     image : imgBase +'j/1.png',
-    description : 'La jirafa (Giraffa camelopardalis) es una especie de mamífero artiodáctilo de la familia Giraffidae propio de África. Es la más alta de todas las especies de animales terrestres existentes. Puede alcanzar una altura de 5,8 metros y un peso que varía entre 750 y 1600 kg.'
+    description : 'Mamífero rumiante que vive en África y se distingue por su cuello largo y delgado. Tiene la cabeza pequeña, con dos cuernos poco desarrollados, y las patas anteriores más largas que las posteriores. Su color es gris claro, con manchas de un rubio oscuro.'
 },
 {
     name : 'JAGUAR',
     image : imgBase +'j/2.png',
-    description : 'El jaguar, yaguar o yaguaretéN (Panthera onca) es un carnívoro félido de la subfamilia de los Panterinos y género Panthera y la única de las cuatro especies actuales de este género que se encuentra en América. También es el mayor félido de América y el tercero del mundo, después del tigre (Panthera tigris) y el león.'
+    description : ' Mamífero carnicero oriundo de América, de gran tamaño, pelaje generalmente amarillo con manchas negras, excepto en el pecho y abdomen que son blancos.'
 },
 {
     name : 'JABALÍ',
     image : imgBase +'j/3.png',
-    description : 'El jabalí (Sus scrofa) es un mamífero artiodáctilo de la familia de los suidos presente en Europa, aunque hay también subespecies en América, África y Asia. El jabalí se puede encontrar en la península Ibérica, donde su población es abundante y es considerado como pieza de caza mayor.'
+    description : 'Variedad salvaje de cerdo, más grande que este, de cabeza más alargada y de hocico prolongado, provisto de grandes colmillos, cuya piel, muy gruesa, está cubierta de un pelaje tupido de color gris.'
 },
 {
     name : 'KIWI',
@@ -170,22 +170,22 @@ var abc = [
 {
     name : 'KOALA',
     image : imgBase +'k/2.png',
-    description : 'El koala (Phascolarctos cinereus) es una especie de marsupial diprotodonto de la familia Phascolarctidae, arborícola con hábitos de baja actividad, similares a los de un perezoso.'
+    description : 'Animal mamífero que vive en Australia, de aspecto parecido al de un oso de pequeño tamaño. Carece de cola, tiene orejas grandes y hocico ancho y corto. Su pelaje es de color gris rojizo.'
 },
 {
     name : 'KARATE',
     image : imgBase +'k/3.png',
-    description : 'El karate-do (‘el camino de la mano vacía’) es un arte marcial tradicional de las Islas Ryūkyū de Japón.'
+    description : 'Arte marcial y deporte de origen japonés que consiste en dar golpes secos con el borde de la mano, con los codos o con los pies.'
 },
 {
     name : 'LUNA',
     image : imgBase +'l/1.png',
-    description : 'La Luna es el único satélite natural de la Tierra. Con un diámetro ecuatorial de 3474 km1 es el quinto satélite más grande del Sistema Solar.'
+    description : 'Satélite de la Tierra de forma redonda que alumbra por la luz de los rayos solares que se reflejan en su superficie.'
 },
 {
     name : 'LLAMA',
     image : imgBase +'l/2.png',
-    description : 'La llama (Lama glama) (en aimara qwara) es un mamífero artiodáctilo doméstico de la familia Camelidae, abundante en la Puna o Altiplano de los Andes de Argentina, Bolivia, Chile, Ecuador y Perú.'
+    description : 'Mamífero rumiante doméstico de abundante pelo que vive en América del Sur. Tiene la cabeza mediana, las orejas puntiagudas y los ojos grandes. Su cuello es largo y erguido, las patas son delgadas y la cola corta.'
 },
 {
     name : 'LÚCUMA',
@@ -195,27 +195,27 @@ var abc = [
 {
     name : 'MANZANA',
     image : imgBase +'m/1.png',
-    description : 'La manzana es una fruta pomácea comestible, fruto del manzano doméstico.'
+    description : 'Fruto del manzano, con forma de globo y una hendidura en cada polo. Tiene la pulpa blanca, jugosa, con sabor agridulce y algunas semillas en el centro; su cáscara es muy fina, de color rojo, verde o amarillo.'
 },
 {
     name : 'MAÍZ',
     image : imgBase +'m/2.png',
-    description : 'El maíz (Zea mays) es una especie de gramínea anual originaria de América e introducida en Europa en el siglo XVII. Actualmente, es el cereal con el mayor volumen de producción a nivel mundial.'
+    description : 'Planta herbácea originaria de América, de tallos rectos y largos, hojas alargadas, planas y puntiagudas.'
 },
 {
     name : 'MARIPOSA',
     image : imgBase +'m/3.png',
-    description : 'Los lepidópteros (Lepidoptera, del griego «lepis», escama, y «pteron», ala) son un orden de insectos holometábolos, casi siempre voladores, conocidos comúnmente como mariposas; las más conocidas son las mariposas diurnas, pero la mayoría de las especies son nocturnas.'
+    description : 'nsecto de vistosos colores presente en nuestros jardines y campos.'
 },
 {
     name : 'NUBE',
     image : imgBase +'n/1.png',
-    description : 'Una nube es un hidrometeoro que consiste en una masa visible formada por cristales de nieve o gotas de agua microscópicas suspendidas en la atmósfera. Las nubes dispersan toda la luz visible y por eso se ven blancas.'
+    description : 'Masa de color blanco o gris suspendida en la atmósfera, constituida por goticas que resultan de la condensación del vapor de agua. Por su forma las nubes se clasifican en cirros, cúmulos, estratos y nimbos.'
 },
 {
     name : 'NUTRIA',
     image : imgBase +'n/2.png',
-    description : 'Los lutrinos (Lutrinae), conocidos comúnmente como nutrias, son una subfamilia de mamíferos carnívoros de la gran familia Mustelidae. Existen 13 especies de nutrias repartidas en 7 géneros, con una distribución de la población prácticamente mundial.'
+    description : 'Mamífero carnívoro de cuerpo alargado, pelaje espeso y suave, patas cortas con dedos unidos por membranas, de cola larga y piel muy apreciada, que vive a orillas de los ríos.'
 },
 {
     name : 'NEVADO',
@@ -225,12 +225,12 @@ var abc = [
 {
     name : 'ÑU',
     image : imgBase +'n1/1.png',
-    description : 'Connochaetes es un género de mamíferos artiodáctilos de la subfamilia Alcelaphinae. Son antílopes de África que incluyen al ñu negro (Connochaetes gnou) y al ñu azul (Connochaetes taurinus) como sus únicas especies. '
+    description : 'Género de antílopes de gran tamaño que habitan fundamentalmente en África. La cabeza del ñu es parecida a la del toro; tiene la crin corta y los cuernos curvados hacia delante y hacia arriba.'
 },
 {
-    name : 'ÑANDU',
+    name : 'ÑANDÚ',
     image : imgBase +'n1/2.png',
-    description : 'Los ñandúes (Rhea) son aves paleognatas endémicas de Sudamérica, existiendo dos especies.1 No obstante, algunos autores clasifican al ñandú de Darwin (Rhea pennata) como Pterocnemia pennata.'
+    description : 'Avestruz americano que se diferencia del de origen africano por tener tres dedos en cada pata y ser más pequeño. Mide aproximadamente 1,65 m de altura.'
 },
 {
     name : 'ÑUSTA',
@@ -240,37 +240,37 @@ var abc = [
 {
     name : 'OSO',
     image : imgBase +'o/1.png',
-    description : 'Los úrsidos (Ursidae) son una familia de mamíferos carnívoros conocidos comúnmente como osos. Son animales de gran tamaño, generalmente omnívoros ya que, a pesar de su temible dentadura, comen frutos, raíces e insectos, además de carne'
+    description : 'Mamífero de gran tamaño y pelaje abundante de color oscuro. Tiene la cabeza grande, con ojos pequeños; sus extremidades, fuertes y gruesas, se apoyan en cinco dedos con uñas duras, en forma de ganchos.'
 },
 {
     name : 'OJOS',
     image : imgBase +'o/2.png',
-    description : 'Los ojos son órganos visuales que detectan la luz y la convierten en impulsos electroquímicos que viajan a través de neuronas. La célula fotoreceptora más simple de la visión consciente asocia la luz al movimiento.'
+    description : 'Órgano de la vista del hombre y los animales, que está en la cara. Su forma es similar a la de una esfera.'
 },
 {
-    name : 'OÍDOS',
+    name : 'OREJAS',
     image : imgBase +'o/3.png',
-    description : 'El oído es un conjunto de órganos cuyas funciones principales son dotar de equilibrio y audición al cuerpo de los humanos o animales.'
+    description : 'Nombre que recibe cada una de las dos partes externas del oído de la mayoría de los mamíferos, que sobresalen a los lados de la cabeza.'
 },
 {
     name : 'PUMA',
     image : imgBase +'p/1.png',
-    description : 'El puma, león de montaña, león o pantera (Puma concolor), es un mamífero carnívoro de la familia Felidae nativo de América. Este gran felino vive en más lugares que cualquier otro mamífero salvaje terrestre.'
+    description : 'Mamífero carnicero americano parecido al tigre, pero de pelo suave y de un solo color que puede variar en sus tonalidades, desde el gris amarillento hasta el rojizo.'
 },
 {
     name : 'PAPAGAYO',
     image : imgBase +'p/2.png',
-    description : 'Psittacoidea es una de las tres superfamilias del orden Psittaciformes. Contiene unas 330 especies de psitacoideos o loros típicos.'
+    description : 'Ave originaria de los países tropicales, que resulta vistosa por el color amarillento, verde y rojo encarnado de su plumaje; sus patas están provistas de uñas fuertes que le sirven para agarrar; su pico es corvo y fuerte también.'
 },
 {
     name : 'PINGÜINO',
     image : imgBase +'p/3.png',
-    description : 'Los pingüinos (familia Spheniscidae, orden Sphenisciformes) son un grupo de aves marinas, no voladoras, que se distribuyen únicamente en el Hemisferio Sur, sobre todo en sus altas latitudes.'
+    description : 'Ave de la región polar sur, de patas cortas con dedos unidos por membranas. Tiene facilidad para nadar, pero no para volar. Posee el dorso y las alas negras, y el pecho blanco.'
 },
 {
     name : 'QUESO',
     image : imgBase +'q/1.png',
-    description : 'El queso es un alimento sólido elaborado a partir de la leche cuajada de vaca, cabra, oveja, búfala, camello u otros mamíferos rumiantes. La leche es inducida a cuajarse usando una combinación de cuajo (o algún sustituto) y acidificación.'
+    description : 'Producto alimenticio que se obtiene haciendo fermentar y cuajar la leche, a la que luego se le quita el agua.'
 },
 {
     name : 'QUENA',
@@ -285,37 +285,37 @@ var abc = [
 {
     name : 'RATÓN',
     image : imgBase +'r/1.png',
-    description : 'Mus es un género de roedores miomorfos de la familia Muridae que incluye la mayoría de los roedores llamados comúnmente ratones, si bien el nombre de ratón se usa para varias especies más pertenecientes a otros géneros.'
+    description : 'Mamífero roedor de pequeño tamaño, de pelo blanco o gris, patas cortas y cola larga. Es muy fecundo y ágil.'
 },
 {
     name : 'RANA',
     image : imgBase +'r/2.png',
-    description : 'Los anuros son un grupo de anfibios, con rango taxonómico de orden, conocidos vulgarmente como ranas y sapos.'
+    description : ' Animal vertebrado anfibio, con patas traseras muy desarrolladas para saltar, cabeza triangular unida directamente al tronco, boca grande y ojos saltones.'
 },
 {
     name : 'RUEDA',
     image : imgBase +'r/3.png',
-    description : 'La rueda es una pieza mecánica circular que gira alrededor de un eje. Puede ser considerada una máquina simple, y forma parte del conjunto denominado elementos de máquinas.'
+    description : 'Pieza circular que gira en torno a su eje.'
 },
 {
     name : 'SOL',
     image : imgBase +'s/1.png',
-    description : 'Es una estrella del tipo espectral G2 que se encuentra en el centro del Sistema Solar y constituye la mayor fuente de radiación electromagnética de este sistema planetario.'
+    description : 'Estrella con luz propia, alrededor de la cual giran la Tierra y los otros planetas que forman parte de nuestro sistema solar.'
 },
 {
     name : 'SOFÁ',
     image : imgBase +'s/2.png',
-    description : 'Un sofá es un mueble utilizado para sentarse confortablemente más de una persona. Se encuentran generalmente en el recibidor o el salón y/o la sala de la casa.'
+    description : 'Asiento grande con respaldo y brazos, hecho para ser utilizado por más de una persona a la vez.'
 },
 {
     name : 'SILLA',
     image : imgBase +'s/3.png',
-    description : 'La silla es un mueble cuya finalidad es servir de asiento a una persona. Suele tener cuatro patas, aunque puede haber de una, dos, tres o más.'
+    description : 'Asiento con respaldo que, por lo general, cuenta con cuatro patas, a veces tiene brazos y en ella solo cabe una persona.'
 },
 {
     name : 'TOMATE',
     image : imgBase +'t/1.png',
-    description : 'Solanum lycopersicum, conocido comúnmente como jitomate, tomate o tomatera. Es una especie de la familia de las solanáceas originaria de América (Perú o México) y cultivada en todo el mundo.'
+    description : 'Fruto de huerto, de superficie lisa y brillante de color verde o rojo, según su grado de madurez, de pulpa jugosa y semillas planas de color amarillo.'
 },
 {
     name : 'TITÍ',
@@ -330,17 +330,17 @@ var abc = [
 {
     name : 'UVA',
     image : imgBase +'u/1.png',
-    description : 'La uva es una fruta obtenida de la vid. Las uvas vienen en racimos y son pequeñas y dulces. Se comen frescas o se utilizan para producir agraz, mosto, vino y vinagre.'
+    description : ' Fruto comestible de la parra; tiene forma redonda u ovalada y es de color verde claro o morado. Posee una pulpa muy jugosa y dulce.'
 },
 {
     name : 'UÑA',
     image : imgBase +'u/2.png',
-    description : 'La uña es una estructura anexa de la piel localizada en las regiones distales de los miembros. Se conoce también como garra y pezuña en los animales.'
+    description : 'Lámina dura y delgada que nace y crece en la parte superior de las extremidades de los dedos.'
 },
 {
     name : 'UNICORNIO',
     image : imgBase +'u/3.png',
-    description : 'El unicornio es una criatura mitológica representada habitualmente como un caballo blanco con patas de antílope, barba de chivo y un cuerno en la frente.'
+    description : 'Animal imaginario, con figura de caballo, que tiene un cuerno recto en medio de la frente.'
 },
 {
     name : 'VACA',
@@ -350,12 +350,12 @@ var abc = [
 {
     name : 'VENADO',
     image : imgBase +'v/2.png',
-    description : 'Los cérvidos (Cervidae) son una familia de mamíferos rumiantes que incluye los ciervos o venados. Su tamaño es variable, siendo el alce el mayor (hasta 450 kg)'
+    description : ' Mamífero rumiante, esbelto y ligero, de color pardo rojizo y cuernos en forma de ramas.'
 },
 {
     name : 'VOLCÁN',
     image : imgBase +'v/3.png',
-    description : 'Un volcán (del nombre del dios mitológico romano Vulcano) es una estructura geológica por la que emergen magma en forma de lava, ceniza volcánica y gases provenientes del interior de la Tierra.'
+    description : 'Elevación del terreno por la que salen gases y materiales muy calientes que proceden del interior de la Tierra.'
 },
 {
     name : 'WATERPOLO',
@@ -375,17 +375,17 @@ var abc = [
 {
     name : 'XILÓFONO',
     image : imgBase +'x/1.png',
-    description : 'Es un instrumento musical de percusión.'
+    description : 'Instrumento musical de percusión formado por varias tablillas de madera de diferente longitud que, al ser golpeadas por dos piezas, producen sonidos correspondientes a las diversas notas de la escala musical.'
 },
 {
     name : 'YOYO',
     image : imgBase +'y/1.png',
-    description : 'El yo-yo es un juguete formado por un disco de madera, de plástico o de otros materiales con una ranura profunda en el centro de todo el borde, alrededor de la cual se enrolla un cordón que, anudado a un dedo se hace subir y bajar alternativamente.'
+    description : ' Juguete constituido por un disco ahuecado que deja en el centro un eje, al cual se le coloca un hilo o cuerda fina elástica, que lo hace subir o bajar si se enrolla o desenrolla.'
 },
 {
     name : 'YEGUA',
     image : imgBase +'y/2.png',
-    description : 'El caballo (Equus ferus caballus) es un mamífero perisodáctilo domesticado de la familia de los équidos. Es un herbívoro solípedo de gran porte, cuello largo y arqueado, poblado por largas crines.'
+    description : 'Hembra del caballo.'
 },
 {
     name : 'YACARÉ',
@@ -395,12 +395,12 @@ var abc = [
 {
     name : 'ZORRO',
     image : imgBase +'z/1.png',
-    description : 'Los vulpinos (Vulpini) son una tribu de mamíferos carnívoros incluidos en la familia de los cánidos. Se conocen comúnmente como zorros, zorras, raposos o raposas.'
+    description : 'Mamífero carnicero de abundante pelaje color pardo, cabeza ancha, hocico puntiagudo, patas cortas y cola larga y gruesa, que habita en diferentes zonas climáticas, según la especie.'
 },
 {
     name : 'ZAPATO',
     image : imgBase +'z/2.png',
-    description : 'El zapato es un accesorio de esemen de caballolla vestimenta hecho con la intención de proveer protección y comodidad al pie mientras realiza actividades varias. '
+    description : 'Prenda de vestir que cubre el pie o parte de este, con una o varias piezas, generalmente de piel, aunque pueden ser de tela, plástico u otro material, sujetas a una suela resistente que protege la parte inferior de esa extremidad.'
 },
 {
     name : 'ZAMPOÑA',

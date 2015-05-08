@@ -217,7 +217,7 @@ var abc = [
     description : ''
 },
 {
-    name : 'ÑANDU',
+    name : 'ÑANDÚ',
     image : imgBase +'a/1.png',
     description : ''
 },
