@@ -130,7 +130,7 @@ var abc = [
 {
     name : 'HELICÓPTERO',
     image : imgBase +'h/3.png',
-    description : ' Aparato de aviación que se sostiene en el aire y se impulsa hacia adelante por medio de hélices horizontales. Admite pocos pasajeros y puede bajar y subir verticalmente.'
+    description : 'Aparato de aviación que se sostiene en el aire y se impulsa hacia adelante por medio de hélices horizontales. Admite pocos pasajeros y puede bajar y subir verticalmente.'
 },
 {
     name : 'IGLESIA',
@@ -140,7 +140,7 @@ var abc = [
 {
     name : 'IMÁN',
     image : imgBase +'i/2.png',
-    description : ' Cuerpo que tiene la propiedad de atraer a otros; está formado por dos polos, de uno de los cuales salen líneas de fuerza magnética. Estas líneas conforman el campo magnético de dicho cuerpo. Un efecto similar puede producirse por corrientes eléctricas.'
+    description : 'Cuerpo que tiene la propiedad de atraer a otros; está formado por dos polos, de uno de los cuales salen líneas de fuerza magnética. Estas líneas conforman el campo magnético de dicho cuerpo. Un efecto similar puede producirse por corrientes eléctricas.'
 },
 {
     name : 'IGUANA',
