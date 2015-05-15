@@ -124,7 +124,7 @@ var applicationModel = function () {
                     +'            <th colspan="3" class="text-center rank-top">Ranking Top 5 <span class="color-blue">Nivel '+id+'</span></th>'
                     +'        </tr>'
                     +'        <tr>'
-                    +'            <th class="col-xs-1">#</th>'
+                    +'            <th class="text-center col-xs-1">#</th>'
                     +'            <th class="text-center">Nombre</th>'
                     +'            <th class="text-center">Tiempo</th>'                            
                     +'        </tr>'

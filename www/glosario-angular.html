@@ -11,6 +11,7 @@
         <!-- Bootstrap -->
         <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="assets/plugins/angular/angular.min.js"></script>
         <style type="text/css">
             html, body {
                 background-color: #00a31f;
@@ -43,6 +44,9 @@
             margin: 0;
             margin-top: 15px;
         }
+
+
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 25px;
@@ -50,21 +54,8 @@
             .f-text-glosario {
                 font-size: 35px;;
             }
+
         }
-        
-// addiontal
-td 
-{
-    height: 50px; 
-    width:50px;
-}
-
-table td 
-{
-    text-align:center; 
-    vertical-align:middle;
-}
-
 
         </style>
         
@@ -79,26 +70,23 @@ table td
 
                 <div class="row header-glosario">
 
-                    <div class="pull-left logo-glosario"><img src="assets/img/ranking.png" alt="ranking"></div>
-                    <div class="pull-left"><h1 class="win-title f-text-glosario">Ranking Top 5</h1></div>
+                    <div class="pull-left logo-glosario"><img src="assets/img/glosario.png" alt=""></div>
+                    <div class="pull-left"><h1 class="win-title f-text-glosario">GLOSARIO</h1></div>
 
                 </div>
 
                 <div class="row" ng-controller="StoreController as controller">
                     <div class="col-xs-1"></div>
 
-                    <div class="col-xs-10 space-button text-left" id="container-ranking">
-                        
-                        <div class="row ranking">
-                            <div id="ranking-top-5-1"></div>
-                        </div>
-                        
-                        <div class="row ranking">
-                            <div id="ranking-top-5-2"></div>
-                        </div>
-                        
-                        <div class="row ranking">
-                            <div id="ranking-top-5-3"></div>
+                    <div class="col-xs-10 space-button text-left">
+                        <div class="row" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="{{abc.image}}">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario">{{abc.name}}</h1>
+                                <p class="description-glosario">{{abc.description}}</p>
+                            </div>
                         </div>
 
                     </div>
@@ -106,14 +94,13 @@ table td
                     <!--<div class="col-xs-1"></div>-->
                 </div>
                 
-                <!--<div class="row">
+                <div class="row">
                     <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
-                </div>-->
+                </div>
 
             </div>
 
         </header>
-        
         <div class="popup-restart">         
             <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
         </div>  
@@ -121,30 +108,7 @@ table td
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
         <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->
         <script type="text/javascript" src="cordova.js"></script>
-        
-        <!--app--> 
-        <script type="text/javascript" src="assets/js/html5sql.js"></script>
-        <script type="text/javascript" src="assets/js/applicationModelSql.js"></script>
     
-        <script type="text/javascript">
-            //appModel.showRecords(URI.data.level);
-            $(document).ready(function(){
-                console.log("init");
-                
-                // 02 SCRIP FOR RANKING
-                var appModel = new applicationModel();
-                appModel.initDatabase();
-                
-                appModel.clearContentByLevel(1, 'container-ranking');
-
-                appModel.showRecords(1, 'ranking-top-5-1');
-                appModel.showRecords(2, 'ranking-top-5-2'); 
-                appModel.showRecords(3, 'ranking-top-5-3'); 
-               
-            });
-                   
-        </script>
-
-  
+        <script type="text/javascript" src="assets/js/glosario.js"></script>   
     </body>
 </html>
