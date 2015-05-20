@@ -988,6 +988,7 @@ background-size: cover;
    margin-top: 0; 
 }
 .description-glosario {
+    font-size: 20px;
     color: #00a651;
     text-shadow: 
     2px 0 0 #fff,
