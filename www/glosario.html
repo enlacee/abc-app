@@ -736,6 +736,12 @@
         <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript">
+        document.addEventListener("backbutton", function(e){
+
+            navigator.app.backHistory();
+
+        }, false);
+
             $(document).on('mousedown','a', function(e) {
                 e.preventDefault();
                 var elem = $(this);
