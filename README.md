@@ -33,10 +33,14 @@ https://github.com/cfjedimaster/Cordova-Examples
 ## Cordova plugin Requeriments
 
     # 01 add plugin for sound 'MEDIA'
+    cordova plugin add org.apache.cordova.media
+    cordova plugin add org.apache.cordova.device
     
     # 02 add plugin for splashcreen ()
     cordova plugin add org.apache.cordova.splashscreen
 
+    # 03 open in browser
+    cordova plugin add org.apache.cordova.inappbrowser
 
 ## config developer
 
