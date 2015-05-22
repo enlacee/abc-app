@@ -95,6 +95,11 @@ Position div INDEX (assets/css/style.css)
 .content-footer             = 4      # footer buttom
 
 
+## open links externo
+
+    <a href="#" onclick="window.open('http://www.kidzout.com', '_system');">www.kidzout.com</a>
+
+
 ## Support Responsive
 
 Support responsive device with min : 300px
