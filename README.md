@@ -106,3 +106,15 @@ Support responsive device with min : 300px
 
 
 ![screenshot abc app](docs/screenshot-abc.png)
+
+
+## Cordova changed version of (version="0.0.1") to (version="0.0.2")
+
+01 : open file `config.xml`
+02 : editar and push (for android)
+version="0.0.2" android-versionCode="2"
+
+    <?xml version='1.0' encoding='utf-8'?>
+    <widget id="com.example.appabc" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+
