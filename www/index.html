@@ -26,20 +26,20 @@
                 </div>
                 <div class="col-xs-6 space-button text-left">
                     <div class="row">
-                        <a href="1_0.html?level=1" data-role="button" rel="external" class="btn x-btn-main-red">
+                        <a href="#" onclick='window.location = urlBase + "/1_0.html?level=1"' data-role="button"  class="btn x-btn-main-red">
                             NIVEL 1
                             <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-red" aria-hidden="true"></span>
                         </a>
                     </div>
                     <div class="row">
-                        <a href="2_0.html?level=2" data-role="button" rel="external" id="level2button" 
+                        <a href="#" onclick='window.location = urlBase + "/2_0.html?level=2"' data-role="button"  id="level2button" 
                            class="color-blue btn x-btn-main-blue x-btn-main-disabled">
                                 NIVEL 2
                             <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-blue" aria-hidden="true"></span>
                         </a>
                     </div>
                     <div class="row">
-                        <a href="3_0.html?level=3" data-role="button" rel="external" 
+                        <a href="#" onclick='window.location = urlBase + "/3_0.html?level=3"' data-role="button"  
                            class="btn x-btn-main-purple x-btn-main-disabled" id="level3button">
                             NIVEL 3 <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-purple" aria-hidden="true"></span>                        
                         </a>
@@ -69,12 +69,12 @@
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-    
+        <!--app-->
+        <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
         <script type="text/javascript">
+            var URI = new URI(location.href); console.log ('URI', URI);
+            var urlBase = URI.protocol() +'://'+ URI.hostname() + URI.directory();
         /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-        /*      background force to jquery-mobile  */
-        document.getElementById('page1').style.backgroundColor = "#83e749";
-        document.body.style.backgroundColor = "#83e749";
 
         $( window ).on( "orientationchange", function( event ) {
             setTimeout(function(){

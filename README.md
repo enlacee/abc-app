@@ -39,7 +39,7 @@ https://github.com/cfjedimaster/Cordova-Examples
     # 02 add plugin for splashcreen ()
     cordova plugin add org.apache.cordova.splashscreen
 
-    # 03 open in browser
+    # 03 open in browser (plugin removed)
     cordova plugin add org.apache.cordova.inappbrowser
 
 ## config developer
