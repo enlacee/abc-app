@@ -72,22 +72,6 @@
     <script type="text/javascript" src="assets/js/html5sql.js"></script>
     <script type="text/javascript" src="assets/js/applicationModelSql.js"></script>
     <script type="text/javascript">
-    /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-
-
-    $( window ).on( "orientationchange", function( event ) {
-        setTimeout(function(){
-            $.mobile.loading('show');
-        },100);
-
-        $( "header" ).fadeOut( 1, function() {
-            setTimeout(function(){
-                $( "header" ).fadeIn();
-                $.mobile.loading('hide');
-            },2000);
-        });
-    });
-    /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
     
     var URI = new URI(location.href)
         URI.data = {};

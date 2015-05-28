@@ -74,21 +74,6 @@
         <script type="text/javascript">
             var URI = new URI(location.href); console.log ('URI', URI);
             var urlBase = URI.protocol() +'://'+ URI.hostname() + URI.directory();
-        /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-
-        $( window ).on( "orientationchange", function( event ) {
-            setTimeout(function(){
-                $.mobile.loading('show');
-            },100);
-
-            $( "header" ).fadeOut( 1, function() {
-                setTimeout(function(){
-                    $( "header" ).fadeIn();
-                    $.mobile.loading('hide');
-                },2000);
-            });
-        });
-        /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
 
             // 01 LOCAL STORE MANAGER OF LEVEL GAME
             if (typeof(Storage) != "undefined") {

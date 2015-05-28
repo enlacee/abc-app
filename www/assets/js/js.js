@@ -7,26 +7,6 @@
 * get data map:
 * uri.search(true); // returns { foo: "bar", hello : ["world", "mars"] }
 */
-/*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-/*      background force to jquery-mobile  */
-/*document.getElementById('page1').style.backgroundColor = "#83e749";
-document.body.style.backgroundColor = "#83e749";*/
-
-$( window ).on( "orientationchange", function( event ) {
-    setTimeout(function(){
-        $.mobile.loading('show');
-    },100);
-
-    $( "header" ).fadeOut( 1, function() {
-        setTimeout(function(){
-            $( "header" ).fadeIn();
-            $.mobile.loading('hide');
-        },2000);
-    });
-});
-/*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-
-
 
 /*$(function(){*/
 
