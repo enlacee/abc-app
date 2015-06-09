@@ -15,7 +15,7 @@
         <preference name="SplashScreenDelay" value="3000" />
 
         <preference name="exit-on-suspend" value="false"/>
-        <preference name="BackgroundColor" value="0xff83e749"/>
+        <!--<preference name="BackgroundColor" value="0xff83e749"/>-->
 
         <preference name="orientation" value="portrait" />
 </widget>
