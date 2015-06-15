@@ -20,57 +20,60 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center row">
-            <div class="col-xs-5 space-parrot">
-                <img class="img-responsive" src="assets/img/parrot-abc.png">
-            </div>
-            <div class="col-xs-6 space-button text-left">
-                <div class="row">
-                    <a href="1_0.html?level=1" data-role="button" rel="external" class="btn x-btn-main-red">
-                        NIVEL 1
-                        <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-red" aria-hidden="true"></span>
-                    </a>
+            <div class="row">
+                <div class="col-xs-5 space-parrot">
+                    <img class="img-responsive" src="assets/img/parrot-abc.png">
                 </div>
-                <div class="row">
-                    <a href="2_0.html?level=2" data-role="button" rel="external" id="level2button" 
-                       class="color-blue btn x-btn-main-blue x-btn-main-disabled">
-                            NIVEL 2
-                        <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-blue" aria-hidden="true"></span>
-                    </a>
-                </div>
-                <div class="row">
-                    <a href="3_0.html?level=3" data-role="button" rel="external" 
-                       class="btn x-btn-main-purple x-btn-main-disabled" id="level3button">
-                        NIVEL 3 <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-purple" aria-hidden="true"></span>                        
-                    </a>
-                </div>                    
+                <div class="col-xs-6 space-button text-left">
+                    <div class="row">
+                        <a href="#" onclick='window.location = urlBase + "/1_0.html?level=1"' data-role="button"  class="btn x-btn-main-red">
+                            NIVEL 1
+                            <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-red" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a href="#" onclick='window.location = urlBase + "/2_0.html?level=2"' data-role="button"  id="level2button" 
+                           class="color-blue btn x-btn-main-blue x-btn-main-disabled">
+                                NIVEL 2
+                            <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-blue" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a href="#" onclick='window.location = urlBase + "/3_0.html?level=3"' data-role="button"  
+                           class="btn x-btn-main-purple x-btn-main-disabled" id="level3button">
+                            NIVEL 3 <span class="glyphicon glyphicon-circle-arrow-right x-btn-arrow-red color-purple" aria-hidden="true"></span>                        
+                        </a>
+                    </div>
+                    
+                    <div class="row" style="padding-left: 29%"> 
+                        <div class="pull-left btn-additional x-btn-1">
+                            <a href="glosario.html" data-role="button" rel="external">
+                                <img src="assets/img/glosario.png" alt="glosario"> 
+                            </a>
+                        </div>
+                         &nbsp &nbsp &nbsp &nbsp
+                        <div class="pull-left btn-additional x-btn-1">
+                            <a href="ranking.html" data-role="button" rel="external">
+                                <img src="assets/img/ranking.png" alt="ranking"> 
+                            </a>
+                        </div>
+                    </div>
 
+                </div>
             </div>
+            
+            
         </div>
 
     </header>
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-    
+        <!--app-->
+        <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
         <script type="text/javascript">
-        /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-        /*      background force to jquery-mobile  */
-        document.getElementById('page1').style.backgroundColor = "#83e749";
-        document.body.style.backgroundColor = "#83e749";
-
-        $( window ).on( "orientationchange", function( event ) {
-            setTimeout(function(){
-                $.mobile.loading('show');
-            },100);
-
-            $( "header" ).fadeOut( 1, function() {
-                setTimeout(function(){
-                    $( "header" ).fadeIn();
-                    $.mobile.loading('hide');
-                },2000);
-            });
-        });
-        /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
+            var URI = new URI(location.href); console.log ('URI', URI);
+            var urlBase = URI.protocol() +'://'+ URI.hostname() + URI.directory();
 
             // 01 LOCAL STORE MANAGER OF LEVEL GAME
             if (typeof(Storage) != "undefined") {
@@ -89,7 +92,8 @@
             
             // 02 LandSpace with jquery mobile
 
-            // 03 BACKGROUND SOUND 'init phonegap'
+            // 03 BACKGROUND SOUND 'init phonegap'            
+            sessionStorage.setItem('timerForLevel', 0);  
             </script>
         <script type="text/javascript" src="assets/js/index.html.js"></script>
 </body>

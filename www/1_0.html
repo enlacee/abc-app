@@ -10,7 +10,13 @@
         <link rel="stylesheet" href="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.css" />
         <!-- Bootstrap -->
         <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
+                <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>             
+        <!--app-->
+        <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
+        <script type="text/javascript" src="assets/js/js.js"></script>  
 
     </head>
     <body>
@@ -75,60 +81,6 @@
         <div class="popup-restart">         
             <a href="1_0.html?level=1" data-role="button" class="" rel="external"><img src="assets/img/restart.png" /></a>
         </div>
-        
-        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-  <script>
-/*
-document.addEventListener('deviceready', function() { validationStartVoice('someVar'); } , false);
-
-
-function playMP3(myPathFileMp3) {
-    var mp3URL = getMediaURL(myPathFileMp3);
-    var media = new Media(mp3URL, null, mediaError);
-    media.play();
-}
-
-function getMediaURL(s) {
-    if(device.platform.toLowerCase() === "android") return "/android_asset/www/" + s;
-    return s;
-}
-
-function mediaError(e) {
-    alert('Media Error');
-    alert(JSON.stringify(e));
-}
-
-
-// function validation of voice to Start
-function validationStartVoice(data) { alert('da' +data);
-
-        var soundMp3 = 'assets/audio-others/bienvenido.mp3';
-        if (soundMp3.length > 0) {
-            playMP3(soundMp3);
-            sessionStorage.setItem('voiceStart', true);
-        }
-   
-    
-}
-*/
-  </script>        
-        <!--app-->
-        <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
-        <script type="text/javascript" src="assets/js/js.js"></script>
-        
-        
-        <!--
-        <script>
-        var URI = new URI(location.href)
-        URI.data = {};
-        URI.data.totalPoints = 270;
-        URI.data.level = 1;
-        </script>
-        <script type="text/javascript" src="assets/js/1_27.js"></script>
-        -->
-
 
     </body>
 </html>

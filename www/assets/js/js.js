@@ -7,26 +7,6 @@
 * get data map:
 * uri.search(true); // returns { foo: "bar", hello : ["world", "mars"] }
 */
-/*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-/*      background force to jquery-mobile  */
-document.getElementById('page1').style.backgroundColor = "#83e749";
-document.body.style.backgroundColor = "#83e749";
-
-$( window ).on( "orientationchange", function( event ) {
-    setTimeout(function(){
-        $.mobile.loading('show');
-    },100);
-
-    $( "header" ).fadeOut( 1, function() {
-        setTimeout(function(){
-            $( "header" ).fadeIn();
-            $.mobile.loading('hide');
-        },2000);
-    });
-});
-/*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-
-
 
 /*$(function(){*/
 
@@ -136,7 +116,8 @@ $( window ).on( "orientationchange", function( event ) {
             vars.URIdata.points = myPoints;
             vars.URIdata.totalPoints = myTotalPoints;
             vars.URIdata.life = life;
-            vars.URIdata.timerForLevel = parseInt(vars.URIdata.timerForLevel) || 0;
+
+            vars.URIdata.timerForLevel = this.initTimerGetValueInitial();
             
             vars.URI.query(vars.URIdata);
             
@@ -176,9 +157,13 @@ $( window ).on( "orientationchange", function( event ) {
         // btn 
         rebuildDomView : function() {
         
-            $(vars.DOM_MESSAGE_WIN).find('div').html( vars.URIdata.totalPoints +" puntos");
-            
-            if (vars.URIdata.indice == 0) {
+            $(vars.DOM_MESSAGE_WIN).find('div').html( vars.URIdata.totalPoints +" puntos");            
+            //$(vars.DOM_BTN_RESTART).prepend('<a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/salir.png"></a>');
+            if (vars.URIdata.indice > 0) {
+                var btnRestart = $(vars.DOM_BTN_RESTART).find('a');
+                btnRestart.attr('href', 'index.html');
+                
+            } else {
                 var btnRestart = $(vars.DOM_BTN_RESTART).find('a');
                 btnRestart.attr('href', 'index.html');
             }
@@ -327,14 +312,12 @@ $( window ).on( "orientationchange", function( event ) {
                     getDomButtonWrong(el);
                     getDomButtonCorrect();
                     
-                    vars.URI.query({
-                        level : myLevel,
-                        indice : (myIndice + 1),
-                        points: 0,
-                        totalPoints : myTotalPoints + 0
-                    });
-                    vars.URIdata = vars.URI.query(true);
+                    vars.URIdata.indice = (myIndice + 1);
+                    vars.URIdata.points = 0;
+                    vars.URIdata.totalPoints = myTotalPoints + 0;
+                    vars.URI.query(vars.URIdata);                 
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
+
                     
                     // redirect
                     /*setTimeout(function() {
@@ -370,7 +353,7 @@ $( window ).on( "orientationchange", function( event ) {
                     vars.URIdata.indice = (myIndice + 1);
                     vars.URIdata.points = App.pointsValue;
                     vars.URIdata.totalPoints = totalPointsQuery;
-                    vars.URI.query(vars.URIdata);
+                    vars.URI.query(vars.URIdata); // actualiza la data URIDATA
                     
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
@@ -388,17 +371,14 @@ $( window ).on( "orientationchange", function( event ) {
                 } else { // WRONG
                     getDomButtonWrong(el);
                     getDomButtonCorrect();
-                    vars.URI.query({
-                        level : myLevel,
-                        indice : (myIndice + 1),
-                        points: 0,
-                        totalPoints : myTotalPoints + 0
-                    });
-                    vars.URIdata = vars.URI.query(true);
-                    console.log("app.data despues : vars.URI.query()", vars.URI.query());
-                    /*
+                    vars.URIdata.indice = parseInt(vars.URIdata.indice)+1;
+                    vars.URIdata.points = 0;
+                    vars.URIdata.totalPoints = myTotalPoints + 0;
+                    vars.URI.query(vars.URIdata); // actualiza la data URIDATA  //console.log("app.data despues : vars.URI.query()",vars.URIdata);                  
+                    
                     // redirect
-                    setTimeout(function() {
+
+                    /*setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
                     }, 1000);*/
@@ -431,7 +411,7 @@ $( window ).on( "orientationchange", function( event ) {
                     vars.URIdata.indice = (myIndice + 1);
                     vars.URIdata.points = App.pointsValue;
                     vars.URIdata.totalPoints = totalPointsQuery;
-                    vars.URI.query(vars.URIdata);
+                    vars.URI.query(vars.URIdata); // actualiza la data URIDATA 
                     console.log('app.data despues : vars.URIdata', vars.URIdata);
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
@@ -485,13 +465,11 @@ $( window ).on( "orientationchange", function( event ) {
 
                     // redirect perdio todas sus vidas
                     if (flagredirect === true) {
-                        vars.URI.query({
-                             level : myLevel,
-                             indice : (myIndice + 1),
-                             points: 0,
-                             totalPoints : myTotalPoints + 0
-                         });
-                         vars.URIdata = vars.URI.query(true);
+                        vars.URIdata.indice = (myIndice + 1);
+                        vars.URIdata.points = 0;
+                        vars.URIdata.totalPoints = myTotalPoints + 0;
+                        vars.URI.query(vars.URIdata); // actualiza la data URIDATA
+
 
                          setTimeout(function() {
                              var fileHtml = myLevel + '_' + vars.URIdata.indice;
@@ -529,10 +507,26 @@ $( window ).on( "orientationchange", function( event ) {
         initTimerInBackground : function() {
           
             self.timerForLevel = setInterval( function() {
-                vars.URIdata.timerForLevel = parseInt(vars.URIdata.timerForLevel) + 1; // adding One second to Time.
+                var counter = parseInt(vars.URIdata.timerForLevel) + 1;
+                vars.URIdata.timerForLevel = counter; // adding One second to Time.
+                sessionStorage.setItem('timerForLevel', counter);
+
                 vars.URI.query(vars.URIdata); // actualiza la data URIDATA
                 
             }, 1000);
+        },
+        initTimerGetValueInitial : function (timeInSecond) {            
+
+            if (sessionStorage.getItem('timerForLevel') === null 
+                || sessionStorage.getItem('timerForLevel') === ''
+                || sessionStorage.getItem('timerForLevel') === 0)
+            {
+                sessionStorage.setItem('timerForLevel', 0);
+            } 
+            
+            console.log('get VALUE timerForLevel', sessionStorage.getItem('timerForLevel'));
+            
+            return sessionStorage.getItem('timerForLevel');            
         },
 
         // ------------------ NATIVO ANDROID -------------
@@ -575,7 +569,7 @@ $( window ).on( "orientationchange", function( event ) {
 // Android
 /******************************************************************************/
 /*document.addEventListener("backbutton", onBackKeyDown, false); // disabled boton back
-function onBackKeyDown(e) { e.preventDefault();}*/
+function onBackKeyDown(e) { e.preventDefault(); }*/
 
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {

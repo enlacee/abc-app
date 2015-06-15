@@ -10,7 +10,13 @@
         <link rel="stylesheet" href="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.css" />
         <!-- Bootstrap -->
         <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
+                <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>             
+        <!--app-->
+        <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
+        <script type="text/javascript" src="assets/js/js.js"></script>  
                 
     </head>
     <body>
@@ -40,34 +46,38 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="row ranking">
+                    <div id="ranking-top-5">
+                        <div id="myModal" style="display:none; border:0px solid red">
+                            <!---->
+                            <div class="form-inline">
+                              <div class="form-group pull-left">
+                                <div class="input-group-lg">
+                                  <!--<input type="text" class="form-control " placeholder="Nombre" id="nombreUser">-->
+                                  <select class="form-control" id="nombreUser">
+                                      <option></option>
+                                  </select>
+                                  <button type="submit" class="btn btn-warning btn-lg" id="btnGuardarNombre" >Guardar</button>
+                                </div>
+                                  <div id="nombreUserMessage" class="warning text-message-loser"></div>
+                              </div>
+                            </div>
+                        </div>                    
+                    </div>                
+                </div>                
             </div>
+            
         </div>
-
     </header>
     <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>     
     <!--app--> 
     <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
+    <script type="text/javascript" src="assets/js/html5sql.js"></script>
+    <script type="text/javascript" src="assets/js/applicationModelSql.js"></script>
     <script type="text/javascript">
-    /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
-    /*      background force to jquery-mobile  */
-    document.getElementById('page1').style.backgroundColor = "#83e749";
-    document.body.style.backgroundColor = "#83e749";
-
-    $( window ).on( "orientationchange", function( event ) {
-        setTimeout(function(){
-            $.mobile.loading('show');
-        },100);
-
-        $( "header" ).fadeOut( 1, function() {
-            setTimeout(function(){
-                $( "header" ).fadeIn();
-                $.mobile.loading('hide');
-            },2000);
-        });
-    });
-    /*+++++++++++++++++ ADD CUSTOM +++++++++++++*/
     
     var URI = new URI(location.href)
         URI.data = {};
@@ -85,7 +95,7 @@
         
         var messageHtml = '';
         if ((27*10) === myTotalPoints) {
-            // save LocalStore
+            $('#myModal').show();
             sessionStorage.setItem("level2", true);
             messageHtml = '<a href="index.html" data-role="button" rel="external">'
             + '<img class="img-responsive" src="assets/img/next-blue.png">'
@@ -104,5 +114,27 @@
     
     </script>
     <script type="text/javascript" src="assets/js/1_27.js"></script>
+   
+    <script type="text/javascript">
+        // 02 SCRIP FOR RANKING
+        var appModel = new applicationModel();
+        appModel.initDatabase();
+        appModel.fillSelectOfUsers();
+        //appModel.showRecords(URI.data.level);
+        
+        $('#btnGuardarNombre').click(function() {
+            var nombre = $( "#nombreUser option:selected" ).text();
+            if (nombre != '' && (27*10) === myTotalPoints ) {
+                // ADD USER
+                addUserRegister(URI.data, appModel, nombre);
+                // ADD USER  
+                appModel.showRecords(URI.data.level);
+                $('#nombreUser').val('');
+                
+            } else {
+                $('#nombreUserMessage').text('Ingrese su Nombre');
+            }
+        });        
+    </script>
 </body>
 </html>

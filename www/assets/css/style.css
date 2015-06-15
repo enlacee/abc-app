@@ -18,7 +18,6 @@ body {
     height: 100%;
     margin:0;
     padding: 0;
-    background-color: #83e749;
 }
 
 body {
@@ -274,6 +273,9 @@ footer {
 }
 .color-white {
     color:#fff;
+}
+.color-green {
+    color: #00a651;
 }
 
 .space-button {
@@ -601,7 +603,9 @@ footer {
     font-size: 2.2em;
     margin: 0%;
     color: #fff;
-    text-shadow: 3px 2px 2px #000;    
+    text-shadow: 3px 2px 2px #000;
+    top: 105px;
+    right: 25px;
 }
 
 /* maximo de acho donde aplicara todo este estilo*/
@@ -654,7 +658,6 @@ footer {
     }    
     #popup-message-win-points{
         font-size: 1.5em;
-
     }
 }
 
@@ -761,7 +764,7 @@ background-size: cover;
     top: 1%;
     width: auto;
     right: 0px;
-    padding: 0 16% 0 0;
+    padding: 0 26% 0 0;
 }
 .popup-life-items {
     float:left;
@@ -866,6 +869,11 @@ background-size: cover;
         margin: 17% 0 0 0;
         /*background-color: yellow;*/
     }
+    #popup-message-win-points {
+        font-size: 1.5em;
+        top: 64px;
+        right: 14px; 
+    }
 }
 
 /* maximo de acho donde aplicara todo este estilo*/
@@ -917,3 +925,91 @@ background-size: cover;
     text-shadow: 3px 2px 2px #FA7680;
 }
 
+.ranking {
+    padding: 0 18%;
+}
+.ranking .table {
+    background-color: white;
+}
+.ranking .table thead{
+    background-color: graytext;
+    color:white;
+    text-shadow: none;
+}
+
+.rank strong{
+    float: left;
+    line-height: 21px;
+    display: block;
+    color: #424242;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0 0 0 7px;
+    padding: 0 8px;
+    background-color: #FFC418;  
+}
+.rank-top{
+    color: #fff;
+    background: #b80e80;
+    text-shadow: none;
+}
+.input-data{
+    margin: 0 15px 15px 15px !important;
+}
+.form-control{
+    height: 54px;
+}
+
+/*glosario*/
+.f-text-glosario {
+    color: #00a651;
+    text-shadow: 
+    4px 0 0 #fff,
+    -4px 0 0 #fff,
+    0 4px 0 #fff,
+    0 -4px 0 #fff,
+    2px 2px #fff,
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff; 
+}
+.subtitle-glosario {
+    color: #00a651;
+    text-shadow: 
+    2px 0 0 #fff,
+    -2px 0 0 #fff,
+    0 2px 0 #fff,
+    0 -2px 0 #fff,
+    1px 1px #fff,
+    -2px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff;
+   margin-top: 0; 
+}
+.description-glosario {
+    font-size: 20px;
+    color: #00a651;
+    text-shadow: 
+    2px 0 0 #fff,
+    -2px 0 0 #fff,
+    0 2px 0 #fff,
+    0 -2px 0 #fff,
+    1px 1px #fff,
+    -2px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff;
+}
+.header-glosario{
+    margin: 0 1%;
+}
+
+.logo-glosario {
+    margin: 13px;
+}
+
+.btn-additional {
+    border-radius: 15px;
+    border: 5px solid #ec008c;
+    margin-right: 15px;
+    width: auto;
+}

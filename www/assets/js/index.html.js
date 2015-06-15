@@ -1,3 +1,20 @@
+/*
+document.addEventListener("backbutton", onBackKeyDown, false); // disabled boton back
+function onBackKeyDown(e) { console.log("BUTON BACK READY. READY.");}
+*/
+document.addEventListener("backbutton", function(e){
+
+    if ($("#page1").length > 0){
+        /* 
+         Event preventDefault/stopPropagation not required as adding backbutton
+          listener itself override the default behaviour. Refer below PhoneGap link.
+        */
+        //e.preventDefault();
+        navigator.app.exitApp();
+    } else {
+        navigator.app.backHistory();
+    }
+}, false);
 document.addEventListener('deviceready', validationStartVoice, false);
 
 function onDeviceReady() {

@@ -33,10 +33,14 @@ https://github.com/cfjedimaster/Cordova-Examples
 ## Cordova plugin Requeriments
 
     # 01 add plugin for sound 'MEDIA'
+    cordova plugin add org.apache.cordova.media
+    cordova plugin add org.apache.cordova.device
     
     # 02 add plugin for splashcreen ()
     cordova plugin add org.apache.cordova.splashscreen
 
+    # 03 open in browser (plugin removed)
+    cordova plugin add org.apache.cordova.inappbrowser
 
 ## config developer
 
@@ -91,9 +95,26 @@ Position div INDEX (assets/css/style.css)
 .content-footer             = 4      # footer buttom
 
 
+## open links externo
+
+    <a href="#" onclick="window.open('http://www.kidzout.com', '_system');">www.kidzout.com</a>
+
+
 ## Support Responsive
 
 Support responsive device with min : 300px
 
 
 ![screenshot abc app](docs/screenshot-abc.png)
+
+
+## Cordova changed version of (version="0.0.1") to (version="0.0.2")
+
+01 : open file `config.xml`
+02 : editar and push (for android)
+version="0.0.2" android-versionCode="2"
+
+    <?xml version='1.0' encoding='utf-8'?>
+    <widget id="com.example.appabc" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+

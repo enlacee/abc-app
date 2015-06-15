@@ -1,0 +1,756 @@
+<html><head>
+            <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+        <title>APP ABC</title>
+        <!--<link rel="stylesheet" href="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.css" />-->
+        <!-- Bootstrap -->
+        <link href="assets/plugins/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style.css?q=1ss1" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            html, body {
+                background-color: #00a31f;
+            }
+            
+            body {  
+            position: absolute;
+            background: transparent url(assets/img/bg.jpg) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            
+            }
+            /*
+            header {            
+            position: absolute;
+            background: url(assets/img/bg.jpg) no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+             background-attachment: fixed;
+            }*/
+        div[data-role=page]
+        {
+            background-color: #00a31f;
+        }
+        .row{
+            margin: 0;
+            margin-top: 15px;
+        }
+
+
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 25px;
+            }
+            .f-text-glosario {
+                font-size: 35px;;
+            }
+
+        }
+
+        </style>
+        
+    </head>
+    <body ng-app="gemStore" class="ng-scope" cz-shortcut-listen="true">
+        <!--<div data-role="page" id="page1">
+        </div>-->
+
+        <!-- Header -->
+        <header id="top" class="header__">
+            <div class="text-vertical-center__ row">
+
+                <div class="row header-glosario">
+
+                    <div class="pull-left logo-glosario"><img src="assets/img/glosario.png" alt=""></div>
+                    <div class="pull-left"><h1 class="win-title f-text-glosario">GLOSARIO</h1></div>
+
+                </div>
+
+                <div class="row ng-scope" ng-controller="StoreController as controller">
+                    <div class="col-xs-1"></div>
+
+                    <div class="col-xs-10 space-button text-left">
+                        <!-- ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/a/1.png" src="assets/img/alphabet/a/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">AVIÓN</h1>
+                                <p class="description-glosario ng-binding">Vehículo con alas, más pesado que el aire, que vuela generalmente propulsado por uno o varios motores y se usa para el transporte aéreo.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/a/2.png" src="assets/img/alphabet/a/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ÁRBOL</h1>
+                                <p class="description-glosario ng-binding">Planta de tronco elevado y leñoso que tiene ramas grandes y numerosas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/a/3.png" src="assets/img/alphabet/a/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ALPACA</h1>
+                                <p class="description-glosario ng-binding">Mamífero rumiante, doméstico. Es propio de Perú. Tiene el cuerpo cubierto de pelos largos, finos y rojizos, y su tamaño es superior al de una cabra. Su cuello es largo y la cabeza pequeña. Se utiliza como bestia de carga, aunque también se aprovecha su carne y su lana.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/b/1.png" src="assets/img/alphabet/b/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">BANDERA</h1>
+                                <p class="description-glosario ng-binding"> Pedazo de tela, generalmente rectangular y de varios colores, que se usa como símbolo de un país, una región o cualquier agrupación.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/b/2.png" src="assets/img/alphabet/b/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">BARCO</h1>
+                                <p class="description-glosario ng-binding">Vehículo de madera o hierro que por sus características físicas es capaz de flotar y moverse en el agua, transportando personas o cargamento.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/b/3.png" src="assets/img/alphabet/b/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">BALLENA</h1>
+                                <p class="description-glosario ng-binding"> Mamífero marino de gran tamaño. Respira por unos orificios, por donde arroja un chorro de aire caliente cuando sale a la superficie. En lugar de dientes tiene unas láminas duras y elásticas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/c/1.png" src="assets/img/alphabet/c/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">CÓNDOR</h1>
+                                <p class="description-glosario ng-binding"> Ave rapaz de hábitos diurnos. Tiene poco más de un metro de largo y tres de ancho, con la cabeza y el cuello desnudos, plumaje fuerte de color negro azulado y collar blanco. Habita en los Andes y es la mayor de las aves que vuelan.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/c/2.png" src="assets/img/alphabet/c/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">CUY</h1>
+                                <p class="description-glosario ng-binding">Es un roedor nativo de América del Sur (Perú, Colombia, Venezuela). Ha sido criado desde hace más de 500 años.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/c/3.png" src="assets/img/alphabet/c/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">CHINCHILLA</h1>
+                                <p class="description-glosario ng-binding">Animal mamífero del grupo de los roedores, muy parecido a la ardilla y propio de la América del Sur. Su pelaje es gris y su piel es muy estimada, especialmente para la confección de abrigos.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/d/1.png" src="assets/img/alphabet/d/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">DADO</h1>
+                                <p class="description-glosario ng-binding">Objeto con forma de cubo en cuyos lados aparecen marcados puntos del uno al seis o una figura distinta en cada lado. Se usa en juegos de azar.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/d/2.png" src="assets/img/alphabet/d/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">DELFÍN</h1>
+                                <p class="description-glosario ng-binding">Mamífero cetáceo de hasta 3 metros de largo que vive en los mares. Los delfines son muy sociables entre sí, y también con el hombre, por lo que son fácilmente domesticables.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/d/3.png" src="assets/img/alphabet/d/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">DINOSAURIO</h1>
+                                <p class="description-glosario ng-binding"> Reptil prehistórico vertebrado, cuyos fósiles presentan cabeza pequeña, patas delanteras más cortas que las traseras, y la cola y el cuello largos.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/e/1.png" src="assets/img/alphabet/e/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">EDIFICIO</h1>
+                                <p class="description-glosario ng-binding">Obra o construcción grande, de mayor tamaño que una casa, en la cual habitan distintas familias o hay oficinas, comercios, etc.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/e/2.png" src="assets/img/alphabet/e/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ELEFANTE</h1>
+                                <p class="description-glosario ng-binding">Mamífero de gran tamaño, el mayor de los terrestres, con la piel de color gris oscuro, gruesa, rugosa y sin pelo.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/e/3.png" src="assets/img/alphabet/e/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ERIZO</h1>
+                                <p class="description-glosario ng-binding">Mamífero de unos 25 centímetros de longitud, color castaño oscuro, dorso y costados cubiertos de púas, hocico puntiagudo, y patas, cola y cabeza muy pequeñas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/f/1.png" src="assets/img/alphabet/f/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">FRESA</h1>
+                                <p class="description-glosario ng-binding"> Animal mamífero de tamaño aproximado a los 20 o 25 cm de largo, que tiene el dorso y los costados cubiertos de púas agudas; su cabeza es pequeña, el hocico afilado, los ojos chicos y las patas y cola cortas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/f/2.png" src="assets/img/alphabet/f/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">FLOR</h1>
+                                <p class="description-glosario ng-binding">Parte reproductora de las plantas, compuesta generalmente de cáliz, corola, estambres y pistilos; presenta formas y colores muy variados, y la mayoría de ellas emanan agradables olores.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/f/3.png" src="assets/img/alphabet/f/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">FOCA</h1>
+                                <p class="description-glosario ng-binding">Mamífero acuático que habita fundamentalmente en costas marinas de clima frío. Tiene el cuerpo en forma de pez, las extremidades semejan aletas y la cabeza es parecida a la de un perro.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/g/1.png" src="assets/img/alphabet/g/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">GATO</h1>
+                                <p class="description-glosario ng-binding">Animal doméstico de cabeza redonda y orejas triangulares, cola y bigotes largos, cubierto de pelo suave y abundante, y con agudas uñas. Presenta garras para cazar ratones y despedazar los alimentos.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/g/2.png" src="assets/img/alphabet/g/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">GUITARRA</h1>
+                                <p class="description-glosario ng-binding">Instrumento musical de cuerdas, cuyo cuerpo, generalmente de madera, está constituido por una caja plana y ovalada, más estrecha en el centro y con un agujero en la tapa anterior, a partir del cual sale un brazo provisto en su extremo superior de clavijas que sirven para afinar.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/g/3.png" src="assets/img/alphabet/g/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">GALLITO</h1>
+                                <p class="description-glosario ng-binding">Ave nacional del Perú. Habita en la región amazónica y es notable por la increíble belleza de su plumaje.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/h/1.png" src="assets/img/alphabet/h/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">HELADO</h1>
+                                <p class="description-glosario ng-binding">Es un <a href="#" onclick="window.open('http://es.wikipedia.org/wiki/Postre', '_system');">postre</a> 
+                                    <a href="#" onclick="window.open('http://es.wikipedia.org/wiki/Congelaci%C3%B3n', '_system');">congelado</a> hecho de agua,
+                                    <a href="#" onclick="window.open('http://es.wikipedia.org/wiki/Leche', '_system');">leche</a> o
+                                    <a href="#" onclick="window.open('http://es.wikipedia.org/wiki/Crema_de_leche', '_system');">crema de leche</a>. Es un alimento completo que aporta muchos nutrientes y vitaminas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/h/2.png" src="assets/img/alphabet/h/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">HORMIGA</h1>
+                                <p class="description-glosario ng-binding"> Insecto de variadas especies, de diferentes colores y tamaños. Tiene la cabeza, el tórax y el abdomen abultados y el resto del cuerpo estrecho; presenta dos antenas y patas largas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/h/3.png" src="assets/img/alphabet/h/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">HELICÓPTERO</h1>
+                                <p class="description-glosario ng-binding">Aparato de aviación que se sostiene en el aire y se impulsa hacia adelante por medio de hélices horizontales. Admite pocos pasajeros y puede bajar y subir verticalmente.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/i/1.png" src="assets/img/alphabet/i/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">IGLESIA</h1>
+                                <p class="description-glosario ng-binding">Templo donde se celebra el culto religioso.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/i/2.png" src="assets/img/alphabet/i/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">IMÁN</h1>
+                                <p class="description-glosario ng-binding">Cuerpo que tiene la propiedad de atraer a otros; está formado por dos polos, de uno de los cuales salen líneas de fuerza magnética. Estas líneas conforman el campo magnético de dicho cuerpo. Un efecto similar puede producirse por corrientes eléctricas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/i/3.png" src="assets/img/alphabet/i/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">IGUANA</h1>
+                                <p class="description-glosario ng-binding">Reptil de América parecido al lagarto, pero de tamaño muy grande. De color verdoso oscuro, posee una cresta espinosa alta en el cuello y una bolsa o saco en la garganta. Se alimenta de hierbas y es totalmente inofensivo.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/j/1.png" src="assets/img/alphabet/j/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">JIRAFA</h1>
+                                <p class="description-glosario ng-binding">Mamífero rumiante que vive en África y se distingue por su cuello largo y delgado. Tiene la cabeza pequeña, con dos cuernos poco desarrollados, y las patas anteriores más largas que las posteriores. Su color es gris claro, con manchas de un rubio oscuro.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/j/2.png" src="assets/img/alphabet/j/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">JAGUAR</h1>
+                                <p class="description-glosario ng-binding"> Mamífero carnicero oriundo de América, de gran tamaño, pelaje generalmente amarillo con manchas negras, excepto en el pecho y abdomen que son blancos.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/j/3.png" src="assets/img/alphabet/j/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">JABALÍ</h1>
+                                <p class="description-glosario ng-binding">Variedad salvaje de cerdo, más grande que este, de cabeza más alargada y de hocico prolongado, provisto de grandes colmillos, cuya piel, muy gruesa, está cubierta de un pelaje tupido de color gris.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/k/1.png" src="assets/img/alphabet/k/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">KIWI</h1>
+                                <p class="description-glosario ng-binding">Son 
+                                    <a href="#" onclick="window.open('http://es.wikipedia.org/wiki/Ave_no_voladora', '_system');">aves no voladoras</a> pequeñas, aproximadamente del tamaño de una 
+                                    <a href="#" onclick="window.open('http://es.wikipedia.org/wiki/Gallus_gallus_domesticus', '_system');">gallina</a>.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/k/2.png" src="assets/img/alphabet/k/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">KOALA</h1>
+                                <p class="description-glosario ng-binding">Animal mamífero que vive en Australia, de aspecto parecido al de un oso de pequeño tamaño. Carece de cola, tiene orejas grandes y hocico ancho y corto. Su pelaje es de color gris rojizo.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/k/3.png" src="assets/img/alphabet/k/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">KARATE</h1>
+                                <p class="description-glosario ng-binding">Arte marcial y deporte de origen japonés que consiste en dar golpes secos con el borde de la mano, con los codos o con los pies.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/l/1.png" src="assets/img/alphabet/l/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">LUNA</h1>
+                                <p class="description-glosario ng-binding">Satélite de la Tierra de forma redonda que alumbra por la luz de los rayos solares que se reflejan en su superficie.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/l/2.png" src="assets/img/alphabet/l/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">LLAMA</h1>
+                                <p class="description-glosario ng-binding">Mamífero rumiante doméstico de abundante pelo que vive en América del Sur. Tiene la cabeza mediana, las orejas puntiagudas y los ojos grandes. Su cuello es largo y erguido, las patas son delgadas y la cola corta.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/l/3.png" src="assets/img/alphabet/l/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">LÚCUMA</h1>
+                                <p class="description-glosario ng-binding">El lúcumo (Pouteria lucuma) es la especie más extendida y comercialmente más valiosa de Pouteria. Es un árbol de la familia de las sapotáceas, originaria y nativa de los valles andinos del Perú.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/m/1.png" src="assets/img/alphabet/m/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">MANZANA</h1>
+                                <p class="description-glosario ng-binding">Fruto del manzano, con forma de globo y una hendidura en cada polo. Tiene la pulpa blanca, jugosa, con sabor agridulce y algunas semillas en el centro; su cáscara es muy fina, de color rojo, verde o amarillo.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/m/2.png" src="assets/img/alphabet/m/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">MAÍZ</h1>
+                                <p class="description-glosario ng-binding">Planta herbácea originaria de América, de tallos rectos y largos, hojas alargadas, planas y puntiagudas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/m/3.png" src="assets/img/alphabet/m/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">MARIPOSA</h1>
+                                <p class="description-glosario ng-binding">Insecto de vistosos colores presente en nuestros jardines y campos.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/n/1.png" src="assets/img/alphabet/n/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">NUBE</h1>
+                                <p class="description-glosario ng-binding">Masa de vapor que se encuentra suspendida en la atmósfera. Están formadas por gotas de agua o cristales de nieve.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/n/2.png" src="assets/img/alphabet/n/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">NUTRIA</h1>
+                                <p class="description-glosario ng-binding">Mamífero carnívoro de cuerpo alargado, pelaje espeso y suave, patas cortas con dedos unidos por membranas, de cola larga y piel muy apreciada, que vive a orillas de los ríos.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/n/3.png" src="assets/img/alphabet/n/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">NEVADO</h1>
+                                <p class="description-glosario ng-binding">Que está cubierto de nieve paisaje nevado. Montaña cubierta de nieves perpetuas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/n1/1.png" src="assets/img/alphabet/n1/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ÑU</h1>
+                                <p class="description-glosario ng-binding">Género de antílopes de gran tamaño que habitan fundamentalmente en África. La cabeza del ñu es parecida a la del toro; tiene la crin corta y los cuernos curvados hacia delante y hacia arriba.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/n1/2.png" src="assets/img/alphabet/n1/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ÑANDÚ</h1>
+                                <p class="description-glosario ng-binding">Avestruz americano que se diferencia del de origen africano por tener tres dedos en cada pata y ser más pequeño. Mide aproximadamente 1,65 m de altura.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/n1/3.png" src="assets/img/alphabet/n1/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ÑUSTA</h1>
+                                <p class="description-glosario ng-binding">Ñusta era el nombre quechua para las REINAS O PRINCESA s en el Imperio inca.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/o/1.png" src="assets/img/alphabet/o/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">OSO</h1>
+                                <p class="description-glosario ng-binding">Mamífero de gran tamaño y pelaje abundante de color oscuro. Tiene la cabeza grande, con ojos pequeños; sus extremidades, fuertes y gruesas, se apoyan en cinco dedos con uñas duras, en forma de ganchos.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/o/2.png" src="assets/img/alphabet/o/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">OJOS</h1>
+                                <p class="description-glosario ng-binding">Órgano de la vista del hombre y los animales, que está en la cara. Su forma es similar a la de una esfera.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/o/3.png" src="assets/img/alphabet/o/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">OREJAS</h1>
+                                <p class="description-glosario ng-binding">Nombre que recibe cada una de las dos partes externas del oído de la mayoría de los mamíferos, que sobresalen a los lados de la cabeza.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/p/1.png" src="assets/img/alphabet/p/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">PUMA</h1>
+                                <p class="description-glosario ng-binding">Mamífero carnicero americano parecido al tigre, pero de pelo suave y de un solo color que puede variar en sus tonalidades, desde el gris amarillento hasta el rojizo.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/p/2.png" src="assets/img/alphabet/p/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">PAPAGAYO</h1>
+                                <p class="description-glosario ng-binding">Ave originaria de los países tropicales, que resulta vistosa por el color amarillento, verde y rojo encarnado de su plumaje; sus patas están provistas de uñas fuertes que le sirven para agarrar; su pico es corvo y fuerte también.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/p/3.png" src="assets/img/alphabet/p/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">PINGÜINO</h1>
+                                <p class="description-glosario ng-binding">Ave de la región polar sur, de patas cortas con dedos unidos por membranas. Tiene facilidad para nadar, pero no para volar. Posee el dorso y las alas negras, y el pecho blanco.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/q/1.png" src="assets/img/alphabet/q/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">QUESO</h1>
+                                <p class="description-glosario ng-binding">Producto alimenticio que se obtiene haciendo fermentar y cuajar la leche, a la que luego se le quita el agua.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/q/2.png" src="assets/img/alphabet/q/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">QUENA</h1>
+                                <p class="description-glosario ng-binding">La quena (en quechua: qina) es un instrumento de viento de bisel, usado de modo tradicional por los habitantes de los Andes centrales. La quena es tradicionalmente de caña o madera y tiene un total de siete agujeros, seis al frente y uno atrás, para el pulgar.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/q/3.png" src="assets/img/alphabet/q/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">QUÍMICA</h1>
+                                <p class="description-glosario ng-binding">Es la ciencia que estudia tanto la composición, estructura y propiedades de la materia como los cambios que ésta experimenta durante las reacciones químicas y su relación con la energía.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/r/1.png" src="assets/img/alphabet/r/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">RATÓN</h1>
+                                <p class="description-glosario ng-binding">Mamífero roedor de pequeño tamaño, de pelo blanco o gris, patas cortas y cola larga. Es muy fecundo y ágil.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/r/2.png" src="assets/img/alphabet/r/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">RANA</h1>
+                                <p class="description-glosario ng-binding"> Animal vertebrado anfibio, con patas traseras muy desarrolladas para saltar, cabeza triangular unida directamente al tronco, boca grande y ojos saltones.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/r/3.png" src="assets/img/alphabet/r/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">RUEDA</h1>
+                                <p class="description-glosario ng-binding">Pieza circular que gira en torno a su eje.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/s/1.png" src="assets/img/alphabet/s/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">SOL</h1>
+                                <p class="description-glosario ng-binding">Estrella con luz propia, alrededor de la cual giran la Tierra y los otros planetas que forman parte de nuestro sistema solar.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/s/2.png" src="assets/img/alphabet/s/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">SOFÁ</h1>
+                                <p class="description-glosario ng-binding">Asiento grande con respaldo y brazos, hecho para ser utilizado por más de una persona a la vez.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/s/3.png" src="assets/img/alphabet/s/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">SILLA</h1>
+                                <p class="description-glosario ng-binding">Asiento con respaldo que, por lo general, cuenta con cuatro patas, a veces tiene brazos y en ella solo cabe una persona.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/t/1.png" src="assets/img/alphabet/t/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">TOMATE</h1>
+                                <p class="description-glosario ng-binding">Fruto de huerto, de superficie lisa y brillante de color verde o rojo, según su grado de madurez, de pulpa jugosa y semillas planas de color amarillo.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/t/2.png" src="assets/img/alphabet/t/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">TITÍ</h1>
+                                <p class="description-glosario ng-binding">Tití es el nombre vulgar de diferentes especies de primates americanos (platirrinos)</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/t/3.png" src="assets/img/alphabet/t/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">TUCÁN</h1>
+                                <p class="description-glosario ng-binding">Ave de plumaje negro con manchas de colores muy vivos en el pecho y en el cuello. También tiene el pico coloreado, ancho y alto como la cara, casi tan largo como el cuerpo, y algo curvado.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/u/1.png" src="assets/img/alphabet/u/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">UVA</h1>
+                                <p class="description-glosario ng-binding"> Fruto comestible de la parra; tiene forma redonda u ovalada y es de color verde claro o morado. Posee una pulpa muy jugosa y dulce.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/u/2.png" src="assets/img/alphabet/u/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">UÑA</h1>
+                                <p class="description-glosario ng-binding">Lámina dura y delgada que nace y crece en la parte superior de las extremidades de los dedos.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/u/3.png" src="assets/img/alphabet/u/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">UNICORNIO</h1>
+                                <p class="description-glosario ng-binding">Animal imaginario, con figura de caballo, que tiene un cuerno recto en medio de la frente.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/v/1.png" src="assets/img/alphabet/v/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">VACA</h1>
+                                <p class="description-glosario ng-binding">Mamífero de gran tamaño muy grande y pesado. Su cuerpo está cubierto de pelo que puede ser de distintos colores.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/v/2.png" src="assets/img/alphabet/v/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">VENADO</h1>
+                                <p class="description-glosario ng-binding"> Mamífero rumiante, esbelto y ligero, de color pardo rojizo y cuernos en forma de ramas.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/v/3.png" src="assets/img/alphabet/v/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">VOLCÁN</h1>
+                                <p class="description-glosario ng-binding">Elevación del terreno por la que salen gases y materiales muy calientes que proceden del interior de la Tierra.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/w/1.png" src="assets/img/alphabet/w/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">WATERPOLO</h1>
+                                <p class="description-glosario ng-binding">El waterpolo o polo acuático es un deporte que se practica en una piscina, en la cual se enfrentan dos equipos. El objetivo del juego es marcar el mayor número de goles en la portería del equipo contrario, durante el tiempo que dura el partido.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/w/2.png" src="assets/img/alphabet/w/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">WAPITÍ</h1>
+                                <p class="description-glosario ng-binding">Mamífero que vive en América del Norte. Gran tamaño y destacan por su aspecto majestuoso. El cuerpo es generalmente de un tono marrón muy brillante.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/w/3.png" src="assets/img/alphabet/w/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">WINDSURF</h1>
+                                <p class="description-glosario ng-binding">El surf a vela, windsurf o tabla a vela es una modalidad del deporte a vela que consiste en desplazarse en el agua sobre una tabla algo similar a una de surf, provista de una vela.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/x/1.png" src="assets/img/alphabet/x/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">XILÓFONO</h1>
+                                <p class="description-glosario ng-binding">Instrumento musical de percusión formado por varias tablillas de madera de diferente longitud que, al ser golpeadas por dos piezas, producen sonidos correspondientes a las diversas notas de la escala musical.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/y/1.png" src="assets/img/alphabet/y/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">YOYO</h1>
+                                <p class="description-glosario ng-binding"> Juguete constituido por un disco ahuecado que deja en el centro un eje, al cual se le coloca un hilo o cuerda fina elástica, que lo hace subir o bajar si se enrolla o desenrolla.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/y/2.png" src="assets/img/alphabet/y/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">YEGUA</h1>
+                                <p class="description-glosario ng-binding">Hembra del caballo.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/y/3.png" src="assets/img/alphabet/y/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">YACARÉ</h1>
+                                <p class="description-glosario ng-binding">Caimán es un género de crocodilios de la familia de los aligatóridos, conocidos vulgarmente como yacarés o caimanes.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/z/1.png" src="assets/img/alphabet/z/1.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ZORRO</h1>
+                                <p class="description-glosario ng-binding">Mamífero carnicero de abundante pelaje color pardo, cabeza ancha, hocico puntiagudo, patas cortas y cola larga y gruesa, que habita en diferentes zonas climáticas, según la especie.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/z/2.png" src="assets/img/alphabet/z/2.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ZAPATO</h1>
+                                <p class="description-glosario ng-binding">Prenda de vestir que cubre el pie o parte de este, con una o varias piezas, generalmente de piel, aunque pueden ser de tela, plástico u otro material, sujetas a una suela resistente que protege la parte inferior de esa extremidad.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet --><div class="row ng-scope" ng-repeat="abc in controller.alphabet">
+                            <div class="col-sm-4 col-xs-4">
+                                <img class="img-responsive img-glosario" ng-src="assets/img/alphabet/z/3.png" src="assets/img/alphabet/z/3.png">
+                            </div>
+                            <div class="col-sm-8 col-xs-8">
+                                <h1 class="subtitle-glosario ng-binding">ZAMPOÑA</h1>
+                                <p class="description-glosario ng-binding">La zampoña es un instrumento de viento compuesto de varios tubos ahuecados por un extremo y cerrados por el otro, dispuestos en forma vertical en una o dos hileras.</p>
+                            </div>
+                        </div><!-- end ngRepeat: abc in controller.alphabet -->
+
+                    </div>
+
+                    <!--<div class="col-xs-1"></div>-->
+                </div>
+                
+                <div class="row">
+                    <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
+                </div>
+
+            </div>
+
+        </header>
+        <div class="popup-restart">         
+            <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
+        </div>  
+
+        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
+        <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+        document.addEventListener("backbutton", function(e){
+
+            navigator.app.backHistory();
+
+        }, false);
+
+            $(document).on('mousedown','a', function(e) {
+                e.preventDefault();
+                var elem = $(this);
+                var url = elem.attr('href');
+                if (url.indexOf('http://') !== -1) {
+                    //alert("caught");
+                    window.open(url, '_system');
+                }
+            });
+        </script>
+    
+
+</body></html>
