@@ -1,5 +1,5 @@
 # abc-app
-Application for divice mobile subject : Alphabet for kids (alphabet game)
+Application for device mobile subject : Alphabet kids
 Project development in Html,css
 
 
@@ -7,7 +7,7 @@ Project development in Html,css
 
 Estas son las palabras que tenemos: http://develowebapps.com/apps/abc/palabras.jpg
 
-cada letra tiene 3 palabras asociadas ( 1 por nivel). Por favor acomoda según tu criterio la palabra más facil en el nivel 1 y la más complicada en el 3. (p. ej:  A: Arbol (nivel 1), Arbol (Nivel 2), Alpaca (Nivel 3) )
+Cada letra tiene 3 palabras asociadas ( 1 por nivel). Por favor acomoda según tu criterio la palabra más facil en el nivel 1 y la más complicada en el 3. (p. ej:  A: Arbol (nivel 1), Arbol (Nivel 2), Alpaca (Nivel 3) )
 
 solo la X tiene 1 sola palabra, así que se repite en los 3 niveles.
 
@@ -19,7 +19,7 @@ Por favor también a tu criterio elige las otras 3 palabras que se mostrarán al
 
 
 ## Resources
-generate icono support Android IOS
+Generate icons support Android IOS
 
 https://github.com/AlexDisler/cordova-icon
 
@@ -83,7 +83,7 @@ https://github.com/AlexDisler/cordova-splash (OK)
 Screenshot reference
 
 
-## OJOoooooo :D
+## OJO with permission
 - dar permisos a los sonidos chmod 777 * (para lectura app)
 
 
