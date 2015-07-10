@@ -55,7 +55,27 @@
         }
 
         </style>
-        
+        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
+        <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+        document.addEventListener("backbutton", function(e){
+
+            navigator.app.backHistory();
+
+        }, false);
+
+            $(document).on('mousedown','a', function(e) {
+                e.preventDefault();
+                var elem = $(this);
+                var url = elem.attr('href');
+                if (url.indexOf('http://') !== -1) {
+                    //alert("caught");
+                    window.open(url, '_system');
+                }
+            });
+        </script>
+    
     </head>
     <body ng-app="gemStore" class="ng-scope" cz-shortcut-listen="true">
         <!--<div data-role="page" id="page1">
@@ -731,26 +751,6 @@
             <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
         </div>  
 
-        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
-        <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript">
-        document.addEventListener("backbutton", function(e){
-
-            navigator.app.backHistory();
-
-        }, false);
-
-            $(document).on('mousedown','a', function(e) {
-                e.preventDefault();
-                var elem = $(this);
-                var url = elem.attr('href');
-                if (url.indexOf('http://') !== -1) {
-                    //alert("caught");
-                    window.open(url, '_system');
-                }
-            });
-        </script>
-    
+        
 
 </body></html>

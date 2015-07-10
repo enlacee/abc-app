@@ -67,7 +67,32 @@ table td
 
 
         </style>
+         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
+        <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->
+        <script type="text/javascript" src="cordova.js"></script>
         
+        <!--app--> 
+        <script type="text/javascript" src="assets/js/html5sql.js"></script>
+        <script type="text/javascript" src="assets/js/applicationModelSql.js"></script>
+    
+        <script type="text/javascript">
+            //appModel.showRecords(URI.data.level);
+            $(document).ready(function(){
+                console.log("init");
+                
+                // 02 SCRIP FOR RANKING
+                var appModel = new applicationModel();
+                appModel.initDatabase();
+                
+                appModel.clearContentByLevel(1, 'container-ranking');
+
+                appModel.showRecords(1, 'ranking-top-5-1');
+                appModel.showRecords(2, 'ranking-top-5-2'); 
+                appModel.showRecords(3, 'ranking-top-5-3'); 
+               
+            });
+                   
+        </script>
     </head>
     <body ng-app="gemStore">
         <!--<div data-role="page" id="page1">
@@ -118,32 +143,7 @@ table td
             <a href="index.html" data-role="button" class="" rel="external"><img src="assets/img/restart-green.png"></a>
         </div>  
 
-        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
-        <!--<script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>-->
-        <script type="text/javascript" src="cordova.js"></script>
-        
-        <!--app--> 
-        <script type="text/javascript" src="assets/js/html5sql.js"></script>
-        <script type="text/javascript" src="assets/js/applicationModelSql.js"></script>
-    
-        <script type="text/javascript">
-            //appModel.showRecords(URI.data.level);
-            $(document).ready(function(){
-                console.log("init");
-                
-                // 02 SCRIP FOR RANKING
-                var appModel = new applicationModel();
-                appModel.initDatabase();
-                
-                appModel.clearContentByLevel(1, 'container-ranking');
-
-                appModel.showRecords(1, 'ranking-top-5-1');
-                appModel.showRecords(2, 'ranking-top-5-2'); 
-                appModel.showRecords(3, 'ranking-top-5-3'); 
-               
-            });
-                   
-        </script>
+       
 
   
     </body>
