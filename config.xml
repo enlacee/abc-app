@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.appabc" version="0.0.3"
-      android-versionCode="3"
+<widget id="com.example.appabc" version="0.0.2"
+      android-versionCode="2"
       xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>AppAbc</name>
+    <name>ABC Play Kids</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        ABC Play Kids one, two, three level to have fun.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+        Develoweb (Anibal C)
     </author>
     <content src="index.html" />
     <access origin="*" />
