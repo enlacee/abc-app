@@ -1,21 +1,32 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.appabc" version="0.0.2"
-      android-versionCode="2"
-      xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.develoweb.appabc" version="0.0.2" android-versionCode="2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ABC Play Kids</name>
     <description>
         ABC Play Kids one, two, three level to have fun.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Develoweb (Anibal C)
+        Develoweb Team
     </author>
     <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" version="1" />
     <access origin="*" />
         <preference name="SplashScreen" value="screen" />
         <preference name="SplashScreenDelay" value="3000" />
-
         <preference name="exit-on-suspend" value="false"/>
         <!--<preference name="BackgroundColor" value="0xff83e749"/>-->
-
         <preference name="orientation" value="portrait" />
+
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
 </widget>

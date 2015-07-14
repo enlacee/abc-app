@@ -59,6 +59,10 @@
             
             // init timer
             var myLevel = parseInt(vars.URIdata.level) || 1;
+            var myIndice = parseInt(vars.URIdata.indice) || 0;
+            // exit app (level 3)
+            if((myLevel === 3 || myLevel === 2) && myIndice == 27) {clearInterval(self.countdownTimer); return true}
+
             if (myLevel === 2 || myLevel === 3) {
                 var seconds = (myLevel === 3) ? 15 : 30; // countDown
                 
@@ -304,7 +308,7 @@
                     /*setTimeout(function() {
                         var fileHtml = myLevel + '_' + vars.URIdata.indice;
                         App.redirect(fileHtml + '.html?' + vars.URI.query());
-                    }, 700);*/      
+                    }, 700);*/
                     
                     //alert('vars.URIdata ' + JSON.stringify(vars.URIdata) );
                     console.log("app.data despues : vars.URI.query()", vars.URI.query());
@@ -390,7 +394,7 @@
             /*
              * Action Level 3
              */
-            function isLevel3(el) {
+            function isLevel3(el) { 
                 
                 console.log('app.data antes : vars.URIdata', vars.URIdata);
                 var attribute = el.attr('data-audio') || '';
@@ -398,7 +402,7 @@
                 var myPoints = parseInt(vars.URIdata.points) || 0;
                 var myTotalPoints = parseInt(vars.URIdata.totalPoints) || 0;
                 var myLevel = parseInt(vars.URIdata.level) || 1;
-                
+
                 //getDomButtonLock();
                 if (attribute.length > 0) {
                     getDomButtonLock();
@@ -415,18 +419,16 @@
                     console.log('app.data despues : vars.URIdata', vars.URIdata);
                     console.log('vars.URIdata', JSON.stringify(vars.URIdata));
                     console.log('vars.URI.query()', JSON.stringify(vars.URI.query()));
-                    //alert("2222");
+                    
                     App.mySoundCorrect.play();
-                    //alert("333");
-                    /*console.log("ECHO ECHO sonido.sonido.sonido LEVEL 3");
-                                             
+                    /*
+                    console.log("ECHO ECHO sonido.sonido.sonido LEVEL 3");              
                     var fileHtml = myLevel + '_' + vars.URIdata.indice + '.html?'+ vars.URI.query();
                     console.log('fileHtml', fileHtml);
-                    //alert("redirect a "+ fileHtml);
-                        setTimeout(function() {
-                             
-                             App.redirect(fileHtml);
-                         }, 700);*/
+                    setTimeout(function() {
+
+                         App.redirect(fileHtml);
+                     }, 700);*/
                          
                     
                 } else { // WRONG
@@ -574,8 +576,11 @@ function onBackKeyDown(e) { e.preventDefault(); }*/
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     App.init();
-    //alert("App.init android");
 };
-//
-//alert('App.init();');
-//App.init();
+
+/*
+$(document).ready(function(){
+    App.init();
+});
+*/
+

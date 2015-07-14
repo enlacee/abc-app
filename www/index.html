@@ -14,34 +14,9 @@
         
         <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="assets/js/index.html.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <!--app-->
-        <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
-        <script type="text/javascript">
-            var URI = new URI(location.href); console.log ('URI', URI);
-            var urlBase = URI.protocol() +'://'+ URI.hostname() + URI.directory();
 
-            // 01 LOCAL STORE MANAGER OF LEVEL GAME
-            if (typeof(Storage) != "undefined") {
-                // Store
-                var level1 = sessionStorage.getItem('level1');
-                var level2 = sessionStorage.getItem('level2');
-                if (typeof(level1) != 'undefined' && level1 == 'true') {
-                    $('#level2button').removeClass('x-btn-main-disabled');
-                    if (typeof(level2) != 'undefined' && level2 == 'true') {
-                        $('#level3button').removeClass('x-btn-main-disabled');
-                    }
-                }
-            } else {
-                alert ("Sorry, your browser does not support web Storage 'localStore'");
-            }
-            
-            // 02 LandSpace with jquery mobile
-
-            // 03 BACKGROUND SOUND 'init phonegap'            
-            sessionStorage.setItem('timerForLevel', 0);  
-            </script>
-            <script type="text/javascript" src="assets/js/index.html.js"></script>
     </head>
     <body>
     <div data-role="page" id="page1">
@@ -93,11 +68,34 @@
                 </div>
             </div>
             
-            
         </div>
 
     </header>
 
-    
+    <!--app-->
+    <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
+    <script type="text/javascript">
+        var URI = new URI(location.href); console.log ('URI', URI);
+        var urlBase = URI.protocol() +'://'+ URI.hostname() + URI.directory();
+
+        // 01 LOCAL STORE MANAGER OF LEVEL GAME
+        if (typeof(Storage) != "undefined") {
+            // Store
+            var level1 = sessionStorage.getItem('level1');
+            var level2 = sessionStorage.getItem('level2');
+            
+            if (typeof(level1) != 'undefined' && level1 == 'true') {
+                $('#level2button').removeClass('x-btn-main-disabled');
+                if (typeof(level2) != 'undefined' && level2 == 'true') {
+                    $('#level3button').removeClass('x-btn-main-disabled');
+                }
+            }
+        } else {
+            alert ("Sorry, your browser does not support web Storage 'localStore'");
+        }
+
+        // 03 BACKGROUND SOUND 'init phonegap'            
+        sessionStorage.setItem('timerForLevel', 0);  
+    </script>
 </body>
 </html>

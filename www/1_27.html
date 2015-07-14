@@ -60,7 +60,7 @@
                                       <option></option>
                                   </select>
                                   </div>
-                                  <button type="submit" class="btn btn-warning btn-lg" id="btnGuardarNombre" >Guardar</button>
+                                  <button type="submit" class=" btn-warning btn-lg" id="btnGuardarNombre" >Guardar</button>
                                 </div>
                                   <div id="nombreUserMessage" class="warning text-message-loser"></div>
                               </div>
@@ -79,12 +79,13 @@
     <script type="text/javascript" src="assets/js/plugins/uri/URI.js"></script>
     <script type="text/javascript" src="assets/js/html5sql.js"></script>
     <script type="text/javascript" src="assets/js/applicationModelSql.js"></script>
+    <script type="text/javascript" src="assets/js/1_27.js"></script>
     <script type="text/javascript">
     var URI = new URI(location.href)
         URI.data = {};
         
     URI.data = URI.search(true);
-        console.log('DATA' , URI.data);
+    console.log('DATA' , URI.data);
     var myIndice = parseInt(URI.data.indice) || 0;
     var myPoints = parseInt(URI.data.points) || 0;
     var myTotalPoints = parseInt(URI.data.totalPoints) || 0;
@@ -99,10 +100,11 @@
             sessionStorage.setItem("level1", 'true');
             messageHtml = '<a href="index.html" data-role="button" rel="external">'
             + '<img class="img-responsive" src="assets/img/next-blue.png">'
-            + '</a>';            
+            + '</a>';        
       
         } else {
             sessionStorage.setItem("level1", 'false');
+            sessionStorage.setItem("level2", 'false');
             messageHtml = '<span class="text-message-purple">Fallaste! no completaste todo el abecedario correctamente, puedes volver a intentarlo.</span>'
             + '<a href="1_0.html?level=1" data-role="button" rel="external">'
             + '<img class="img-responsive" src="assets/img/return.png">'
@@ -112,38 +114,7 @@
         $('#message').html(messageHtml);
     });
     
-    
-    
-    
-    
-    /**
-     * user
-     */     
-    var string_abcUser = sessionStorage.getItem('abc_user');
-    var abcUser = jQuery.parseJSON(string_abcUser);
-        abcUser.timerForLevel = URI.data.timerForLevel;
-    
-    console.log('abcUser', abcUser);
-    
-    //save OBJ USERS
-    var string_abcUsers = sessionStorage.getItem('abc_users');
-    var abcUsers = jQuery.parseJSON(string_abcUsers);
-    
-    var arrayUsers = [];
-    arrayUsers.push(abcUser);
-    
-    console.log('arrayUsers', arrayUsers);
-    
-    function addUser(objUser) {
-        /*var newUsers = [];
-        [0,1,2,3,4].forEach(function(element, indice, array){
-            console.log('id.element', element.name);
-            newUsers[indice] = 
-                    
-        });*/
-    }
     </script>
-    <script type="text/javascript" src="assets/js/1_27.js"></script>
     <script type="text/javascript">
         // 02 SCRIP FOR RANKING
         var appModel = new applicationModel();
