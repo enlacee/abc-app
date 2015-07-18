@@ -9,6 +9,10 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         },
@@ -52,19 +56,22 @@
         }
     },
     "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.develoweb.appabc"
+        },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.example.appabc"
+            "PACKAGE_NAME": "com.develoweb.appabc"
         },
         "org.apache.cordova.media": {
-            "PACKAGE_NAME": "com.example.appabc"
+            "PACKAGE_NAME": "com.develoweb.appabc"
         },
         "org.apache.cordova.splashscreen": {
-            "PACKAGE_NAME": "com.example.appabc"
+            "PACKAGE_NAME": "com.develoweb.appabc"
         }
     },
     "dependent_plugins": {
         "org.apache.cordova.file": {
-            "PACKAGE_NAME": "com.example.appabc"
+            "PACKAGE_NAME": "com.develoweb.appabc"
         }
     }
 }
