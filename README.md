@@ -49,11 +49,11 @@ Install: for Sound
     cordova plugin add org.apache.cordova.device
 
 
-Install: for Icon
+Install: Icon
 https://github.com/AlexDisler/cordova-icon (OK)
 
 
-Install: for spash screen
+Install: spash screen
 https://github.com/AlexDisler/cordova-splash (OK)
     
     cordova plugin add org.apache.cordova.splashscreen
@@ -83,13 +83,13 @@ https://github.com/AlexDisler/cordova-splash (OK)
 Screenshot reference
 
 
-## OJO with permission
-- dar permisos a los sonidos chmod 777 * (para lectura app)
+## NOTE with permission
+- GIVE PERMITS to sound files chmod 777 * (para lectura app)
 
 
 ## 
 Position div INDEX (assets/css/style.css)
-.img-main-alphabet          = O      # imagen del abecedario (center)
+.img-main-alphabet          = O      # image of the abc (center)
 #popup-message-win-points   = 1      # message score (center)
 .popup-restart              = 3      # button restart(rigth)
 .content-footer             = 4      # footer buttom
